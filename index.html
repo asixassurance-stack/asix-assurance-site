@@ -1,100 +1,876 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>ASIX Assurance</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ASIX Assurance</title>
+  <meta name="description" content="ASIX Assurance, courtier indépendant en assurance : auto, habitation, santé et professionnelle. Devis gratuit partout en France." />
+  <style>
+    :root{
+      --blue-950:#081a35;
+      --blue-900:#0f2f63;
+      --blue-700:#1f5bb5;
+      --blue-100:#eaf2ff;
+      --slate-900:#0f172a;
+      --slate-700:#334155;
+      --slate-600:#475569;
+      --slate-300:#cbd5e1;
+      --slate-200:#e2e8f0;
+      --slate-100:#f1f5f9;
+      --white:#ffffff;
+      --success:#16a34a;
+      --radius:22px;
+      --shadow:0 18px 50px rgba(2, 8, 23, 0.10);
+      --shadow-soft:0 10px 30px rgba(15, 23, 42, 0.08);
+      --max:1180px;
+    }
 
-<style>
-body {
-    margin: 0;
-    font-family: Arial, sans-serif;
-    background: #f5f7fa;
-}
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{
+      margin:0;
+      font-family:Arial, Helvetica, sans-serif;
+      color:var(--slate-900);
+      background:#fff;
+      line-height:1.5;
+    }
+    img{max-width:100%;display:block}
+    a{text-decoration:none;color:inherit}
 
-header {
-    background: #0b2c5f;
-    color: white;
-    padding: 15px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 15px;
-}
+    .container{width:min(var(--max), calc(100% - 32px)); margin:0 auto}
+    .btn{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      gap:10px;
+      padding:14px 24px;
+      border-radius:16px;
+      font-weight:700;
+      transition:.2s ease;
+    }
+    .btn-primary{background:var(--white); color:var(--blue-950); box-shadow:var(--shadow-soft)}
+    .btn-primary:hover{transform:translateY(-1px)}
+    .btn-secondary{border:1px solid rgba(255,255,255,.35); color:#fff; background:rgba(255,255,255,.08)}
+    .btn-dark{background:var(--blue-900); color:#fff}
+    .btn-whatsapp{background:#25D366; color:#073b1d}
 
-header img {
-    height: 50px;
-}
+    header{
+      position:sticky; top:0; z-index:20;
+      background:rgba(255,255,255,.94);
+      backdrop-filter:blur(10px);
+      border-bottom:1px solid var(--slate-200);
+    }
+    .topbar{
+      display:flex; align-items:center; justify-content:space-between;
+      min-height:78px;
+      gap:16px;
+    }
+    .brand{display:flex; align-items:center; gap:12px}
+    .brand img{height:50px; width:auto}
+    .brand strong{display:block; color:var(--blue-950); font-size:22px; line-height:1}
+    .brand span{color:var(--slate-600); font-size:13px}
+    nav{display:flex; gap:26px; flex-wrap:wrap}
+    nav a{font-weight:700; color:var(--slate-700)}
+    nav a:hover{color:var(--blue-700)}
 
-.hero {
-    text-align: center;
-    padding: 80px 20px;
-    background: white;
-}
+    .hero{
+      position:relative;
+      color:#fff;
+      overflow:hidden;
+      background:linear-gradient(120deg, rgba(8,26,53,.96), rgba(15,47,99,.93));
+    }
+    .hero-bg{
+      position:absolute; inset:0;
+      background:url('https://images.unsplash.com/photo-1520607162513-77705c0f0d4a?auto=format&fit=crop&w=1600&q=80') center/cover no-repeat;
+      opacity:.18;
+    }
+    .hero .container{
+      position:relative;
+      display:grid;
+      grid-template-columns:1.2fr .8fr;
+      gap:42px;
+      align-items:center;
+      padding:72px 0 90px;
+    }
+    .pill{
+      display:inline-block;
+      padding:10px 16px;
+      background:rgba(255,255,255,.10);
+      border:1px solid rgba(255,255,255,.14);
+      border-radius:999px;
+      font-size:14px;
+      margin-bottom:18px;
+    }
+    .hero h1{
+      margin:0;
+      font-size:58px;
+      line-height:1.05;
+      letter-spacing:-1px;
+      max-width:720px;
+    }
+    .hero p{
+      font-size:19px;
+      color:#dbeafe;
+      max-width:680px;
+      margin:22px 0 0;
+    }
+    .hero-actions{display:flex; gap:14px; flex-wrap:wrap; margin-top:30px}
+    .hero-logo-badge{display:inline-flex; align-items:center; gap:14px; background:rgba(255,255,255,.10); border:1px solid rgba(255,255,255,.16); padding:12px 16px; border-radius:20px; margin-bottom:22px}
+    .hero-logo-badge img{height:54px; width:auto}
+    .hero-logo-badge span{font-weight:800; letter-spacing:.08em; color:#fff}
+    .hero-card{
+      background:rgba(255,255,255,.12);
+      border:1px solid rgba(255,255,255,.12);
+      border-radius:30px;
+      padding:14px;
+      box-shadow:var(--shadow);
+      backdrop-filter:blur(10px);
+    }
+    .hero-card img{height:520px; width:100%; object-fit:cover; border-radius:24px}
 
-.hero h1 {
-    font-size: 36px;
-}
+    .stats-wrap{margin-top:-32px; position:relative; z-index:2}
+    .stats{
+      background:#fff;
+      border:1px solid var(--slate-200);
+      border-radius:28px;
+      box-shadow:var(--shadow);
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      gap:18px;
+      padding:18px;
+    }
+    .stat{background:var(--slate-100); border-radius:20px; padding:24px}
+    .stat strong{display:block; font-size:38px; color:var(--blue-950)}
+    .stat span{color:var(--slate-600)}
 
-.btn {
-    display: inline-block;
-    margin-top: 20px;
-    padding: 12px 25px;
-    background: #0b2c5f;
-    color: white;
-    text-decoration: none;
-    border-radius: 6px;
-}
+    section{padding:84px 0}
+    .eyebrow{color:var(--blue-700); font-weight:800; text-transform:uppercase; letter-spacing:.18em; font-size:13px}
+    h2{margin:12px 0 0; font-size:46px; line-height:1.08; letter-spacing:-1px}
+    .lead{margin:18px 0 0; color:var(--slate-600); font-size:19px; max-width:820px}
 
-.services {
-    padding: 50px;
-    text-align: center;
-}
+    .service-grid{
+      display:grid;
+      grid-template-columns:repeat(4,1fr);
+      gap:24px;
+      margin-top:36px;
+    }
+    .service-card{
+      border:1px solid var(--slate-200);
+      border-radius:28px;
+      overflow:hidden;
+      background:#fff;
+      box-shadow:var(--shadow-soft);
+    }
+    .service-card img{height:220px; width:100%; object-fit:cover}
+    .service-content{padding:22px}
+    .service-content h3{margin:0; font-size:27px; color:var(--blue-950)}
+    .service-content p{color:var(--slate-600); margin:12px 0 0}
 
-.card {
-    display: inline-block;
-    background: white;
-    padding: 20px;
-    margin: 10px;
-    border-radius: 10px;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-}
+    .about-section{background:var(--slate-100); border-top:1px solid var(--slate-200); border-bottom:1px solid var(--slate-200)}
+    .about-grid{display:grid; grid-template-columns:1fr 1fr; gap:38px; align-items:center}
+    .about-images{display:grid; grid-template-columns:1fr 1fr; gap:18px}
+    .about-images img{height:280px; width:100%; object-fit:cover; border-radius:26px; box-shadow:var(--shadow-soft)}
+    .about-images img:last-child{margin-top:36px}
+    .check-grid{display:grid; grid-template-columns:1fr 1fr; gap:12px; margin-top:26px}
+    .check{
+      background:#fff; border:1px solid var(--slate-200); border-radius:18px; padding:15px 16px;
+      color:var(--slate-700); font-weight:600
+    }
 
-footer {
-    background: #0b2c5f;
-    color: white;
-    text-align: center;
-    padding: 20px;
-}
-</style>
+    .steps{display:grid; grid-template-columns:repeat(3,1fr); gap:24px}
+    .step{border:1px solid var(--slate-200); border-radius:28px; padding:28px; box-shadow:var(--shadow-soft); background:#fff}
+    .step strong{font-size:42px; color:var(--blue-700)}
+    .step h3{margin:16px 0 0; font-size:28px}
+    .step p{margin:12px 0 0; color:var(--slate-600)}
 
+    .faq-wrap{background:#fff; border-top:1px solid var(--slate-200); border-bottom:1px solid var(--slate-200)}
+    .faq-list{margin-top:34px; display:grid; gap:14px}
+    details{border:1px solid var(--slate-200); border-radius:22px; background:var(--slate-100); padding:20px 22px}
+    summary{cursor:pointer; font-weight:800; font-size:20px}
+    details p{color:var(--slate-600); margin:14px 0 0}
+
+    .contact-section{background:linear-gradient(135deg, var(--blue-950), var(--blue-700)); color:#fff}
+    .contact-grid{display:grid; grid-template-columns:1fr 1fr; gap:32px; align-items:start}
+    .contact-box{background:rgba(255,255,255,.07); border:1px solid rgba(255,255,255,.12); border-radius:22px; padding:22px; margin-top:16px}
+    .contact-box small{display:block; color:#cbd5e1; margin-bottom:6px}
+    .contact-box strong{font-size:22px}
+    .form-card{background:#fff; color:var(--slate-900); border-radius:30px; padding:28px; box-shadow:var(--shadow)}
+    .form-card h3{margin:0; color:var(--blue-950); font-size:30px}
+    .form-card p{color:var(--slate-600)}
+    .field{width:100%; margin-top:14px; padding:15px 16px; border:1px solid var(--slate-300); border-radius:14px; font:inherit}
+    textarea.field{min-height:150px; resize:vertical}
+
+    .legal{background:#fff}
+    .legal-card{border:1px solid var(--slate-200); border-radius:28px; padding:30px; box-shadow:var(--shadow-soft); margin-bottom:22px}
+    .legal-card h3{margin:0 0 12px; font-size:30px}
+    .legal-card p{margin:10px 0; color:var(--slate-600)}
+
+    footer{background:var(--blue-950); color:#cbd5e1; padding:34px 0}
+    .footer-grid{display:grid; grid-template-columns:1.2fr 1fr 1fr; gap:24px}
+    .footer-title{color:#fff; font-weight:800; margin-bottom:12px}
+    footer a{display:block; color:#cbd5e1; margin:8px 0}
+    .copy{border-top:1px solid rgba(255,255,255,.10); margin-top:28px; padding-top:18px; font-size:14px}
+
+    .whatsapp-float{
+      position:fixed; right:18px; bottom:18px; z-index:25;
+      background:#25D366; color:#073b1d; border-radius:999px; padding:14px 18px;
+      font-weight:800; box-shadow:var(--shadow)
+    }
+
+    @media (max-width: 1050px){
+      .hero .container, .about-grid, .contact-grid{grid-template-columns:1fr}
+      .service-grid{grid-template-columns:repeat(2,1fr)}
+      .steps{grid-template-columns:1fr}
+      .footer-grid{grid-template-columns:1fr}
+      .hero h1{font-size:48px}
+      .hero-card img{height:420px}
+    }
+    @media (max-width: 720px){
+      nav{display:none}
+      .hero h1{font-size:38px}
+      h2{font-size:34px}
+      .service-grid,.check-grid,.stats,.about-images{grid-template-columns:1fr}
+      .hero .container{padding:52px 0 72px}
+      .hero-card img{height:320px}
+      .stat strong{font-size:32px}
+      .service-content h3{font-size:24px}
+    }
+  </style>
 </head>
-
 <body>
+  <header>
+    <div class="container topbar">
+      <div class="brand">
+        <img src="asix_hd.png" alt="Logo ASIX Assurance" />
+        <div>
+          <strong>ASIX ASSURANCE</strong>
+          <span>Courtier indépendant en assurance</span>
+        </div>
+      </div>
+      <nav>
+        <a href="#accueil">Accueil</a>
+        <a href="#services">Services</a>
+        <a href="#apropos">À propos</a>
+        <a href="#faq">FAQ</a>
+        <a href="#contact">Contact</a>
+      </nav>
+      <a class="btn btn-dark" href="#contact">Devis gratuit</a>
+    </div>
+  </header>
 
-<header>
-    <img src="asix_hd.png" alt="logo">
-    <h2>ASIX Assurance</h2>
-</header>
+  <main>
+    <section class="hero" id="accueil">
+      <div class="hero-bg"></div>
+      <div class="container">
+        <div>
+          <div class="pill">Auto • Habitation • Santé • Professionnelle • Toute la France</div>
+          <div class="hero-logo-badge">
+            <img src="asix_hd.png" alt="Logo ASIX Assurance" />
+            <span>ASIX ASSURANCE</span>
+          </div>
+          <h1>Une assurance plus claire, un accompagnement plus humain.</h1>
+          <p>ASIX Assurance vous aide à comparer, comprendre et optimiser vos contrats avec une approche indépendante, professionnelle et accessible.</p>
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="https://wa.me/33603793189?text=Bonjour%2C%20je%20souhaite%20obtenir%20un%20devis%20d%27assurance." target="_blank">📲 Obtenir mon devis sur WhatsApp</a>
+            <a class="btn btn-secondary" href="tel:0603793189">📞 06 03 79 31 89</a>
+          </div>
+        </div>
+        <div class="hero-card">
+          <img src="https://images.unsplash.com/photo-1556155092-490a1ba16284?auto=format&fit=crop&w=1200&q=80" alt="Conseiller en assurance avec clients" />
+        </div>
+      </div>
+    </section>
 
-<section class="hero">
-    <h1>Réduisez vos assurances jusqu'à -30%</h1>
-    <p>Auto • Habitation • Santé • Pro</p>
-    <a href="#" class="btn">Demander un devis</a>
-</section>
+    <div class="container stats-wrap">
+      <div class="stats">
+        <div class="stat"><strong>-30%</strong><span>Jusqu’à d’économies sur vos contrats</span></div>
+        <div class="stat"><strong>5 min</strong><span>Pour comparer vos solutions</span></div>
+        <div class="stat"><strong>France</strong><span>Accompagnement partout sur le territoire</span></div>
+      </div>
+    </div>
 
-<section class="services">
-    <h2>Nos services</h2>
+    <section id="services">
+      <div class="container">
+        <div class="eyebrow">Nos services</div>
+        <h2>Des garanties pensées pour la vraie vie</h2>
+        <p class="lead">Des solutions concrètes, un comparatif clair et des conseils adaptés à votre profil personnel ou professionnel.</p>
 
-    <div class="card">🚗 Assurance Auto</div>
-    <div class="card">🏠 Assurance Habitation</div>
-    <div class="card">💼 Assurance Pro</div>
-    <div class="card">❤️ Mutuelle Santé</div>
-</section>
+        <div class="service-grid">
+          <article class="service-card">
+            <img src="https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=900&q=80" alt="Assurance auto" />
+            <div class="service-content">
+              <h3>Assurance auto</h3>
+              <p>Comparez rapidement les meilleures offres auto et bénéficiez d’une couverture adaptée à votre profil au meilleur prix.</p>
+            </div>
+          </article>
+          <article class="service-card">
+            <img src="https://images.unsplash.com/photo-1560518883-ce09059eeffa?auto=format&fit=crop&w=900&q=80" alt="Assurance habitation" />
+            <div class="service-content">
+              <h3>Assurance habitation</h3>
+              <p>Protégez votre logement, vos biens et votre tranquillité avec des garanties claires et efficaces.</p>
+            </div>
+          </article>
+          <article class="service-card">
+            <img src="https://images.unsplash.com/photo-1576091160550-2173dba999ef?auto=format&fit=crop&w=900&q=80" alt="Assurance santé" />
+            <div class="service-content">
+              <h3>Assurance santé</h3>
+              <p>Trouvez une solution santé adaptée à votre situation personnelle, familiale et budgétaire.</p>
+            </div>
+          </article>
+          <article class="service-card">
+            <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=900&q=80" alt="Assurance professionnelle" />
+            <div class="service-content">
+              <h3>Assurance professionnelle</h3>
+              <p>Sécurisez votre activité avec des garanties pensées pour les indépendants, professions libérales et entreprises.</p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
 
-<footer>
-    <p>contact@asixassurance.fr</p>
-</footer>
+    <section class="about-section" id="apropos">
+      <div class="container about-grid">
+        <div class="about-images">
+          <img src="https://images.unsplash.com/photo-1573497019418-b400bb3ab074?auto=format&fit=crop&w=900&q=80" alt="Conseillère en assurance" />
+          <img src="https://images.unsplash.com/photo-1556740749-887f6717d7e4?auto=format&fit=crop&w=900&q=80" alt="Rendez-vous client" />
+        </div>
+        <div>
+          <div class="eyebrow">À propos</div>
+          <h2>Un courtier indépendant, proche de ses clients</h2>
+          <p class="lead">ASIX Assurance accompagne particuliers et professionnels dans la recherche de solutions d’assurance adaptées à leur réalité. Notre approche est fondée sur la clarté, la réactivité et l’écoute.</p>
+          <div class="check-grid">
+            <div class="check">✔ Comparatif gratuit en 5 minutes</div>
+            <div class="check">✔ Sans engagement</div>
+            <div class="check">✔ Accompagnement personnalisé</div>
+            <div class="check">✔ Intervention partout en France</div>
+            <div class="check">✔ Réponse rapide</div>
+            <div class="check">✔ Solutions pour particuliers et professionnels</div>
+          </div>
+        </div>
+      </div>
+    </section>
 
+    <section>
+      <div class="container">
+        <div class="eyebrow">Notre méthode</div>
+        <h2>Un accompagnement simple, clair et efficace</h2>
+        <div class="steps" style="margin-top:34px;">
+          <div class="step">
+            <strong>01</strong>
+            <h3>Analyse de votre besoin</h3>
+            <p>Nous étudions votre situation et vos contrats actuels afin d’identifier les solutions les plus pertinentes.</p>
+          </div>
+          <div class="step">
+            <strong>02</strong>
+            <h3>Comparatif du marché</h3>
+            <p>Nous comparons plusieurs offres pour vous proposer un tarif cohérent avec des garanties adaptées.</p>
+          </div>
+          <div class="step">
+            <strong>03</strong>
+            <h3>Accompagnement personnalisé</h3>
+            <p>Nous vous conseillons à chaque étape pour vous aider à faire le bon choix avec sérénité.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="faq-wrap" id="faq">
+      <div class="container">
+        <div class="eyebrow">FAQ</div>
+        <h2>Questions fréquentes</h2>
+        <div class="faq-list">
+          <details>
+            <summary>Quels types d’assurances propose ASIX Assurance ?</summary>
+            <p>ASIX Assurance accompagne ses clients en assurance auto, habitation, santé et professionnelle, avec une approche de courtage indépendante.</p>
+          </details>
+          <details>
+            <summary>Le devis est-il gratuit ?</summary>
+            <p>Oui. La demande de devis et l’étude de votre besoin sont gratuites et sans engagement.</p>
+          </details>
+          <details>
+            <summary>Intervenez-vous uniquement en Île-de-France ?</summary>
+            <p>Non. ASIX Assurance accompagne ses clients partout en France.</p>
+          </details>
+          <details>
+            <summary>Comment obtenir une proposition ?</summary>
+            <p>Vous pouvez utiliser le formulaire du site, envoyer un email à contact@asixassurance.fr ou appeler directement le 06 03 79 31 89.</p>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <section class="contact-section" id="contact">
+      <div class="container contact-grid">
+        <div>
+          <div class="eyebrow" style="color:#bfdbfe;">Contact</div>
+          <h2>Parlons de votre assurance</h2>
+          <p class="lead" style="color:#dbeafe; max-width:600px;">Besoin d’un comparatif, d’un devis ou d’un conseil ? Contactez ASIX Assurance pour être recontacté rapidement.</p>
+          <div class="contact-box"><small>Téléphone</small><strong>06 03 79 31 89</strong></div>
+          <div class="contact-box"><small>Email</small><strong>contact@asixassurance.fr</strong></div>
+          <div class="contact-box"><small>Zone d’intervention</small><strong>Toute la France</strong></div>
+        </div>
+
+        <div class="form-card">
+          <h3>Demandez votre devis gratuit</h3>
+          <p>Complétez ce formulaire pour recevoir une réponse rapide.</p>
+          <form action="mailto:contact@asixassurance.fr" method="post" enctype="text/plain">
+            <input class="field" type="text" name="Nom" placeholder="Nom complet" />
+            <input class="field" type="email" name="Email" placeholder="Adresse email" />
+            <input class="field" type="tel" name="Téléphone" placeholder="Téléphone" />
+            <select class="field" name="Type assurance">
+              <option>Assurance auto</option>
+              <option>Assurance habitation</option>
+              <option>Assurance santé</option>
+              <option>Assurance professionnelle</option>
+            </select>
+            <textarea class="field" name="Besoin" placeholder="Décrivez votre besoin"></textarea>
+            <button class="btn btn-dark" type="submit" style="width:100%; margin-top:16px; border:none; cursor:pointer;">Envoyer ma demande</button>
+          </form>
+          <a class="btn btn-whatsapp" href="https://wa.me/33603793189?text=Bonjour%2C%20je%20souhaite%20obtenir%20un%20devis%20d%27assurance." target="_blank" style="width:100%; margin-top:12px;">WhatsApp direct</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="legal" id="mentions-legales">
+      <div class="container">
+        <div class="legal-card">
+          <h3>Mentions légales</h3>
+          <p><strong>Éditeur du site :</strong> ASIX Assurance</p>
+          <p><strong>Forme juridique :</strong> SASU</p>
+          <p><strong>Siège social :</strong> 9 Place du 19 mars 1962, 92130 Issy-les-Moulineaux</p>
+          <p><strong>Email :</strong> contact@asixassurance.fr</p>
+          <p><strong>Téléphone :</strong> 06 03 79 31 89</p>
+          <p><strong>Directeur de publication :</strong> GASSAMA Mohamed Salim</p>
+          <p><strong>Hébergeur :</strong> Vercel Inc.</p>
+          <p><strong>Nom de domaine :</strong> asixassurance.fr</p>
+          <p><strong>RCS :</strong> 103 487 906 R.C.S. Nanterre</p>
+          <p><strong>ORIAS :</strong> À compléter dès réception</p>
+        </div>
+        <div class="legal-card">
+          <h3>Politique de confidentialité</h3>
+          <p>ASIX Assurance attache une importance particulière à la protection des données personnelles de ses utilisateurs et clients.</p>
+          <p>Les données collectées via le formulaire de contact sont utilisées uniquement pour répondre aux demandes, établir un devis ou recontacter l’utilisateur.</p>
+          <p>Conformément à la réglementation applicable, vous disposez d’un droit d’accès, de rectification, d’effacement et d’opposition concernant vos données, en écrivant à contact@asixassurance.fr.</p>
+        </div>
+        <div class="legal-card">
+          <h3>Conditions générales d’utilisation</h3>
+          <p>L’utilisation du site ASIX Assurance implique l’acceptation pleine et entière des présentes conditions générales d’utilisation.</p>
+          <p>Les informations figurant sur le site sont fournies à titre informatif et peuvent être modifiées à tout moment sans préavis.</p>
+          <p>ASIX Assurance ne pourra être tenue responsable en cas d’interruption du site, d’inexactitude temporaire ou de dommage indirect lié à son utilisation.</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <div class="footer-title" style="display:flex; align-items:center; gap:10px;"><img src="asix_hd.png" alt="Logo ASIX Assurance" style="height:36px; width:auto;"> <span>ASIX ASSURANCE</span></div>
+          <div>Courtier indépendant en assurance pour particuliers et professionnels. Intervention partout en France.</div>
+        </div>
+        <div>
+          <div class="footer-title">Navigation</div>
+          <a href="#accueil">Accueil</a>
+          <a href="#services">Services</a>
+          <a href="#apropos">À propos</a>
+          <a href="#faq">FAQ</a>
+          <a href="#contact">Contact</a>
+        </div>
+        <div>
+          <div class="footer-title">Informations</div>
+          <a href="#mentions-legales">Mentions légales</a>
+          <a href="#contact">Demande de devis</a>
+          <a href="mailto:contact@asixassurance.fr">contact@asixassurance.fr</a>
+          <a href="tel:0603793189">06 03 79 31 89</a>
+        </div>
+      </div>
+      <div class="copy">© 2026 ASIX Assurance — Tous droits réservés.</div>
+    </div>
+  </footer>
+
+  <a class="whatsapp-float" href="https://wa.me/33603793189?text=Bonjour%2C%20je%20souhaite%20obtenir%20un%20devis%20d%27assurance." target="_blank">WhatsApp</a>
 </body>
-</html>
+</html>n;
+      min-height:78px;
+      gap:16px;
+    }
+    .brand strong{display:block; color:var(--blue-950); font-size:28px; line-height:1}
+    .brand span{color:var(--slate-600); font-size:13px}
+    nav{display:flex; gap:26px; flex-wrap:wrap}
+    nav a{font-weight:700; color:var(--slate-700)}
+    nav a:hover{color:var(--blue-700)}
+
+    .hero{
+      position:relative;
+      color:#fff;
+      overflow:hidden;
+      background:linear-gradient(120deg, rgba(8,26,53,.96), rgba(15,47,99,.93));
+    }
+    .hero-bg{
+      position:absolute; inset:0;
+      background:url('https://images.unsplash.com/photo-1520607162513-77705c0f0d4a?auto=format&fit=crop&w=1600&q=80') center/cover no-repeat;
+      opacity:.18;
+    }
+    .hero .container{
+      position:relative;
+      display:grid;
+      grid-template-columns:1.2fr .8fr;
+      gap:42px;
+      align-items:center;
+      padding:72px 0 90px;
+    }
+    .pill{
+      display:inline-block;
+      padding:10px 16px;
+      background:rgba(255,255,255,.10);
+      border:1px solid rgba(255,255,255,.14);
+      border-radius:999px;
+      font-size:14px;
+      margin-bottom:18px;
+    }
+    .hero h1{
+      margin:0;
+      font-size:58px;
+      line-height:1.05;
+      letter-spacing:-1px;
+      max-width:720px;
+    }
+    .hero p{
+      font-size:19px;
+      color:#dbeafe;
+      max-width:680px;
+      margin:22px 0 0;
+    }
+    .hero-actions{display:flex; gap:14px; flex-wrap:wrap; margin-top:30px}
+    .hero-card{
+      background:rgba(255,255,255,.12);
+      border:1px solid rgba(255,255,255,.12);
+      border-radius:30px;
+      padding:14px;
+      box-shadow:var(--shadow);
+      backdrop-filter:blur(10px);
+    }
+    .hero-card img{height:520px; width:100%; object-fit:cover; border-radius:24px}
+
+    .stats-wrap{margin-top:-32px; position:relative; z-index:2}
+    .stats{
+      background:#fff;
+      border:1px solid var(--slate-200);
+      border-radius:28px;
+      box-shadow:var(--shadow);
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      gap:18px;
+      padding:18px;
+    }
+    .stat{background:var(--slate-100); border-radius:20px; padding:24px}
+    .stat strong{display:block; font-size:38px; color:var(--blue-950)}
+    .stat span{color:var(--slate-600)}
+
+    section{padding:84px 0}
+    .eyebrow{color:var(--blue-700); font-weight:800; text-transform:uppercase; letter-spacing:.18em; font-size:13px}
+    h2{margin:12px 0 0; font-size:46px; line-height:1.08; letter-spacing:-1px}
+    .lead{margin:18px 0 0; color:var(--slate-600); font-size:19px; max-width:820px}
+
+    .service-grid{
+      display:grid;
+      grid-template-columns:repeat(4,1fr);
+      gap:24px;
+      margin-top:36px;
+    }
+    .service-card{
+      border:1px solid var(--slate-200);
+      border-radius:28px;
+      overflow:hidden;
+      background:#fff;
+      box-shadow:var(--shadow-soft);
+    }
+    .service-card img{height:220px; width:100%; object-fit:cover}
+    .service-content{padding:22px}
+    .service-content h3{margin:0; font-size:27px; color:var(--blue-950)}
+    .service-content p{color:var(--slate-600); margin:12px 0 0}
+
+    .about-section{background:var(--slate-100); border-top:1px solid var(--slate-200); border-bottom:1px solid var(--slate-200)}
+    .about-grid{display:grid; grid-template-columns:1fr 1fr; gap:38px; align-items:center}
+    .about-images{display:grid; grid-template-columns:1fr 1fr; gap:18px}
+    .about-images img{height:280px; width:100%; object-fit:cover; border-radius:26px; box-shadow:var(--shadow-soft)}
+    .about-images img:last-child{margin-top:36px}
+    .check-grid{display:grid; grid-template-columns:1fr 1fr; gap:12px; margin-top:26px}
+    .check{
+      background:#fff; border:1px solid var(--slate-200); border-radius:18px; padding:15px 16px;
+      color:var(--slate-700); font-weight:600
+    }
+
+    .steps{display:grid; grid-template-columns:repeat(3,1fr); gap:24px}
+    .step{border:1px solid var(--slate-200); border-radius:28px; padding:28px; box-shadow:var(--shadow-soft); background:#fff}
+    .step strong{font-size:42px; color:var(--blue-700)}
+    .step h3{margin:16px 0 0; font-size:28px}
+    .step p{margin:12px 0 0; color:var(--slate-600)}
+
+    .faq-wrap{background:#fff; border-top:1px solid var(--slate-200); border-bottom:1px solid var(--slate-200)}
+    .faq-list{margin-top:34px; display:grid; gap:14px}
+    details{border:1px solid var(--slate-200); border-radius:22px; background:var(--slate-100); padding:20px 22px}
+    summary{cursor:pointer; font-weight:800; font-size:20px}
+    details p{color:var(--slate-600); margin:14px 0 0}
+
+    .contact-section{background:linear-gradient(135deg, var(--blue-950), var(--blue-700)); color:#fff}
+    .contact-grid{display:grid; grid-template-columns:1fr 1fr; gap:32px; align-items:start}
+    .contact-box{background:rgba(255,255,255,.07); border:1px solid rgba(255,255,255,.12); border-radius:22px; padding:22px; margin-top:16px}
+    .contact-box small{display:block; color:#cbd5e1; margin-bottom:6px}
+    .contact-box strong{font-size:22px}
+    .form-card{background:#fff; color:var(--slate-900); border-radius:30px; padding:28px; box-shadow:var(--shadow)}
+    .form-card h3{margin:0; color:var(--blue-950); font-size:30px}
+    .form-card p{color:var(--slate-600)}
+    .field{width:100%; margin-top:14px; padding:15px 16px; border:1px solid var(--slate-300); border-radius:14px; font:inherit}
+    textarea.field{min-height:150px; resize:vertical}
+
+    .legal{background:#fff}
+    .legal-card{border:1px solid var(--slate-200); border-radius:28px; padding:30px; box-shadow:var(--shadow-soft); margin-bottom:22px}
+    .legal-card h3{margin:0 0 12px; font-size:30px}
+    .legal-card p{margin:10px 0; color:var(--slate-600)}
+
+    footer{background:var(--blue-950); color:#cbd5e1; padding:34px 0}
+    .footer-grid{display:grid; grid-template-columns:1.2fr 1fr 1fr; gap:24px}
+    .footer-title{color:#fff; font-weight:800; margin-bottom:12px}
+    footer a{display:block; color:#cbd5e1; margin:8px 0}
+    .copy{border-top:1px solid rgba(255,255,255,.10); margin-top:28px; padding-top:18px; font-size:14px}
+
+    .whatsapp-float{
+      position:fixed; right:18px; bottom:18px; z-index:25;
+      background:#25D366; color:#073b1d; border-radius:999px; padding:14px 18px;
+      font-weight:800; box-shadow:var(--shadow)
+    }
+
+    @media (max-width: 1050px){
+      .hero .container, .about-grid, .contact-grid{grid-template-columns:1fr}
+      .service-grid{grid-template-columns:repeat(2,1fr)}
+      .steps{grid-template-columns:1fr}
+      .footer-grid{grid-template-columns:1fr}
+      .hero h1{font-size:48px}
+      .hero-card img{height:420px}
+    }
+    @media (max-width: 720px){
+      nav{display:none}
+      .hero h1{font-size:38px}
+      h2{font-size:34px}
+      .service-grid,.check-grid,.stats,.about-images{grid-template-columns:1fr}
+      .hero .container{padding:52px 0 72px}
+      .hero-card img{height:320px}
+      .stat strong{font-size:32px}
+      .service-content h3{font-size:24px}
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container topbar">
+      <div class="brand">
+        <strong>ASIX ASSURANCE</strong>
+        <span>Courtier indépendant en assurance</span>
+      </div>
+      <nav>
+        <a href="#accueil">Accueil</a>
+        <a href="#services">Services</a>
+        <a href="#apropos">À propos</a>
+        <a href="#faq">FAQ</a>
+        <a href="#contact">Contact</a>
+      </nav>
+      <a class="btn btn-dark" href="#contact">Devis gratuit</a>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero" id="accueil">
+      <div class="hero-bg"></div>
+      <div class="container">
+        <div>
+          <div class="pill">Auto • Habitation • Santé • Professionnelle • Toute la France</div>
+          <h1>Une assurance plus claire, un accompagnement plus humain.</h1>
+          <p>ASIX Assurance vous aide à comparer, comprendre et optimiser vos contrats avec une approche indépendante, professionnelle et accessible.</p>
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="https://wa.me/33603793189?text=Bonjour%2C%20je%20souhaite%20obtenir%20un%20devis%20d%27assurance." target="_blank">📲 Obtenir mon devis sur WhatsApp</a>
+            <a class="btn btn-secondary" href="tel:0603793189">📞 06 03 79 31 89</a>
+          </div>
+        </div>
+        <div class="hero-card">
+          <img src="https://images.unsplash.com/photo-1556155092-490a1ba16284?auto=format&fit=crop&w=1200&q=80" alt="Conseiller en assurance avec clients" />
+        </div>
+      </div>
+    </section>
+
+    <div class="container stats-wrap">
+      <div class="stats">
+        <div class="stat"><strong>-30%</strong><span>Jusqu’à d’économies sur vos contrats</span></div>
+        <div class="stat"><strong>5 min</strong><span>Pour comparer vos solutions</span></div>
+        <div class="stat"><strong>France</strong><span>Accompagnement partout sur le territoire</span></div>
+      </div>
+    </div>
+
+    <section id="services">
+      <div class="container">
+        <div class="eyebrow">Nos services</div>
+        <h2>Des garanties pensées pour la vraie vie</h2>
+        <p class="lead">Des solutions concrètes, un comparatif clair et des conseils adaptés à votre profil personnel ou professionnel.</p>
+
+        <div class="service-grid">
+          <article class="service-card">
+            <img src="https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=900&q=80" alt="Assurance auto" />
+            <div class="service-content">
+              <h3>Assurance auto</h3>
+              <p>Comparez rapidement les meilleures offres auto et bénéficiez d’une couverture adaptée à votre profil au meilleur prix.</p>
+            </div>
+          </article>
+          <article class="service-card">
+            <img src="https://images.unsplash.com/photo-1560518883-ce09059eeffa?auto=format&fit=crop&w=900&q=80" alt="Assurance habitation" />
+            <div class="service-content">
+              <h3>Assurance habitation</h3>
+              <p>Protégez votre logement, vos biens et votre tranquillité avec des garanties claires et efficaces.</p>
+            </div>
+          </article>
+          <article class="service-card">
+            <img src="https://images.unsplash.com/photo-1576091160550-2173dba999ef?auto=format&fit=crop&w=900&q=80" alt="Assurance santé" />
+            <div class="service-content">
+              <h3>Assurance santé</h3>
+              <p>Trouvez une solution santé adaptée à votre situation personnelle, familiale et budgétaire.</p>
+            </div>
+          </article>
+          <article class="service-card">
+            <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=900&q=80" alt="Assurance professionnelle" />
+            <div class="service-content">
+              <h3>Assurance professionnelle</h3>
+              <p>Sécurisez votre activité avec des garanties pensées pour les indépendants, professions libérales et entreprises.</p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="about-section" id="apropos">
+      <div class="container about-grid">
+        <div class="about-images">
+          <img src="https://images.unsplash.com/photo-1573497019418-b400bb3ab074?auto=format&fit=crop&w=900&q=80" alt="Conseillère en assurance" />
+          <img src="https://images.unsplash.com/photo-1556740749-887f6717d7e4?auto=format&fit=crop&w=900&q=80" alt="Rendez-vous client" />
+        </div>
+        <div>
+          <div class="eyebrow">À propos</div>
+          <h2>Un courtier indépendant, proche de ses clients</h2>
+          <p class="lead">ASIX Assurance accompagne particuliers et professionnels dans la recherche de solutions d’assurance adaptées à leur réalité. Notre approche est fondée sur la clarté, la réactivité et l’écoute.</p>
+          <div class="check-grid">
+            <div class="check">✔ Comparatif gratuit en 5 minutes</div>
+            <div class="check">✔ Sans engagement</div>
+            <div class="check">✔ Accompagnement personnalisé</div>
+            <div class="check">✔ Intervention partout en France</div>
+            <div class="check">✔ Réponse rapide</div>
+            <div class="check">✔ Solutions pour particuliers et professionnels</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="container">
+        <div class="eyebrow">Notre méthode</div>
+        <h2>Un accompagnement simple, clair et efficace</h2>
+        <div class="steps" style="margin-top:34px;">
+          <div class="step">
+            <strong>01</strong>
+            <h3>Analyse de votre besoin</h3>
+            <p>Nous étudions votre situation et vos contrats actuels afin d’identifier les solutions les plus pertinentes.</p>
+          </div>
+          <div class="step">
+            <strong>02</strong>
+            <h3>Comparatif du marché</h3>
+            <p>Nous comparons plusieurs offres pour vous proposer un tarif cohérent avec des garanties adaptées.</p>
+          </div>
+          <div class="step">
+            <strong>03</strong>
+            <h3>Accompagnement personnalisé</h3>
+            <p>Nous vous conseillons à chaque étape pour vous aider à faire le bon choix avec sérénité.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="faq-wrap" id="faq">
+      <div class="container">
+        <div class="eyebrow">FAQ</div>
+        <h2>Questions fréquentes</h2>
+        <div class="faq-list">
+          <details>
+            <summary>Quels types d’assurances propose ASIX Assurance ?</summary>
+            <p>ASIX Assurance accompagne ses clients en assurance auto, habitation, santé et professionnelle, avec une approche de courtage indépendante.</p>
+          </details>
+          <details>
+            <summary>Le devis est-il gratuit ?</summary>
+            <p>Oui. La demande de devis et l’étude de votre besoin sont gratuites et sans engagement.</p>
+          </details>
+          <details>
+            <summary>Intervenez-vous uniquement en Île-de-France ?</summary>
+            <p>Non. ASIX Assurance accompagne ses clients partout en France.</p>
+          </details>
+          <details>
+            <summary>Comment obtenir une proposition ?</summary>
+            <p>Vous pouvez utiliser le formulaire du site, envoyer un email à contact@asixassurance.fr ou appeler directement le 06 03 79 31 89.</p>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <section class="contact-section" id="contact">
+      <div class="container contact-grid">
+        <div>
+          <div class="eyebrow" style="color:#bfdbfe;">Contact</div>
+          <h2>Parlons de votre assurance</h2>
+          <p class="lead" style="color:#dbeafe; max-width:600px;">Besoin d’un comparatif, d’un devis ou d’un conseil ? Contactez ASIX Assurance pour être recontacté rapidement.</p>
+          <div class="contact-box"><small>Téléphone</small><strong>06 03 79 31 89</strong></div>
+          <div class="contact-box"><small>Email</small><strong>contact@asixassurance.fr</strong></div>
+          <div class="contact-box"><small>Zone d’intervention</small><strong>Toute la France</strong></div>
+        </div>
+
+        <div class="form-card">
+          <h3>Demandez votre devis gratuit</h3>
+          <p>Complétez ce formulaire pour recevoir une réponse rapide.</p>
+          <form action="mailto:contact@asixassurance.fr" method="post" enctype="text/plain">
+            <input class="field" type="text" name="Nom" placeholder="Nom complet" />
+            <input class="field" type="email" name="Email" placeholder="Adresse email" />
+            <input class="field" type="tel" name="Téléphone" placeholder="Téléphone" />
+            <select class="field" name="Type assurance">
+              <option>Assurance auto</option>
+              <option>Assurance habitation</option>
+              <option>Assurance santé</option>
+              <option>Assurance professionnelle</option>
+            </select>
+            <textarea class="field" name="Besoin" placeholder="Décrivez votre besoin"></textarea>
+            <button class="btn btn-dark" type="submit" style="width:100%; margin-top:16px; border:none; cursor:pointer;">Envoyer ma demande</button>
+          </form>
+          <a class="btn btn-whatsapp" href="https://wa.me/33603793189?text=Bonjour%2C%20je%20souhaite%20obtenir%20un%20devis%20d%27assurance." target="_blank" style="width:100%; margin-top:12px;">WhatsApp direct</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="legal" id="mentions-legales">
+      <div class="container">
+        <div class="legal-card">
+          <h3>Mentions légales</h3>
+          <p><strong>Éditeur du site :</strong> ASIX Assurance</p>
+          <p><strong>Forme juridique :</strong> SASU</p>
+          <p><strong>Siège social :</strong> 9 Place du 19 mars 1962, 92130 Issy-les-Moulineaux</p>
+          <p><strong>Email :</strong> contact@asixassurance.fr</p>
+          <p><strong>Téléphone :</strong> 06 03 79 31 89</p>
+          <p><strong>Directeur de publication :</strong> GASSAMA Mohamed Salim</p>
+          <p><strong>Hébergeur :</strong> Vercel Inc.</p>
+          <p><strong>Nom de domaine :</strong> asixassurance.fr</p>
+          <p><strong>RCS :</strong> 103 487 906 R.C.S. Nanterre</p>
+          <p><strong>ORIAS :</strong> À compléter dès réception</p>
+        </div>
+        <div class="legal-card">
+          <h3>Politique de confidentialité</h3>
+          <p>ASIX Assurance attache une importance particulière à la protection des données personnelles de ses utilisateurs et clients.</p>
+          <p>Les données collectées via le formulaire de contact sont utilisées uniquement pour répondre aux demandes, établir un devis ou recontacter l’utilisateur.</p>
+          <p>Conformément à la réglementation applicable, vous disposez d’un droit d’accès, de rectification, d’effacement et d’opposition concernant vos données, en écrivant à contact@asixassurance.fr.</p>
+        </div>
+        <div class="legal-card">
+          <h3>Conditions générales d’utilisation</h3>
+          <p>L’utilisation du site ASIX Assurance implique l’acceptation pleine et entière des présentes conditions générales d’utilisation.</p>
+          <p>Les informations figurant sur le site sont fournies à titre i
