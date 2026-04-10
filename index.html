@@ -6,113 +6,157 @@
 <title>ASIX Assurance</title>
 
 <style>
-body {margin:0;font-family:Arial;background:#f4f6f9;}
-
-header {
-display:flex;
-align-items:center;
-justify-content:space-between;
-background:#0b2c5f;
-padding:15px 30px;
-color:white;
+body {
+    margin: 0;
+    font-family: 'Arial', sans-serif;
+    background: #f4f6f9;
 }
 
-header img {height:50px;}
+/* HEADER */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #0b2c5f;
+    padding: 15px 40px;
+    color: white;
+}
+
+header img {
+    height: 55px;
+}
 
 nav a {
-color:white;
-margin:0 15px;
-text-decoration:none;
-font-weight:bold;
+    color: white;
+    margin-left: 25px;
+    text-decoration: none;
+    font-weight: bold;
 }
 
+/* HERO */
 .hero {
-text-align:center;
-padding:100px 20px;
-background:white;
+    text-align: center;
+    padding: 100px 20px;
+    background: linear-gradient(to right, #ffffff, #f1f4f9);
 }
 
-.hero h1 {font-size:40px;margin-bottom:10px;}
+.hero h1 {
+    font-size: 42px;
+    margin-bottom: 10px;
+}
+
+.hero p {
+    font-size: 18px;
+    color: #555;
+}
 
 .btn {
-background:#0b2c5f;
-color:white;
-padding:15px 30px;
-border-radius:6px;
-text-decoration:none;
-display:inline-block;
-margin-top:20px;
+    display: inline-block;
+    margin-top: 25px;
+    padding: 15px 30px;
+    background: #0b2c5f;
+    color: white;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: bold;
 }
 
+/* SERVICES */
 .section {
-padding:60px 20px;
-text-align:center;
+    padding: 60px 20px;
+    text-align: center;
 }
 
 .cards {
-display:flex;
-flex-wrap:wrap;
-justify-content:center;
-gap:20px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 30px;
 }
 
 .card {
-background:white;
-padding:25px;
-border-radius:10px;
-box-shadow:0 5px 15px rgba(0,0,0,0.1);
-width:200px;
+    background: white;
+    padding: 25px;
+    border-radius: 12px;
+    width: 220px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+    transition: 0.3s;
 }
 
+.card:hover {
+    transform: translateY(-5px);
+}
+
+/* POURQUOI NOUS */
+.why {
+    background: white;
+}
+
+.why p {
+    font-size: 18px;
+}
+
+/* CONTACT */
+.contact {
+    background: #f1f4f9;
+}
+
+/* FOOTER */
 footer {
-background:#0b2c5f;
-color:white;
-text-align:center;
-padding:30px;
-margin-top:50px;
+    background: #0b2c5f;
+    color: white;
+    text-align: center;
+    padding: 30px;
 }
 </style>
+
 </head>
 
 <body>
 
 <header>
-<img src="asix_hd.png">
-<nav>
-<a href="#">Accueil</a>
-<a href="#">Services</a>
-<a href="#">Contact</a>
-</nav>
+    <img src="asix_hd.png" alt="ASIX Assurance">
+    <nav>
+        <a href="#">Accueil</a>
+        <a href="#">Services</a>
+        <a href="#">Contact</a>
+    </nav>
 </header>
 
 <section class="hero">
-<h1>Réduisez vos assurances jusqu'à -30%</h1>
-<p>Auto • Habitation • Santé • Pro</p>
-<a href="#" class="btn">Demander un devis</a>
+    <h1>Réduisez vos assurances jusqu'à -30%</h1>
+    <p>Auto • Habitation • Santé • Pro</p>
+    <a href="#" class="btn">Demander un devis</a>
 </section>
 
 <section class="section">
-<h2>Nos services</h2>
-
-<div class="cards">
-<div class="card">🚗 Assurance Auto</div>
-<div class="card">🏠 Assurance Habitation</div>
-<div class="card">💼 Assurance Pro</div>
-<div class="card">❤️ Mutuelle Santé</div>
-</div>
+    <h2>Nos services</h2>
+    <div class="cards">
+        <div class="card">🚗 Assurance Auto</div>
+        <div class="card">🏠 Assurance Habitation</div>
+        <div class="card">💼 Assurance Pro</div>
+        <div class="card">❤️ Mutuelle Santé</div>
+    </div>
 </section>
 
-<section class="section" style="background:#fff;">
-<h2>Pourquoi nous choisir ?</h2>
-<p>✔️ Jusqu’à -30% sur vos assurances</p>
-<p>✔️ Conseiller dédié</p>
-<p>✔️ Réponse rapide</p>
+<section class="section why">
+    <h2>Pourquoi nous choisir ?</h2>
+    <p>✔️ Jusqu’à -30% d’économies</p>
+    <p>✔️ Conseiller dédié</p>
+    <p>✔️ Réponse rapide</p>
+    <p>✔️ Offres adaptées à votre profil</p>
+</section>
+
+<section class="section contact">
+    <h2>Contact</h2>
+    <p>📞 06 03 79 31 89</p>
+    <p>📧 contact@asixassurance.fr</p>
+    <a href="tel:0603793189" class="btn">Appeler maintenant</a>
 </section>
 
 <footer>
-<p>📞 06 03 79 31 89</p>
-<p>📧 contact@asixassurance.fr</p>
-<p>ASIX Assurance © 2026</p>
+    <p>ASIX Assurance © 2026</p>
 </footer>
 
 </body>
