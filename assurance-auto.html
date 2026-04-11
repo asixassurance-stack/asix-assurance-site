@@ -1,177 +1,655 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Assurance auto pas chère | Malussé, résilié | ASIX Assurance</title>
+  <meta name="description" content="Courtier en assurance auto pour tous profils : malussé, résilié, jeune conducteur. Devis rapide partout en France avec ASIX Assurance." />
+  <style>
+    :root{
+      --blue-950:#081a35;
+      --blue-900:#0f2f63;
+      --blue-700:#1f5bb5;
+      --blue-100:#eaf2ff;
+      --slate-900:#0f172a;
+      --slate-700:#334155;
+      --slate-600:#475569;
+      --slate-300:#cbd5e1;
+      --slate-200:#e2e8f0;
+      --slate-100:#f8fafc;
+      --white:#ffffff;
+      --green:#25D366;
+      --max:1180px;
+      --shadow:0 18px 50px rgba(2,8,23,.10);
+      --shadow-soft:0 10px 30px rgba(15,23,42,.08);
+    }
 
-<title>Assurance auto | ASIX Assurance</title>
-<meta name="description" content="Assurance auto pour tous profils : malussé, résilié, jeune conducteur. Devis rapide partout en France.">
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{
+      margin:0;
+      font-family:Arial, Helvetica, sans-serif;
+      color:var(--slate-900);
+      background:#fff;
+      line-height:1.5;
+    }
 
-<style>
-body{margin:0;font-family:Arial;background:#f8fafc}
+    a{text-decoration:none;color:inherit}
+    img{max-width:100%;display:block}
+    .container{width:min(var(--max), calc(100% - 32px));margin:0 auto}
 
-/* HEADER */
-header{
-background:white;
-padding:15px 20px;
-display:flex;
-justify-content:space-between;
-align-items:center;
-box-shadow:0 2px 10px rgba(0,0,0,0.05);
-}
+    .btn{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      gap:10px;
+      padding:14px 22px;
+      border-radius:16px;
+      font-weight:700;
+      transition:.2s ease;
+    }
+    .btn:hover{transform:translateY(-1px)}
+    .btn-white{background:#fff;color:var(--blue-950)}
+    .btn-dark{background:var(--blue-900);color:#fff}
+    .btn-outline{background:rgba(255,255,255,.08); color:#fff; border:1px solid rgba(255,255,255,.22)}
 
-nav{display:flex;gap:20px;align-items:center}
-nav a{font-weight:bold;text-decoration:none;color:#0f172a}
+    header{
+      position:sticky;
+      top:0;
+      z-index:50;
+      background:rgba(255,255,255,.96);
+      backdrop-filter:blur(10px);
+      border-bottom:1px solid var(--slate-200);
+    }
 
-/* DROPDOWN */
-.dropdown{position:relative}
-.dropdown-content{
-display:none;
-position:absolute;
-top:100%;
-background:white;
-min-width:200px;
-border-radius:8px;
-box-shadow:0 10px 25px rgba(0,0,0,0.1);
-}
-.dropdown-content a{display:block;padding:10px}
-.dropdown:hover .dropdown-content{display:block}
+    .topbar{
+      min-height:78px;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:16px;
+    }
 
-/* HERO */
-.hero{
-background:#0f2f63;
-color:white;
-padding:60px 20px;
-text-align:center;
-}
+    .brand{
+      display:flex;
+      align-items:center;
+      gap:12px;
+    }
 
-/* BUTTON */
-.btn{
-display:inline-block;
-padding:12px 20px;
-border-radius:8px;
-text-decoration:none;
-font-weight:bold;
-}
-.btn-whatsapp{background:#25D366;color:white}
+    .brand img{
+      height:54px;
+      width:auto;
+    }
 
-/* CONTENT */
-.container{max-width:900px;margin:auto;padding:40px 20px}
+    .brand strong{
+      display:block;
+      color:var(--blue-950);
+      font-size:20px;
+      line-height:1.1;
+    }
 
-/* FORM */
-.form-card{
-background:white;
-padding:25px;
-border-radius:10px;
-box-shadow:0 10px 25px rgba(0,0,0,0.08);
-margin-top:30px;
-}
+    .brand span{
+      display:block;
+      color:var(--slate-600);
+      font-size:13px;
+    }
 
-.field{
-width:100%;
-padding:10px;
-margin-bottom:10px;
-border:1px solid #ddd;
-border-radius:6px;
-}
+    nav{
+      display:flex;
+      gap:24px;
+      align-items:center;
+      flex-wrap:wrap;
+    }
 
-button{
-width:100%;
-padding:12px;
-background:#0f2f63;
-color:white;
-border:none;
-border-radius:6px;
-}
+    nav a{
+      font-weight:700;
+      color:var(--slate-700);
+    }
 
-/* FOOTER */
-footer{
-background:#0f172a;
-color:white;
-text-align:center;
-padding:20px;
-margin-top:40px;
-}
-</style>
+    .hero{
+      position:relative;
+      overflow:hidden;
+      color:#fff;
+      background:linear-gradient(135deg, rgba(8,26,53,.96), rgba(15,47,99,.92));
+    }
 
+    .hero::before{
+      content:"";
+      position:absolute;
+      inset:0;
+      background:url('https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?auto=format&fit=crop&w=1600&q=80') center/cover no-repeat;
+      opacity:.24;
+    }
+
+    .hero-inner{
+      position:relative;
+      z-index:1;
+      display:grid;
+      grid-template-columns:1.1fr .9fr;
+      gap:36px;
+      align-items:center;
+      padding:82px 0 96px;
+    }
+
+    .pill{
+      display:inline-block;
+      padding:10px 15px;
+      border-radius:999px;
+      background:rgba(255,255,255,.10);
+      border:1px solid rgba(255,255,255,.16);
+      font-size:14px;
+      margin-bottom:18px;
+    }
+
+    .hero h1{
+      margin:0;
+      font-size:56px;
+      line-height:1.02;
+      letter-spacing:-1.4px;
+      max-width:760px;
+    }
+
+    .hero p{
+      margin:18px 0 0;
+      color:#dbeafe;
+      font-size:20px;
+      max-width:720px;
+    }
+
+    .hero-actions{
+      display:flex;
+      flex-wrap:wrap;
+      gap:14px;
+      margin-top:28px;
+    }
+
+    .hero-proof{
+      margin-top:14px;
+      color:#dbeafe;
+      font-size:14px;
+    }
+
+    .hero-card{
+      background:rgba(255,255,255,.10);
+      border:1px solid rgba(255,255,255,.16);
+      border-radius:28px;
+      padding:14px;
+      box-shadow:var(--shadow);
+    }
+
+    .hero-card img{
+      width:100%;
+      height:490px;
+      object-fit:cover;
+      border-radius:22px;
+    }
+
+    .seo-links{
+      margin-top:20px;
+      display:flex;
+      gap:10px;
+      flex-wrap:wrap;
+    }
+
+    .stats-wrap{
+      margin-top:-32px;
+      position:relative;
+      z-index:2;
+    }
+
+    .stats{
+      display:grid;
+      grid-template-columns:repeat(4,1fr);
+      gap:16px;
+      background:#fff;
+      border:1px solid var(--slate-200);
+      border-radius:24px;
+      padding:16px;
+      box-shadow:var(--shadow);
+    }
+
+    .stat{
+      background:var(--slate-100);
+      border-radius:18px;
+      padding:22px;
+    }
+
+    .stat strong{
+      display:block;
+      color:var(--blue-950);
+      font-size:28px;
+    }
+
+    .stat span{
+      color:var(--slate-600);
+      font-size:15px;
+    }
+
+    section{padding:84px 0}
+
+    .eyebrow{
+      color:var(--blue-700);
+      text-transform:uppercase;
+      letter-spacing:.18em;
+      font-size:13px;
+      font-weight:800;
+    }
+
+    h2{
+      margin:12px 0 0;
+      font-size:42px;
+      line-height:1.08;
+      letter-spacing:-1px;
+    }
+
+    h3{
+      margin:0;
+      font-size:26px;
+      color:var(--blue-950);
+    }
+
+    .lead{
+      margin:16px 0 0;
+      color:var(--slate-600);
+      font-size:19px;
+      max-width:860px;
+    }
+
+    .grid-3{
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      gap:24px;
+      margin-top:34px;
+    }
+
+    .feature-card{
+      background:#fff;
+      border:1px solid var(--slate-200);
+      border-radius:24px;
+      overflow:hidden;
+      box-shadow:var(--shadow-soft);
+    }
+
+    .feature-card img{
+      width:100%;
+      height:220px;
+      object-fit:cover;
+    }
+
+    .feature-content{
+      padding:22px;
+    }
+
+    .feature-content p{
+      margin:12px 0 0;
+      color:var(--slate-600);
+    }
+
+    .split{
+      background:var(--slate-100);
+      border-top:1px solid var(--slate-200);
+      border-bottom:1px solid var(--slate-200);
+    }
+
+    .split-grid{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:30px;
+      align-items:start;
+    }
+
+    .panel{
+      background:#fff;
+      border:1px solid var(--slate-200);
+      border-radius:24px;
+      padding:26px;
+      box-shadow:var(--shadow-soft);
+    }
+
+    .panel p{
+      color:var(--slate-600);
+      margin:12px 0 0;
+    }
+
+    .panel ul{
+      margin:14px 0 0;
+      padding-left:18px;
+      color:var(--slate-600);
+    }
+
+    .panel li{margin:10px 0}
+
+    .seo-block{
+      background:#fff;
+      border:1px solid var(--slate-200);
+      border-radius:24px;
+      padding:28px;
+      box-shadow:var(--shadow-soft);
+      margin-top:34px;
+    }
+
+    .seo-block p{
+      color:var(--slate-600);
+      margin:14px 0 0;
+    }
+
+    .cta{
+      background:linear-gradient(135deg, var(--blue-950), var(--blue-700));
+      color:#fff;
+      border-radius:28px;
+      padding:34px;
+      box-shadow:var(--shadow);
+      margin-top:34px;
+    }
+
+    .cta h3{
+      color:#fff;
+      font-size:34px;
+    }
+
+    .cta p{
+      margin:12px 0 0;
+      color:#dbeafe;
+      max-width:760px;
+    }
+
+    .cta-actions{
+      display:flex;
+      flex-wrap:wrap;
+      gap:14px;
+      margin-top:22px;
+    }
+
+    .faq-list{
+      display:grid;
+      gap:14px;
+      margin-top:34px;
+    }
+
+    details{
+      background:var(--slate-100);
+      border:1px solid var(--slate-200);
+      border-radius:18px;
+      padding:18px 20px;
+    }
+
+    summary{
+      cursor:pointer;
+      font-weight:800;
+      font-size:19px;
+    }
+
+    details p{
+      color:var(--slate-600);
+      margin:12px 0 0;
+    }
+
+    footer{
+      background:var(--blue-950);
+      color:#cbd5e1;
+      padding:34px 0;
+      margin-top:10px;
+    }
+
+    .footer-top{
+      display:flex;
+      justify-content:space-between;
+      gap:20px;
+      flex-wrap:wrap;
+    }
+
+    .whatsapp-float{
+      position:fixed;
+      bottom:20px;
+      right:20px;
+      background:#25D366;
+      color:white;
+      padding:14px 18px;
+      border-radius:50px;
+      font-weight:bold;
+      text-decoration:none;
+      box-shadow:0 5px 20px rgba(0,0,0,0.2);
+      z-index:9999;
+    }
+
+    @media (max-width:1100px){
+      .hero-inner,.split-grid{grid-template-columns:1fr}
+      .stats{grid-template-columns:repeat(2,1fr)}
+      .grid-3{grid-template-columns:repeat(2,1fr)}
+      .hero h1{font-size:46px}
+      .hero-card img{height:360px}
+    }
+
+    @media (max-width:720px){
+      nav{display:none}
+      .hero h1{font-size:36px}
+      h2{font-size:34px}
+      .stats,.grid-3{grid-template-columns:1fr}
+      .hero-inner{padding:56px 0 74px}
+      .hero-card img{height:280px}
+    }
+  </style>
 </head>
-
 <body>
 
 <header>
-<h2>ASIX Assurance</h2>
+  <div class="container topbar">
+    <div class="brand">
+      <img src="asix_hd.png" alt="Logo ASIX Assurance">
+      <div>
+        <strong>ASIX ASSURANCE</strong>
+        <span>Courtier indépendant en assurance</span>
+      </div>
+    </div>
+    <nav>
+      <a href="index.html">Accueil</a>
+      <a href="index.html#services">Services</a>
+      <a href="index.html#contact">Contact</a>
+    </nav>
+   <a class="btn btn-dark" href="https://wa.me/33603793189?text=Bonjour%2C%20je%20souhaite%20un%20devis" target="_blank">
+📲 Devis WhatsApp
+</a>
 
-<nav>
-<a href="index.html">Accueil</a>
-
-<div class="dropdown">
-<a href="assurance-auto.html">Auto ▼</a>
-<div class="dropdown-content">
-<a href="assurance-auto.html">Assurance auto</a>
-<a href="assurance-auto-malusse.html">Malussé</a>
-<a href="assurance-auto-resilie.html">Résilié</a>
-<a href="assurance-auto-jeune-conducteur.html">Jeune conducteur</a>
-</div>
-</div>
-
-<a href="assurance-habitation.html">Habitation</a>
-<a href="assurance-sante.html">Santé</a>
-<a href="assurance-pro.html">Pro</a>
-
-<a href="index.html#contact">Contact</a>
-</nav>
+<a class="btn btn-outline" href="tel:0603793189">
+📞 Appeler
+</a>
+  </div>
 </header>
 
-<section class="hero">
-<h1>Assurance auto</h1>
-<p>Devis rapide pour tous profils</p>
+<main>
+  <section class="hero">
+    <div class="container hero-inner">
+      <div>
+        <div class="pill">Auto • Moto • Scooter • Utilitaire • Camion • Toute la France</div>
+        <h1>Assurance auto pas chère pour tous profils</h1>
+        <p>
+          ASIX Assurance propose des solutions d’assurance auto pas chère pour tous les profils :
+          jeunes conducteurs, conducteurs malussés, résiliés ou professionnels.
+          Obtenez un devis rapide et adapté à votre situation partout en France.
+        </p>
 
-<a class="btn btn-whatsapp"
-href="https://wa.me/33603793189?text=Bonjour%20je%20cherche%20une%20assurance%20auto"
-target="_blank">
-WhatsApp direct
-</a>
-</section>
+        <div class="hero-actions">
+          <a class="btn btn-white" href="https://wa.me/33603793189?text=Bonjour%2C%20je%20souhaite%20un%20devis%20pour%20une%20assurance%20auto." target="_blank">📲 Demander un devis</a>
+          <a class="btn btn-outline" href="tel:0603793189">📞 06 03 79 31 89</a>
+        </div>
 
-<div class="container">
+        <div class="seo-links">
+          <a class="btn btn-dark" href="assurance-auto-malusse.html">Conducteur malussé</a>
+          <a class="btn btn-dark" href="assurance-auto-resilie.html">Conducteur résilié</a>
+          <a class="btn btn-dark" href="assurance-auto-jeune-conducteur.html">Jeune conducteur</a>
+        </div>
 
-<h2>Assurance auto adaptée à votre profil</h2>
+        <div class="hero-proof">Réponse rapide • Devis gratuit • Sans engagement</div>
+      </div>
 
-<p>ASIX Assurance vous accompagne pour trouver une solution adaptée à votre situation, que vous soyez jeune conducteur, malussé ou résilié.</p>
+      <div class="hero-card">
+        <img src="https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=1200&q=80" alt="Voiture moderne">
+      </div>
+    </div>
+  </section>
 
-<h2>Assurance auto pour conducteur malussé</h2>
-<p>Nous trouvons des solutions même avec un malus élevé.</p>
+  <div class="container stats-wrap">
+    <div class="stats">
+      <div class="stat"><strong>Tous profils</strong><span>Jeunes conducteurs, malussés, résiliés</span></div>
+      <div class="stat"><strong>5 min</strong><span>Pour analyser votre besoin</span></div>
+      <div class="stat"><strong>Multi-véhicules</strong><span>Auto, moto, utilitaire, camion</span></div>
+      <div class="stat"><strong>France</strong><span>Accompagnement partout sur le territoire</span></div>
+    </div>
+  </div>
 
-<h2>Assurance auto pour conducteur résilié</h2>
-<p>Vous avez été résilié ? Nous avons des solutions adaptées.</p>
+  <section>
+    <div class="container">
+      <div class="eyebrow">Profils accompagnés</div>
+      <h2>Une solution adaptée à chaque conducteur</h2>
+      <p class="lead">Nous vous aidons à comparer plusieurs solutions selon votre profil, votre véhicule et votre historique d’assurance.</p>
 
-<h2>Assurance auto jeune conducteur pas cher</h2>
-<p>Nous proposons des offres adaptées aux jeunes conducteurs.</p>
+      <div class="grid-3">
+        <article class="feature-card">
+          <img src="https://images.unsplash.com/photo-1494976388531-d1058494cdd8?auto=format&fit=crop&w=1200&q=80" alt="Jeune conducteur">
+          <div class="feature-content">
+            <h3>Jeune conducteur</h3>
+            <p>Des solutions pensées pour les profils récents avec un budget plus maîtrisé et des garanties cohérentes.</p>
+          </div>
+        </article>
 
-<div class="form-card">
+        <article class="feature-card">
+          <img src="https://images.unsplash.com/photo-1485291571150-772bcfc10da5?auto=format&fit=crop&w=1200&q=80" alt="Conducteur malussé">
+          <div class="feature-content">
+            <h3>Conducteur malussé ou résilié</h3>
+            <p>Nous accompagnons les profils plus complexes avec une recherche sérieuse et réaliste.</p>
+          </div>
+        </article>
 
-<h3>Demande de devis</h3>
+        <article class="feature-card">
+          <img src="https://images.unsplash.com/photo-1517520287167-4bbf64a00d66?auto=format&fit=crop&w=1200&q=80" alt="Utilitaire camion">
+          <div class="feature-content">
+            <h3>Moto, utilitaire, camion</h3>
+            <p>Deux-roues, véhicules utilitaires et camions : une étude adaptée à votre usage personnel ou professionnel.</p>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
 
-<form action="https://formspree.io/f/xykbrnrr" method="POST">
+  <section class="split">
+    <div class="container split-grid">
+      <div class="panel">
+        <h3>Garanties possibles</h3>
+        <ul>
+          <li>Responsabilité civile</li>
+          <li>Formule au tiers</li>
+          <li>Formule intermédiaire</li>
+          <li>Formule tous risques</li>
+          <li>Vol et incendie</li>
+          <li>Bris de glace</li>
+          <li>Assistance</li>
+          <li>Protection du conducteur</li>
+          <li>Garanties pour moto et scooter</li>
+          <li>Garanties pour utilitaire et camion</li>
+        </ul>
+      </div>
 
-<input class="field" type="text" name="Nom" placeholder="Nom" required>
-<input class="field" type="email" name="email" placeholder="Email" required>
-<input class="field" type="tel" name="telephone" placeholder="Téléphone" required>
+      <div class="panel">
+        <h3>Ce que nous analysons</h3>
+        <ul>
+          <li>Votre profil de conducteur</li>
+          <li>Votre bonus-malus et historique</li>
+          <li>Votre type de véhicule</li>
+          <li>Votre usage quotidien ou professionnel</li>
+          <li>Le niveau de garanties utile</li>
+          <li>Votre budget réel</li>
+          <li>Les contraintes spécifiques de votre situation</li>
+        </ul>
+      </div>
+    </div>
 
-<textarea class="field" name="message" placeholder="Votre demande"></textarea>
+    <div class="container">
+      <div class="cta">
+        <h3>Un comparatif simple, rapide et humain</h3>
+        <p>Notre rôle n’est pas seulement de vous proposer un prix. Nous cherchons une solution cohérente avec votre situation, votre budget et votre niveau de protection souhaité.</p>
+        <div class="cta-actions">
+          <a class="btn btn-white" href="https://wa.me/33603793189?text=Bonjour%2C%20je%20souhaite%20un%20devis%20pour%20une%20assurance%20auto." target="_blank">WhatsApp direct</a>
+          <a class="btn btn-dark" href="index.html">Retour à l’accueil</a>
+        </div>
+      </div>
+    </div>
+  </section>
 
-<button type="submit">Envoyer</button>
+  <section>
+    <div class="container">
+      <div class="eyebrow">Nos solutions selon votre profil</div>
+      <h2>Des réponses ciblées pour les recherches les plus fréquentes</h2>
 
-</form>
+      <div class="seo-block">
+        <h3>Assurance auto pour conducteur malussé</h3>
+        <p>Nous trouvons des solutions même avec un malus élevé. Une étude précise permet d’identifier une formule plus adaptée à votre situation.</p>
+      </div>
 
-</div>
+      <div class="seo-block">
+        <h3>Assurance auto pour conducteur résilié</h3>
+        <p>Vous avez été résilié ? Nous avons des solutions adaptées rapidement, avec une recherche claire selon votre profil et votre budget.</p>
+      </div>
 
-</div>
+      <div class="seo-block">
+        <h3>Assurance auto jeune conducteur pas cher</h3>
+        <p>Nous proposons des offres adaptées aux jeunes conducteurs avec un budget mieux maîtrisé et des garanties réellement utiles.</p>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="container">
+      <div class="eyebrow">Contenu SEO</div>
+      <h2>Votre courtier en assurance auto en France</h2>
+
+      <div class="seo-block">
+        <p>ASIX Assurance est un courtier indépendant spécialisé en assurance auto pas chère pour tous profils. Nous accompagnons les jeunes conducteurs, les conducteurs malussés, les conducteurs résiliés ainsi que les besoins en moto, scooter, utilitaire et camion.</p>
+
+        <p>Notre objectif est de vous proposer une solution adaptée à votre budget avec des garanties claires et un accompagnement personnalisé. Nous comparons plusieurs possibilités pour identifier une formule cohérente avec votre situation réelle.</p>
+
+        <p>Nous intervenons partout en France : Paris, Lyon, Marseille, Toulouse, Nice, Lille, Nantes, Strasbourg, Montpellier et dans toutes les autres villes. Vous pouvez nous contacter rapidement par téléphone, email ou WhatsApp pour obtenir une étude gratuite.</p>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="container">
+      <div class="eyebrow">FAQ</div>
+      <h2>Questions fréquentes</h2>
+      <div class="faq-list">
+        <details>
+          <summary>Pouvez-vous accompagner un conducteur malussé ?</summary>
+          <p>Oui. ASIX Assurance accompagne aussi les conducteurs malussés ou ayant un historique plus complexe.</p>
+        </details>
+        <details>
+          <summary>Proposez-vous des solutions pour moto et utilitaire ?</summary>
+          <p>Oui. Nous accompagnons aussi les besoins en moto, scooter, utilitaire et camion.</p>
+        </details>
+        <details>
+          <summary>Le devis est-il gratuit ?</summary>
+          <p>Oui. L’étude de votre besoin est gratuite et sans engagement.</p>
+        </details>
+      </div>
+    </div>
+  </section>
+</main>
 
 <footer>
-<p>ASIX Assurance</p>
-<p>📞 06 03 79 31 89</p>
+  <div class="container footer-top">
+    <div>
+      <strong style="color:#fff;">ASIX Assurance</strong><br>
+      Courtier indépendant en assurance
+    </div>
+    <div>
+      📞 06 03 79 31 89<br>
+      📧 contact@asixassurance.fr
+    </div>
+  </div>
 </footer>
+
+<a class="whatsapp-float"
+   href="https://wa.me/33603793189?text=Bonjour%2C%20je%20souhaite%20un%20devis%20pour%20une%20assurance%20auto."
+   target="_blank">WhatsApp</a>
 
 </body>
 </html>
