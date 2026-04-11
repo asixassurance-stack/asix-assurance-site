@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Assurance Auto | ASIX Assurance</title>
+  <meta name="description" content="Découvrez nos solutions d’assurance auto : jeune conducteur, résilié, tous risques, tiers, devis rapide partout en France." />
+  <style>
+    :root{
+      --blue-950:#081a35;
+      --blue-900:#0f2f63;
+      --blue-700:#1f5bb5;
+      --slate-900:#0f172a;
+      --slate-700:#334155;
+      --slate-600:#475569;
+      --slate-300:#cbd5e1;
+      --slate-200:#e2e8f0;
+      --slate-100:#f1f5f9;
+      --white:#ffffff;
+      --green:#25D366;
+      --max:1180px;
+      --shadow:0 18px 50px rgba(2, 8, 23, 0.10);
+      --shadow-soft:0 10px 30px rgba(15, 23, 42, 0.08);
+    }
+
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      font-family:Arial, Helvetica, sans-serif;
+      color:var(--slate-900);
+      background:#fff;
+      line-height:1.5;
+    }
+    img{max-width:100%;display:block}
+    a{text-decoration:none;color:inherit}
+    .container{width:min(var(--max), calc(100% - 32px));margin:0 auto}
+
+    header{
+      background:#fff;
+      border-bottom:1px solid var(--slate-200);
+      position:sticky;
+      top:0;
+      z-index:20;
+    }
+    .topbar{
+      min-height:80px;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:16px;
+    }
+    .brand{display:flex;align-items:center;gap:12px}
+    .brand img{height:54px;width:auto}
+    .brand strong{display:block;color:var(--blue-950);font-size:20px}
+    .brand span{font-size:13px;color:var(--slate-600)}
+    nav{display:flex;gap:24px;flex-wrap:wrap}
+    nav a{font-weight:700;color:var(--slate-700)}
+    nav a:hover{color:var(--blue-700)}
+
+    .btn{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      gap:10px;
+      padding:14px 22px;
+      border-radius:16px;
+      font-weight:700;
+      transition:.2s ease;
+    }
+    .btn-dark{background:var(--blue-900);color:#fff}
+    .btn-light{background:#fff;color:var(--blue-950);box-shadow:var(--shadow-soft)}
+    .btn-whatsapp{background:var(--green);color:#08361b}
+
+    .hero{
+      background:linear-gradient(135deg, rgba(8,26,53,.95), rgba(15,47,99,.92));
+      color:#fff;
+      padding:70px 0;
+    }
+    .hero-grid{
+      display:grid;
+      grid-template-columns:1.1fr .9fr;
+      gap:36px;
+      align-items:center;
+    }
+    .hero h1{
+      margin:0;
+      font-size:54px;
+      line-height:1.05;
+      letter-spacing:-1px;
+    }
+    .hero p{
+      font-size:19px;
+      color:#dbeafe;
+      margin-top:18px;
+      max-width:680px;
+    }
+    .hero img{
+      border-radius:28px;
+      box-shadow:var(--shadow);
+      height:420px;
+      width:100%;
+      object-fit:cover;
+    }
+    .hero-actions{
+      display:flex;
+      flex-wrap:wrap;
+      gap:14px;
+      margin-top:28px;
+    }
+
+    section{padding:80px 0}
+    .eyebrow{
+      color:var(--blue-700);
+      font-size:13px;
+      text-transform:uppercase;
+      letter-spacing:.18em;
+      font-weight:800;
+    }
+    h2{
+      margin:12px 0 0;
+      font-size:42px;
+      line-height:1.1;
+      letter-spacing:-1px;
+    }
+    .lead{
+      margin:18px 0 0;
+      font-size:19px;
+      color:var(--slate-600);
+      max-width:850px;
+    }
+
+    .grid-3{
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      gap:24px;
+      margin-top:34px;
+    }
+    .card{
+      background:#fff;
+      border:1px solid var(--slate-200);
+      border-radius:24px;
+      padding:24px;
+      box-shadow:var(--shadow-soft);
+    }
+    .card h3{
+      margin:0;
+      color:var(--blue-950);
+      font-size:25px;
+    }
+    .card p{
+      margin:12px 0 0;
+      color:var(--slate-600);
+    }
+
+    .list-section{
+      background:var(--slate-100);
+      border-top:1px solid var(--slate-200);
+      border-bottom:1px solid var(--slate-200);
+    }
+    .two-col{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:32px;
+      align-items:start;
+    }
+    .bullet-box{
+      background:#fff;
+      border:1px solid var(--slate-200);
+      border-radius:24px;
+      padding:24px;
+      box-shadow:var(--shadow-soft);
+    }
+    .bullet-box h3{
+      margin:0 0 14px;
+      color:var(--blue-950);
+      font-size:26px;
+    }
+    .bullet-box ul{
+      padding-left:18px;
+      margin:0;
+      color:var(--slate-600);
+    }
+    .bullet-box li{margin:10px 0}
+
+    .cta{
+      background:linear-gradient(135deg, var(--blue-950), var(--blue-700));
+      color:#fff;
+      border-radius:30px;
+      padding:34px;
+      box-shadow:var(--shadow);
+      margin-top:36px;
+    }
+    .cta h3{
+      margin:0;
+      font-size:32px;
+    }
+    .cta p{
+      margin:12px 0 0;
+      color:#dbeafe;
+      max-width:700px;
+    }
+    .cta-actions{
+      display:flex;
+      flex-wrap:wrap;
+      gap:14px;
+      margin-top:24px;
+    }
+
+    footer{
+      background:var(--blue-950);
+      color:#cbd5e1;
+      padding:32px 0;
+      margin-top:60px;
+    }
+    .footer-top{
+      display:flex;
+      justify-content:space-between;
+      gap:20px;
+      flex-wrap:wrap;
+    }
+
+    @media (max-width: 980px){
+      .hero-grid,.two-col,.grid-3{grid-template-columns:1fr}
+      .hero h1{font-size:42px}
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container topbar">
+      <div class="brand">
+        <img src="asix_hd.png" alt="Logo ASIX Assurance">
+        <div>
+          <strong>ASIX ASSURANCE</strong>
+          <span>Courtier indépendant en assurance</span>
+        </div>
+      </div>
+      <nav>
+        <a href="index.html">Accueil</a>
+        <a href="index.html#services">Services</a>
+        <a href="index.html#contact">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <section class="hero">
+    <div class="container hero-grid">
+      <div>
+        <div class="eyebrow" style="color:#bfdbfe;">Service détaillé</div>
+        <h1>Assurance Auto</h1>
+        <p>
+          ASIX Assurance vous accompagne pour trouver une assurance auto adaptée à votre profil, à votre véhicule et à votre budget, partout en France.
+        </p>
+        <div class="hero-actions">
+          <a class="btn btn-light" href="https://wa.me/33603793189?text=Bonjour%2C%20je%20souhaite%20un%20devis%20pour%20une%20assurance%20auto." target="_blank">📲 Demander un devis auto</a>
+          <a class="btn btn-dark" href="tel:0603793189">📞 06 03 79 31 89</a>
+        </div>
+      </div>
+      <div>
+        <img src="https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=1200&q=80" alt="Assurance auto">
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="container">
+      <div class="eyebrow">Pourquoi nous consulter</div>
+      <h2>Une solution adaptée à votre profil de conducteur</h2>
+      <p class="lead">
+        Que vous soyez jeune conducteur, conducteur expérimenté, malussé, résilié ou simplement à la recherche d’un meilleur tarif, nous vous aidons à comparer plusieurs solutions pour trouver un contrat cohérent.
+      </p>
+
+      <div class="grid-3">
+        <div class="card">
+          <h3>Jeune conducteur</h3>
+          <p>Nous recherchons des solutions d’assurance auto adaptées aux profils récents, avec des garanties utiles et un budget mieux maîtrisé.</p>
+        </div>
+        <div class="card">
+          <h3>Conducteur résilié</h3>
+          <p>Nous accompagnons les profils ayant rencontré des difficultés précédentes pour retrouver une solution sérieuse et réaliste.</p>
+        </div>
+        <div class="card">
+          <h3>Changement d’assureur</h3>
+          <p>Vous payez trop cher ? Nous comparons votre contrat actuel avec d’autres offres pour identifier une meilleure alternative.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="list-section">
+    <div class="container two-col">
+      <div class="bullet-box">
+        <h3>Les garanties possibles</h3>
+        <ul>
+          <li>Responsabilité civile</li>
+          <li>Formule au tiers</li>
+          <li>Formule intermédiaire</li>
+          <li>Formule tous risques</li>
+          <li>Bris de glace</li>
+          <li>Vol et incendie</li>
+          <li>Assistance</li>
+          <li>Protection du conducteur</li>
+        </ul>
+      </div>
+
+      <div class="bullet-box">
+        <h3>Ce que nous analysons</h3>
+        <ul>
+          <li>Votre profil de conducteur</li>
+          <li>Votre véhicule</li>
+          <li>Votre usage quotidien</li>
+          <li>Votre historique d’assurance</li>
+          <li>Votre budget</li>
+          <li>Le niveau de garanties réellement utile</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="container">
+      <div class="eyebrow">Notre accompagnement</div>
+      <h2>Un comparatif simple et rapide</h2>
+      <p class="lead">
+        Notre objectif n’est pas seulement de vous proposer un tarif. Nous cherchons surtout une solution cohérente avec votre situation, vos garanties souhaitées et votre budget.
+      </p>
+
+      <div class="grid-3">
+        <div class="card">
+          <h3>1. Étude du besoin</h3>
+          <p>Nous analysons votre situation actuelle et vos attentes.</p>
+        </div>
+        <div class="card">
+          <h3>2. Comparatif</h3>
+          <p>Nous comparons différentes solutions selon votre profil.</p>
+        </div>
+        <div class="card">
+          <h3>3. Accompagnement</h3>
+          <p>Nous vous aidons à choisir la formule la plus adaptée.</p>
+        </div>
+      </div>
+
+      <div class="cta">
+        <h3>Besoin d’un devis pour votre assurance auto ?</h3>
+        <p>
+          Contactez ASIX Assurance pour une étude rapide, claire et sans engagement.
+        </p>
+        <div class="cta-actions">
+          <a class="btn btn-light" href="https://wa.me/33603793189?text=Bonjour%2C%20je%20souhaite%20un%20devis%20pour%20une%20assurance%20auto." target="_blank">WhatsApp direct</a>
+          <a class="btn btn-outline" href="index.html">Retour à l’accueil</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container footer-top">
+      <div>
+        <strong style="color:#fff;">ASIX Assurance</strong><br>
+        Courtier indépendant en assurance
+      </div>
+      <div>
+        📞 06 03 79 31 89<br>
+        📧 contact@asixassurance.fr
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
