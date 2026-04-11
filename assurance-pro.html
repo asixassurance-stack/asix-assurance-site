@@ -3,75 +3,480 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Assurance Professionnelle | ASIX Assurance</title>
-  <meta name="description" content="ASIX Assurance accompagne les indépendants, professions libérales, auto-entrepreneurs et entreprises pour leurs assurances professionnelles." />
+  <title>Assurance professionnelle | RC Pro | ASIX Assurance</title>
+  <meta name="description" content="Assurance professionnelle pour indépendants, auto-entrepreneurs et entreprises. RC Pro, multirisque et solutions adaptées partout en France avec ASIX Assurance." />
   <style>
     :root{
-      --blue-950:#081a35;--blue-900:#0f2f63;--blue-700:#1f5bb5;--slate-900:#0f172a;--slate-700:#334155;--slate-600:#475569;--slate-300:#cbd5e1;--slate-200:#e2e8f0;--slate-100:#f8fafc;--green:#25D366;--max:1180px;--shadow:0 18px 50px rgba(2,8,23,.10);--shadow-soft:0 10px 30px rgba(15,23,42,.08);
+      --blue-950:#081a35;
+      --blue-900:#0f2f63;
+      --blue-700:#1f5bb5;
+      --blue-100:#eaf2ff;
+      --slate-900:#0f172a;
+      --slate-700:#334155;
+      --slate-600:#475569;
+      --slate-300:#cbd5e1;
+      --slate-200:#e2e8f0;
+      --slate-100:#f8fafc;
+      --white:#ffffff;
+      --green:#25D366;
+      --max:1180px;
+      --shadow:0 18px 50px rgba(2,8,23,.10);
+      --shadow-soft:0 10px 30px rgba(15,23,42,.08);
     }
-    *{box-sizing:border-box} html{scroll-behavior:smooth}
-    body{margin:0;font-family:Arial,Helvetica,sans-serif;color:var(--slate-900);background:#fff;line-height:1.5}
-    a{text-decoration:none;color:inherit} img{max-width:100%;display:block}
+
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{
+      margin:0;
+      font-family:Arial, Helvetica, sans-serif;
+      color:var(--slate-900);
+      background:#fff;
+      line-height:1.55;
+    }
+
+    a{text-decoration:none;color:inherit}
+    img{max-width:100%;display:block}
     .container{width:min(var(--max), calc(100% - 32px));margin:0 auto}
-    .btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;padding:14px 22px;border-radius:16px;font-weight:700;transition:.2s ease}
-    .btn:hover{transform:translateY(-1px)} .btn-white{background:#fff;color:var(--blue-950)} .btn-dark{background:var(--blue-900);color:#fff} .btn-outline{background:rgba(255,255,255,.08); color:#fff; border:1px solid rgba(255,255,255,.22)}
-    header{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.96);backdrop-filter:blur(10px);border-bottom:1px solid var(--slate-200)}
-    .topbar{min-height:78px;display:flex;align-items:center;justify-content:space-between;gap:16px}
-    .brand{display:flex;align-items:center;gap:12px}
-    .brand img{height:54px;width:auto}
-    .brand strong{display:block;color:var(--blue-950);font-size:20px;line-height:1.1}
-    .brand span{display:block;color:var(--slate-600);font-size:13px}
-    nav{display:flex;gap:24px;align-items:center;flex-wrap:wrap}
-    nav a{font-weight:700;color:var(--slate-700)}
-    .hero{position:relative;overflow:hidden;color:#fff;background:linear-gradient(135deg, rgba(8,26,53,.96), rgba(15,47,99,.92))}
-    .hero::before{content:"";position:absolute;inset:0;background:url('https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=1600&q=80') center/cover no-repeat;opacity:.24}
-    .hero-inner{position:relative;z-index:1;display:grid;grid-template-columns:1.1fr .9fr;gap:36px;align-items:center;padding:82px 0 96px}
-    .pill{display:inline-block;padding:10px 15px;border-radius:999px;background:rgba(255,255,255,.10);border:1px solid rgba(255,255,255,.16);font-size:14px;margin-bottom:18px}
-    .hero h1{margin:0;font-size:58px;line-height:1.02;letter-spacing:-1.5px;max-width:760px}
-    .hero p{margin:18px 0 0;color:#dbeafe;font-size:20px;max-width:720px}
-    .hero-actions{display:flex;flex-wrap:wrap;gap:14px;margin-top:28px}
-    .hero-proof{margin-top:14px;color:#dbeafe;font-size:14px}
-    .hero-card{background:rgba(255,255,255,.10);border:1px solid rgba(255,255,255,.16);border-radius:28px;padding:14px;box-shadow:var(--shadow)}
-    .hero-card img{width:100%;height:490px;object-fit:cover;border-radius:22px}
-    .stats-wrap{margin-top:-32px;position:relative;z-index:2}
-    .stats{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;background:#fff;border:1px solid var(--slate-200);border-radius:24px;padding:16px;box-shadow:var(--shadow)}
-    .stat{background:var(--slate-100);border-radius:18px;padding:22px}
-    .stat strong{display:block;color:var(--blue-950);font-size:30px}
-    .stat span{color:var(--slate-600);font-size:15px}
+
+    .btn{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      gap:10px;
+      padding:14px 22px;
+      border-radius:16px;
+      font-weight:700;
+      transition:.2s ease;
+    }
+
+    .btn:hover{transform:translateY(-1px)}
+    .btn-primary{background:#fff;color:var(--blue-950)}
+    .btn-dark{background:var(--blue-900);color:#fff}
+    .btn-whatsapp{background:var(--green);color:#08361b}
+
+    header{
+      position:sticky;
+      top:0;
+      z-index:50;
+      background:rgba(255,255,255,.96);
+      backdrop-filter:blur(10px);
+      border-bottom:1px solid var(--slate-200);
+    }
+
+    .topbar{
+      min-height:78px;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:16px;
+    }
+
+    .brand{
+      display:flex;
+      align-items:center;
+      gap:12px;
+    }
+
+    .brand img{
+      height:54px;
+      width:auto;
+    }
+
+    .brand strong{
+      display:block;
+      color:var(--blue-950);
+      font-size:20px;
+      line-height:1.1;
+    }
+
+    .brand span{
+      display:block;
+      color:var(--slate-600);
+      font-size:13px;
+    }
+
+    nav{
+      display:flex;
+      gap:24px;
+      align-items:center;
+      flex-wrap:wrap;
+    }
+
+    nav > a,
+    nav > .dropdown > a{
+      font-weight:700;
+      color:var(--slate-700);
+    }
+
+    .dropdown{
+      position:relative;
+      display:inline-block;
+    }
+
+    .dropdown > a{
+      display:inline-block;
+      padding:8px 0;
+    }
+
+    .dropdown-content{
+      display:none;
+      position:absolute;
+      top:100%;
+      left:0;
+      background:#fff;
+      min-width:240px;
+      border:1px solid var(--slate-200);
+      box-shadow:0 10px 25px rgba(0,0,0,.08);
+      border-radius:12px;
+      overflow:hidden;
+      z-index:999;
+    }
+
+    .dropdown-content a{
+      display:block;
+      padding:12px 16px;
+      color:#0f172a;
+      white-space:nowrap;
+    }
+
+    .dropdown-content a:hover{
+      background:#f1f5f9;
+    }
+
+    .dropdown:hover .dropdown-content{
+      display:block;
+    }
+
+    .hero{
+      position:relative;
+      overflow:hidden;
+      color:#fff;
+      background:linear-gradient(135deg, rgba(8,26,53,.96), rgba(15,47,99,.92));
+    }
+
+    .hero::before{
+      content:"";
+      position:absolute;
+      inset:0;
+      background:url('https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=1600&q=80') center/cover no-repeat;
+      opacity:.20;
+    }
+
+    .hero-inner{
+      position:relative;
+      z-index:1;
+      display:grid;
+      grid-template-columns:1.1fr .9fr;
+      gap:36px;
+      align-items:center;
+      padding:82px 0 96px;
+    }
+
+    .pill{
+      display:inline-block;
+      padding:10px 15px;
+      border-radius:999px;
+      background:rgba(255,255,255,.10);
+      border:1px solid rgba(255,255,255,.16);
+      font-size:14px;
+      margin-bottom:18px;
+    }
+
+    .hero h1{
+      margin:0;
+      font-size:56px;
+      line-height:1.02;
+      letter-spacing:-1.4px;
+      max-width:760px;
+    }
+
+    .hero p{
+      margin:18px 0 0;
+      color:#dbeafe;
+      font-size:20px;
+      max-width:720px;
+    }
+
+    .hero-actions{
+      display:flex;
+      flex-wrap:wrap;
+      gap:14px;
+      margin-top:28px;
+    }
+
+    .hero-proof{
+      margin-top:14px;
+      color:#dbeafe;
+      font-size:14px;
+    }
+
+    .hero-card{
+      background:rgba(255,255,255,.10);
+      border:1px solid rgba(255,255,255,.16);
+      border-radius:28px;
+      padding:14px;
+      box-shadow:var(--shadow);
+    }
+
+    .hero-card img{
+      width:100%;
+      height:480px;
+      object-fit:cover;
+      border-radius:22px;
+    }
+
+    .stats-wrap{
+      margin-top:-32px;
+      position:relative;
+      z-index:2;
+    }
+
+    .stats{
+      display:grid;
+      grid-template-columns:repeat(4,1fr);
+      gap:16px;
+      background:#fff;
+      border:1px solid var(--slate-200);
+      border-radius:24px;
+      padding:16px;
+      box-shadow:var(--shadow);
+    }
+
+    .stat{
+      background:var(--slate-100);
+      border-radius:18px;
+      padding:22px;
+    }
+
+    .stat strong{
+      display:block;
+      color:var(--blue-950);
+      font-size:28px;
+    }
+
+    .stat span{
+      color:var(--slate-600);
+      font-size:15px;
+    }
+
     section{padding:84px 0}
-    .eyebrow{color:var(--blue-700);text-transform:uppercase;letter-spacing:.18em;font-size:13px;font-weight:800}
-    h2{margin:12px 0 0;font-size:44px;line-height:1.08;letter-spacing:-1px}
-    .lead{margin:16px 0 0;color:var(--slate-600);font-size:19px;max-width:860px}
-    .grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:34px}
-    .feature-card{background:#fff;border:1px solid var(--slate-200);border-radius:24px;overflow:hidden;box-shadow:var(--shadow-soft)}
-    .feature-card img{width:100%;height:220px;object-fit:cover}
-    .feature-content{padding:22px}
-    .feature-content h3{margin:0;color:var(--blue-950);font-size:26px}
-    .feature-content p{margin:12px 0 0;color:var(--slate-600)}
-    .split{background:var(--slate-100);border-top:1px solid var(--slate-200);border-bottom:1px solid var(--slate-200)}
-    .split-grid{display:grid;grid-template-columns:1fr 1fr;gap:30px;align-items:start}
-    .panel{background:#fff;border:1px solid var(--slate-200);border-radius:24px;padding:26px;box-shadow:var(--shadow-soft)}
-    .panel h3{margin:0 0 14px;color:var(--blue-950);font-size:28px}
-    .panel ul{margin:0;padding-left:18px;color:var(--slate-600)}
-    .panel li{margin:10px 0}
-    .premium-banner{background:linear-gradient(135deg, var(--blue-950), var(--blue-700));color:#fff;border-radius:28px;padding:34px;box-shadow:var(--shadow);margin-top:34px}
-    .premium-banner h3{margin:0;font-size:34px}
-    .premium-banner p{margin:12px 0 0;color:#dbeafe;max-width:760px}
-    .premium-actions{display:flex;flex-wrap:wrap;gap:14px;margin-top:22px}
-    .trust-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;margin-top:34px}
-    .trust-item{background:#fff;border:1px solid var(--slate-200);border-radius:22px;padding:22px;box-shadow:var(--shadow-soft);text-align:center;font-weight:700;color:var(--blue-950)}
-    .faq-list{display:grid;gap:14px;margin-top:34px}
-    details{background:var(--slate-100);border:1px solid var(--slate-200);border-radius:18px;padding:18px 20px}
-    summary{cursor:pointer;font-weight:800;font-size:19px}
-    details p{color:var(--slate-600);margin:12px 0 0}
-    footer{background:var(--blue-950);color:#cbd5e1;padding:34px 0;margin-top:10px}
-    .footer-top{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
-    .whatsapp-float{position:fixed;bottom:20px;right:20px;background:#25D366;color:white;padding:14px 18px;border-radius:50px;font-weight:bold;text-decoration:none;box-shadow:0 5px 20px rgba(0,0,0,0.2);z-index:9999}
-    @media (max-width:1100px){.hero-inner,.split-grid{grid-template-columns:1fr}.stats,.trust-grid{grid-template-columns:repeat(2,1fr)}.grid-3{grid-template-columns:repeat(2,1fr)}.hero h1{font-size:46px}.hero-card img{height:360px}}
-    @media (max-width:720px){nav{display:none}.hero h1{font-size:36px}h2{font-size:34px}.stats,.grid-3,.trust-grid{grid-template-columns:1fr}.hero-inner{padding:56px 0 74px}.hero-card img{height:280px}}
+
+    .eyebrow{
+      color:var(--blue-700);
+      text-transform:uppercase;
+      letter-spacing:.18em;
+      font-size:13px;
+      font-weight:800;
+    }
+
+    h2{
+      margin:12px 0 0;
+      font-size:42px;
+      line-height:1.08;
+      letter-spacing:-1px;
+    }
+
+    h3{
+      margin:0;
+      font-size:26px;
+      color:var(--blue-950);
+    }
+
+    .lead{
+      margin:16px 0 0;
+      color:var(--slate-600);
+      font-size:19px;
+      max-width:860px;
+    }
+
+    .grid-3{
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      gap:24px;
+      margin-top:34px;
+    }
+
+    .grid-2{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:24px;
+      margin-top:34px;
+    }
+
+    .card{
+      background:#fff;
+      border:1px solid var(--slate-200);
+      border-radius:24px;
+      overflow:hidden;
+      box-shadow:var(--shadow-soft);
+      padding:24px;
+    }
+
+    .card img{
+      width:100%;
+      height:210px;
+      object-fit:cover;
+      border-radius:16px;
+      margin-bottom:16px;
+    }
+
+    .card p{
+      margin:12px 0 0;
+      color:var(--slate-600);
+    }
+
+    .split{
+      background:var(--slate-100);
+      border-top:1px solid var(--slate-200);
+      border-bottom:1px solid var(--slate-200);
+    }
+
+    .panel{
+      background:#fff;
+      border:1px solid var(--slate-200);
+      border-radius:24px;
+      padding:26px;
+      box-shadow:var(--shadow-soft);
+    }
+
+    .panel p{
+      color:var(--slate-600);
+      margin:12px 0 0;
+    }
+
+    .panel ul{
+      margin:14px 0 0;
+      padding-left:18px;
+      color:var(--slate-600);
+    }
+
+    .panel li{
+      margin:10px 0;
+    }
+
+    .form-card{
+      background:#fff;
+      color:var(--slate-900);
+      border-radius:24px;
+      padding:26px;
+      box-shadow:var(--shadow);
+      margin-top:34px;
+    }
+
+    .form-card h3{
+      color:var(--blue-950);
+      font-size:30px;
+    }
+
+    .form-card p{
+      color:var(--slate-600);
+    }
+
+    .field{
+      width:100%;
+      margin-top:14px;
+      padding:14px 15px;
+      border:1px solid var(--slate-200);
+      border-radius:12px;
+      font:inherit;
+    }
+
+    textarea.field{
+      min-height:140px;
+      resize:vertical;
+    }
+
+    .faq-list{
+      display:grid;
+      gap:14px;
+      margin-top:34px;
+    }
+
+    details{
+      background:var(--slate-100);
+      border:1px solid var(--slate-200);
+      border-radius:18px;
+      padding:18px 20px;
+    }
+
+    summary{
+      cursor:pointer;
+      font-weight:800;
+      font-size:19px;
+    }
+
+    details p{
+      color:var(--slate-600);
+      margin:12px 0 0;
+    }
+
+    footer{
+      background:var(--blue-950);
+      color:#cbd5e1;
+      padding:34px 0;
+      margin-top:10px;
+    }
+
+    .footer-grid{
+      display:grid;
+      grid-template-columns:1.2fr 1fr 1fr;
+      gap:24px;
+    }
+
+    .footer-title{
+      color:#fff;
+      font-weight:800;
+      margin-bottom:12px;
+    }
+
+    footer a{
+      display:block;
+      margin:8px 0;
+      color:#cbd5e1;
+    }
+
+    .copy{
+      border-top:1px solid rgba(255,255,255,.10);
+      margin-top:26px;
+      padding-top:16px;
+      font-size:14px;
+    }
+
+    .whatsapp-float{
+      position:fixed;
+      bottom:20px;
+      right:20px;
+      background:#25D366;
+      color:white;
+      padding:14px 18px;
+      border-radius:50px;
+      font-weight:bold;
+      text-decoration:none;
+      box-shadow:0 5px 20px rgba(0,0,0,.2);
+      z-index:9999;
+    }
+
+    @media (max-width:1100px){
+      .hero-inner,.grid-2{grid-template-columns:1fr}
+      .stats{grid-template-columns:repeat(2,1fr)}
+      .grid-3{grid-template-columns:repeat(2,1fr)}
+      .footer-grid{grid-template-columns:1fr}
+      .hero h1{font-size:46px}
+      .hero-card img{height:360px}
+    }
+
+    @media (max-width:720px){
+      nav{display:none}
+      .hero h1{font-size:36px}
+      h2{font-size:34px}
+      .stats,.grid-3{grid-template-columns:1fr}
+      .hero-inner{padding:56px 0 74px}
+      .hero-card img{height:280px}
+    }
   </style>
 </head>
 <body>
+
 <header>
   <div class="container topbar">
     <div class="brand">
@@ -81,11 +486,28 @@
         <span>Courtier indépendant en assurance</span>
       </div>
     </div>
+
     <nav>
-      <a href="index.html">Accueil</a>
-      <a href="index.html#services">Services</a>
+      <a href="index.html#accueil">Accueil</a>
+
+      <div class="dropdown">
+        <a href="assurance-auto.html">Auto ▼</a>
+        <div class="dropdown-content">
+          <a href="assurance-auto.html">Assurance auto</a>
+          <a href="assurance-auto-malusse.html">Conducteur malussé</a>
+          <a href="assurance-auto-resilie.html">Conducteur résilié</a>
+          <a href="assurance-auto-jeune-conducteur.html">Jeune conducteur</a>
+        </div>
+      </div>
+
+      <a href="assurance-habitation.html">Habitation</a>
+      <a href="assurance-sante.html">Santé</a>
+      <a href="assurance-pro.html">Pro</a>
+      <a href="index.html#apropos">À propos</a>
+      <a href="index.html#faq">FAQ</a>
       <a href="index.html#contact">Contact</a>
     </nav>
+
     <a class="btn btn-dark" href="index.html#contact">Devis gratuit</a>
   </div>
 </header>
@@ -94,97 +516,99 @@
   <section class="hero">
     <div class="container hero-inner">
       <div>
-        <div class="pill">Indépendant • Profession libérale • Auto-entrepreneur • Entreprise</div>
-        <h1>Assurance professionnelle premium pour sécuriser votre activité</h1>
-        <p>ASIX Assurance accompagne les professionnels dans la recherche de garanties claires, cohérentes et adaptées à leur métier.</p>
+        <div class="pill">RC Pro • Multirisque • Local • Matériel • Indépendants</div>
+        <h1>Assurance professionnelle claire et efficace</h1>
+        <p>ASIX Assurance accompagne indépendants, auto-entrepreneurs et entreprises pour protéger leur activité, leur responsabilité, leur local et leur matériel.</p>
+
         <div class="hero-actions">
-          <a class="btn btn-white" href="https://wa.me/33603793189?text=Bonjour%2C%20je%20souhaite%20un%20devis%20pour%20une%20assurance%20professionnelle." target="_blank">📲 Demander un devis</a>
-          <a class="btn btn-outline" href="tel:0603793189">📞 06 03 79 31 89</a>
+          <a class="btn btn-primary" href="https://wa.me/33603793189?text=Bonjour%2C%20je%20cherche%20une%20assurance%20professionnelle." target="_blank">📲 Obtenir mon devis sur WhatsApp</a>
+          <a class="btn btn-dark" href="tel:0603793189">📞 06 03 79 31 89</a>
         </div>
+
         <div class="hero-proof">Réponse rapide • Devis gratuit • Sans engagement</div>
       </div>
+
       <div class="hero-card">
-        <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=1200&q=80" alt="Assurance pro">
+        <img src="https://images.unsplash.com/photo-1552664688-cf412ec27db2?auto=format&fit=crop&w=1200&q=80" alt="Assurance professionnelle">
       </div>
     </div>
   </section>
 
   <div class="container stats-wrap">
     <div class="stats">
-      <div class="stat"><strong>RC Pro</strong><span>Protection de la responsabilité</span></div>
-      <div class="stat"><strong>Multirisque</strong><span>Biens, local, matériel</span></div>
-      <div class="stat"><strong>Conseil clair</strong><span>Selon votre activité réelle</span></div>
+      <div class="stat"><strong>RC Pro</strong><span>Protection de l’activité</span></div>
+      <div class="stat"><strong>Multirisque</strong><span>Local et matériel</span></div>
+      <div class="stat"><strong>Indépendants</strong><span>Solutions adaptées</span></div>
       <div class="stat"><strong>France</strong><span>Accompagnement partout</span></div>
     </div>
   </div>
 
   <section>
     <div class="container">
-      <div class="eyebrow">Profils accompagnés</div>
-      <h2>Des solutions pour sécuriser votre activité</h2>
-      <p class="lead">Nous vous accompagnons selon votre métier, votre structure et votre niveau d’exposition au risque.</p>
+      <div class="eyebrow">Protéger votre activité</div>
+      <h2>Une assurance pro adaptée à votre métier</h2>
+      <p class="lead">Chaque activité a ses risques, ses contraintes et ses besoins. Nous vous aidons à choisir une couverture utile, claire et cohérente.</p>
 
       <div class="grid-3">
-        <article class="feature-card">
-          <img src="https://images.unsplash.com/photo-1521737604893-d14cc237f11d?auto=format&fit=crop&w=1200&q=80" alt="Indépendant">
-          <div class="feature-content">
-            <h3>Indépendants</h3>
-            <p>Des solutions pour protéger votre activité, votre responsabilité et votre outil de travail.</p>
-          </div>
+        <article class="card">
+          <img src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=900&q=80" alt="RC Pro">
+          <h3>RC Pro</h3>
+          <p>Une protection essentielle contre les dommages causés à des tiers dans le cadre de votre activité.</p>
         </article>
-        <article class="feature-card">
-          <img src="https://images.unsplash.com/photo-1552664688-cf412ec27db2?auto=format&fit=crop&w=1200&q=80" alt="Professions libérales">
-          <div class="feature-content">
-            <h3>Professions libérales</h3>
-            <p>Une couverture pensée pour les activités qui ont besoin de garanties claires et sérieuses.</p>
-          </div>
+
+        <article class="card">
+          <img src="https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&w=900&q=80" alt="Local et matériel">
+          <h3>Local et matériel</h3>
+          <p>Une couverture pour protéger votre environnement de travail, vos équipements et vos marchandises.</p>
         </article>
-        <article class="feature-card">
-          <img src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=1200&q=80" alt="Entreprise">
-          <div class="feature-content">
-            <h3>TPE / PME</h3>
-            <p>Nous étudions aussi les besoins des entreprises avec des solutions adaptées à leur structure.</p>
-          </div>
+
+        <article class="card">
+          <img src="https://images.unsplash.com/photo-1521737604893-d14cc237f11d?auto=format&fit=crop&w=900&q=80" alt="Auto entrepreneur">
+          <h3>Auto-entrepreneur</h3>
+          <p>Des solutions adaptées aux activités indépendantes et aux petites structures.</p>
         </article>
       </div>
     </div>
   </section>
 
   <section class="split">
-    <div class="container split-grid">
+    <div class="container grid-2">
       <div class="panel">
         <h3>Garanties possibles</h3>
+        <p>Nous étudions les garanties réellement utiles à votre activité.</p>
         <ul>
-          <li>Responsabilité Civile Professionnelle</li>
+          <li>RC Pro</li>
           <li>Multirisque professionnelle</li>
           <li>Protection juridique</li>
-          <li>Assurance local professionnel</li>
-          <li>Assurance matériel</li>
+          <li>Local professionnel</li>
+          <li>Matériel et marchandises</li>
           <li>Perte d’exploitation</li>
-          <li>Garanties selon l’activité</li>
+          <li>Cyber protection selon besoin</li>
+          <li>Véhicule professionnel</li>
         </ul>
       </div>
+
       <div class="panel">
         <h3>Ce que nous analysons</h3>
         <ul>
-          <li>Votre activité professionnelle</li>
-          <li>Votre statut</li>
-          <li>Le niveau de risque lié à votre métier</li>
-          <li>La valeur des biens à protéger</li>
-          <li>La présence d’un local ou non</li>
-          <li>Vos obligations éventuelles</li>
-          <li>Votre budget</li>
+          <li>Votre activité</li>
+          <li>Votre statut juridique</li>
+          <li>Vos locaux ou non</li>
+          <li>Votre matériel</li>
+          <li>Vos risques métiers</li>
+          <li>Votre budget et niveau de protection</li>
         </ul>
       </div>
     </div>
 
     <div class="container">
-      <div class="premium-banner">
-        <h3>Une approche claire pour les pros</h3>
-        <p>Nous vous aidons à comprendre les garanties essentielles pour votre activité et à éviter les contrats insuffisamment protecteurs ou mal adaptés.</p>
-        <div class="premium-actions">
-          <a class="btn btn-white" href="https://wa.me/33603793189?text=Bonjour%2C%20je%20souhaite%20un%20devis%20pour%20une%20assurance%20professionnelle." target="_blank">WhatsApp direct</a>
-          <a class="btn btn-dark" href="index.html">Retour à l’accueil</a>
+      <div class="panel" style="margin-top:34px;background:linear-gradient(135deg, var(--blue-950), var(--blue-700));color:#fff;">
+        <h3 style="color:#fff;">Besoin d’une assurance pro adaptée ?</h3>
+        <p style="color:#dbeafe;">Contactez ASIX Assurance pour comparer rapidement une solution cohérente avec votre activité, vos risques et votre budget.</p>
+
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="https://wa.me/33603793189?text=Bonjour%2C%20je%20cherche%20une%20assurance%20professionnelle." target="_blank">WhatsApp direct</a>
+          <a class="btn btn-dark" href="index.html#contact">Retour contact</a>
         </div>
       </div>
     </div>
@@ -192,13 +616,55 @@
 
   <section>
     <div class="container">
-      <div class="eyebrow">Pourquoi ASIX Assurance</div>
-      <h2>Un service premium orienté activité réelle</h2>
-      <div class="trust-grid">
-        <div class="trust-item">✅ Devis gratuit</div>
-        <div class="trust-item">⚡ Réponse rapide</div>
-        <div class="trust-item">💼 Garanties cohérentes</div>
-        <div class="trust-item">🇫🇷 Partout en France</div>
+      <div class="eyebrow">Contenu SEO</div>
+      <h2>Votre courtier en assurance professionnelle en France</h2>
+
+      <div class="panel">
+        <p>ASIX Assurance accompagne indépendants, auto-entrepreneurs et entreprises dans la recherche d’une assurance professionnelle adaptée.</p>
+        <p>Nous comparons plusieurs solutions pour vous orienter vers une formule cohérente avec votre métier, vos risques et votre budget.</p>
+        <p>Nous intervenons partout en France, avec une réponse rapide par téléphone, email ou WhatsApp.</p>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="container">
+      <div class="eyebrow">Demande rapide</div>
+      <h2>Recevez une réponse rapide</h2>
+
+      <div class="form-card">
+        <h3>Demandez votre devis pro</h3>
+        <p>Complétez ce formulaire pour recevoir une réponse rapide.</p>
+
+        <form action="https://formspree.io/f/xykbrnrr" method="POST">
+          <input class="field" type="text" name="Nom" placeholder="Nom complet" required>
+          <input class="field" type="email" name="email" placeholder="Adresse email" required>
+          <input class="field" type="tel" name="Téléphone" placeholder="Téléphone" required>
+
+          <select class="field" name="Type assurance" required>
+            <option value="">Type de besoin</option>
+            <option>RC Pro</option>
+            <option>Multirisque professionnelle</option>
+            <option>Local professionnel</option>
+            <option>Assurance auto-entrepreneur</option>
+          </select>
+
+          <input class="field" type="text" name="Situation" placeholder="Ex: indépendant, auto-entrepreneur, société...">
+          <textarea class="field" name="Message" placeholder="Expliquez votre besoin" required></textarea>
+
+          <input type="hidden" name="_subject" value="Nouveau devis pro ASIX Assurance">
+
+          <button class="btn btn-dark" type="submit" style="width:100%;margin-top:16px;border:none;">
+            Envoyer ma demande
+          </button>
+        </form>
+
+        <a class="btn btn-whatsapp"
+           href="https://wa.me/33603793189?text=Bonjour%2C%20je%20cherche%20une%20assurance%20professionnelle."
+           target="_blank"
+           style="width:100%;margin-top:12px;">
+           WhatsApp direct
+        </a>
       </div>
     </div>
   </section>
@@ -207,18 +673,21 @@
     <div class="container">
       <div class="eyebrow">FAQ</div>
       <h2>Questions fréquentes</h2>
+
       <div class="faq-list">
         <details>
-          <summary>Accompagnez-vous les indépendants et auto-entrepreneurs ?</summary>
-          <p>Oui. Nous accompagnons indépendants, professions libérales, auto-entrepreneurs et entreprises.</p>
+          <summary>Proposez-vous la RC Pro ?</summary>
+          <p>Oui, nous pouvons étudier une RC Pro adaptée à votre activité.</p>
         </details>
+
+        <details>
+          <summary>Pouvez-vous couvrir un local professionnel ?</summary>
+          <p>Oui, selon votre besoin, nous étudions aussi la protection du local et du matériel.</p>
+        </details>
+
         <details>
           <summary>Le devis est-il gratuit ?</summary>
-          <p>Oui. L’étude est gratuite et sans engagement.</p>
-        </details>
-        <details>
-          <summary>Intervenez-vous partout en France ?</summary>
-          <p>Oui, ASIX Assurance accompagne ses clients partout en France.</p>
+          <p>Oui, l’étude est gratuite et sans engagement.</p>
         </details>
       </div>
     </div>
@@ -226,21 +695,39 @@
 </main>
 
 <footer>
-  <div class="container footer-top">
-    <div>
-      <strong style="color:#fff;">ASIX Assurance</strong><br>
-      Courtier indépendant en assurance
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <div class="footer-title">ASIX ASSURANCE</div>
+        <div>Courtier indépendant en assurance pour particuliers et professionnels. Intervention partout en France.</div>
+      </div>
+
+      <div>
+        <div class="footer-title">Navigation</div>
+        <a href="index.html#accueil">Accueil</a>
+        <a href="index.html#services">Services</a>
+        <a href="index.html#apropos">À propos</a>
+        <a href="index.html#faq">FAQ</a>
+        <a href="index.html#contact">Contact</a>
+      </div>
+
+      <div>
+        <div class="footer-title">Informations</div>
+        <a href="index.html#mentions-legales">Mentions légales</a>
+        <a href="mailto:contact@asixassurance.fr">contact@asixassurance.fr</a>
+        <a href="tel:0603793189">06 03 79 31 89</a>
+      </div>
     </div>
-    <div>
-      📞 06 03 79 31 89<br>
-      📧 contact@asixassurance.fr
-    </div>
+
+    <div class="copy">© 2026 ASIX Assurance — Tous droits réservés.</div>
   </div>
 </footer>
 
 <a class="whatsapp-float"
-   href="https://wa.me/33603793189?text=Bonjour%2C%20je%20souhaite%20un%20devis%20pour%20une%20assurance%20professionnelle."
-   target="_blank">WhatsApp</a>
+   href="https://wa.me/33603793189?text=Bonjour%2C%20je%20cherche%20une%20assurance%20professionnelle."
+   target="_blank">
+   WhatsApp
+</a>
 
 </body>
 </html>
