@@ -9,6 +9,7 @@
 <style>
 body{margin:0;font-family:Arial;background:#f8fafc}
 
+/* HEADER */
 header{
 background:white;
 padding:20px;
@@ -19,20 +20,14 @@ box-shadow:0 2px 10px rgba(0,0,0,0.05);
 }
 
 nav{display:flex;gap:20px;align-items:center}
-
 nav a{font-weight:bold;text-decoration:none;color:#0f172a}
 
-/* DROPDOWN FIX */
-.dropdown{
-position:relative;
-display:inline-block;
-}
-
+/* DROPDOWN */
+.dropdown{position:relative}
 .dropdown-content{
 display:none;
 position:absolute;
 top:100%;
-left:0;
 background:white;
 min-width:220px;
 box-shadow:0 10px 25px rgba(0,0,0,0.1);
@@ -40,21 +35,12 @@ border-radius:10px;
 overflow:hidden;
 z-index:999;
 }
-
 .dropdown-content a{
 display:block;
 padding:12px;
-color:#0f172a;
-text-decoration:none;
 }
-
-.dropdown-content a:hover{
-background:#f1f5f9;
-}
-
-.dropdown:hover .dropdown-content{
-display:block;
-}
+.dropdown-content a:hover{background:#f1f5f9}
+.dropdown:hover .dropdown-content{display:block}
 
 /* HERO */
 .hero{
@@ -75,6 +61,20 @@ text-decoration:none;
 
 .btn-whatsapp{background:#25D366;color:white}
 .btn-dark{background:#0f2f63;color:white}
+
+/* SERVICES */
+.services{
+padding:60px 20px;
+text-align:center;
+}
+
+.card{
+background:white;
+padding:20px;
+border-radius:12px;
+width:250px;
+box-shadow:0 5px 20px rgba(0,0,0,0.05);
+}
 
 /* FORM */
 .form-card{
@@ -101,6 +101,14 @@ background:#0f2f63;
 color:white;
 border:none;
 border-radius:8px;
+}
+
+/* TRUST */
+.trust{
+background:#0f2f63;
+color:white;
+padding:60px 20px;
+text-align:center;
 }
 
 footer{
@@ -142,17 +150,59 @@ margin-top:40px;
 </nav>
 </header>
 
+<!-- HERO -->
 <section class="hero">
 <h1>Assurance auto, habitation et santé</h1>
-<p>Devis gratuit en 2 minutes – réponse rapide</p>
 
-<a class="btn btn-whatsapp" href="https://wa.me/33603793189?text=Bonjour%20je%20cherche%20une%20assurance" target="_blank">
-💬 WhatsApp direct
+<p style="font-size:18px;">
+Devis gratuit en 2 minutes – réponse rapide par WhatsApp 📲
+</p>
+
+<p style="font-size:14px;">
+✔️ Malussé ✔️ Résilié ✔️ Jeune conducteur ✔️ Toute la France
+</p>
+
+<a class="btn btn-whatsapp"
+href="https://wa.me/33603793189?text=Bonjour%20je%20cherche%20une%20assurance"
+target="_blank">
+💬 Obtenir un devis rapide
 </a>
 </section>
 
+<!-- SERVICES -->
+<section class="services">
+
+<h2>Nos solutions d’assurance</h2>
+
+<div style="display:flex;gap:20px;flex-wrap:wrap;justify-content:center;margin-top:30px;">
+
+<div class="card">
+<h3>Assurance auto</h3>
+<p>Solutions adaptées à tous les profils</p>
+</div>
+
+<div class="card">
+<h3>Conducteur malussé</h3>
+<p>Solutions même avec un malus élevé</p>
+</div>
+
+<div class="card">
+<h3>Conducteur résilié</h3>
+<p>Assurance après résiliation</p>
+</div>
+
+<div class="card">
+<h3>Jeune conducteur</h3>
+<p>Formules adaptées aux jeunes profils</p>
+</div>
+
+</div>
+
+</section>
+
+<!-- FORMULAIRE -->
 <div class="form-card">
-<h3>Demande de devis</h3>
+<h3>Demande de devis gratuit</h3>
 
 <form action="https://formspree.io/f/xykbrnrr" method="POST">
 
@@ -173,11 +223,25 @@ margin-top:40px;
 
 </form>
 
-<a class="btn btn-whatsapp" href="https://wa.me/33603793189?text=Bonjour%20je%20souhaite%20un%20devis" target="_blank">
+<a class="btn btn-whatsapp"
+href="https://wa.me/33603793189?text=Bonjour%20je%20souhaite%20un%20devis"
+target="_blank">
 💬 WhatsApp direct
 </a>
 
 </div>
+
+<!-- TRUST -->
+<section class="trust">
+<h2>Pourquoi choisir ASIX Assurance ?</h2>
+
+<p>
+✔️ Étude personnalisée<br>
+✔️ Réponse rapide<br>
+✔️ Accompagnement humain<br>
+✔️ Solutions adaptées à votre budget
+</p>
+</section>
 
 <footer>
 <p>ASIX Assurance</p>
