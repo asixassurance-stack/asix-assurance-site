@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Assurance Habitation | ASIX Assurance</title>
-  <meta name="description" content="ASIX Assurance vous accompagne pour votre assurance habitation : locataire, propriétaire, bailleur, PNO, résidence principale ou investissement locatif." />
+  <title>Assurance habitation pas chère | ASIX Assurance</title>
+  <meta name="description" content="Assurance habitation pour locataire, propriétaire occupant, bailleur et PNO. Devis rapide partout en France avec ASIX Assurance." />
   <style>
     :root{
       --blue-950:#081a35;
@@ -23,87 +23,460 @@
       --shadow:0 18px 50px rgba(2,8,23,.10);
       --shadow-soft:0 10px 30px rgba(15,23,42,.08);
     }
+
     *{box-sizing:border-box}
     html{scroll-behavior:smooth}
-    body{margin:0;font-family:Arial,Helvetica,sans-serif;color:var(--slate-900);background:#fff;line-height:1.5}
+    body{
+      margin:0;
+      font-family:Arial, Helvetica, sans-serif;
+      color:var(--slate-900);
+      background:#fff;
+      line-height:1.55;
+    }
+
     a{text-decoration:none;color:inherit}
     img{max-width:100%;display:block}
     .container{width:min(var(--max), calc(100% - 32px));margin:0 auto}
-    .btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;padding:14px 22px;border-radius:16px;font-weight:700;transition:.2s ease}
+
+    .btn{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      gap:10px;
+      padding:14px 22px;
+      border-radius:16px;
+      font-weight:700;
+      transition:.2s ease;
+    }
+
     .btn:hover{transform:translateY(-1px)}
-    .btn-white{background:#fff;color:var(--blue-950)}
+    .btn-primary{background:#fff;color:var(--blue-950)}
     .btn-dark{background:var(--blue-900);color:#fff}
-    .btn-outline{background:rgba(255,255,255,.08); color:#fff; border:1px solid rgba(255,255,255,.22)}
-    header{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.96);backdrop-filter:blur(10px);border-bottom:1px solid var(--slate-200)}
-    .topbar{min-height:78px;display:flex;align-items:center;justify-content:space-between;gap:16px}
-    .brand{display:flex;align-items:center;gap:12px}
-    .brand img{height:54px;width:auto}
-    .brand strong{display:block;color:var(--blue-950);font-size:20px;line-height:1.1}
-    .brand span{display:block;color:var(--slate-600);font-size:13px}
-    nav{display:flex;gap:24px;align-items:center;flex-wrap:wrap}
-    nav a{font-weight:700;color:var(--slate-700)}
-    .hero{position:relative;overflow:hidden;color:#fff;background:linear-gradient(135deg, rgba(8,26,53,.96), rgba(15,47,99,.92))}
-    .hero::before{content:"";position:absolute;inset:0;background:url('https://images.unsplash.com/photo-1560518883-ce09059eeffa?auto=format&fit=crop&w=1600&q=80') center/cover no-repeat;opacity:.24}
-    .hero-inner{position:relative;z-index:1;display:grid;grid-template-columns:1.1fr .9fr;gap:36px;align-items:center;padding:82px 0 96px}
-    .pill{display:inline-block;padding:10px 15px;border-radius:999px;background:rgba(255,255,255,.10);border:1px solid rgba(255,255,255,.16);font-size:14px;margin-bottom:18px}
-    .hero h1{margin:0;font-size:58px;line-height:1.02;letter-spacing:-1.5px;max-width:760px}
-    .hero p{margin:18px 0 0;color:#dbeafe;font-size:20px;max-width:720px}
-    .hero-actions{display:flex;flex-wrap:wrap;gap:14px;margin-top:28px}
-    .hero-proof{margin-top:14px;color:#dbeafe;font-size:14px}
-    .hero-card{background:rgba(255,255,255,.10);border:1px solid rgba(255,255,255,.16);border-radius:28px;padding:14px;box-shadow:var(--shadow)}
-    .hero-card img{width:100%;height:490px;object-fit:cover;border-radius:22px}
-    .stats-wrap{margin-top:-32px;position:relative;z-index:2}
-    .stats{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;background:#fff;border:1px solid var(--slate-200);border-radius:24px;padding:16px;box-shadow:var(--shadow)}
-    .stat{background:var(--slate-100);border-radius:18px;padding:22px}
-    .stat strong{display:block;color:var(--blue-950);font-size:30px}
-    .stat span{color:var(--slate-600);font-size:15px}
+    .btn-whatsapp{background:var(--green);color:#08361b}
+
+    header{
+      position:sticky;
+      top:0;
+      z-index:50;
+      background:rgba(255,255,255,.96);
+      backdrop-filter:blur(10px);
+      border-bottom:1px solid var(--slate-200);
+    }
+
+    .topbar{
+      min-height:78px;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:16px;
+    }
+
+    .brand{
+      display:flex;
+      align-items:center;
+      gap:12px;
+    }
+
+    .brand img{
+      height:54px;
+      width:auto;
+    }
+
+    .brand strong{
+      display:block;
+      color:var(--blue-950);
+      font-size:20px;
+      line-height:1.1;
+    }
+
+    .brand span{
+      display:block;
+      color:var(--slate-600);
+      font-size:13px;
+    }
+
+    nav{
+      display:flex;
+      gap:24px;
+      align-items:center;
+      flex-wrap:wrap;
+    }
+
+    nav > a,
+    nav > .dropdown > a{
+      font-weight:700;
+      color:var(--slate-700);
+    }
+
+    .dropdown{
+      position:relative;
+      display:inline-block;
+    }
+
+    .dropdown > a{
+      display:inline-block;
+      padding:8px 0;
+    }
+
+    .dropdown-content{
+      display:none;
+      position:absolute;
+      top:100%;
+      left:0;
+      background:#fff;
+      min-width:240px;
+      border:1px solid var(--slate-200);
+      box-shadow:0 10px 25px rgba(0,0,0,.08);
+      border-radius:12px;
+      overflow:hidden;
+      z-index:999;
+    }
+
+    .dropdown-content a{
+      display:block;
+      padding:12px 16px;
+      color:#0f172a;
+      white-space:nowrap;
+    }
+
+    .dropdown-content a:hover{
+      background:#f1f5f9;
+    }
+
+    .dropdown:hover .dropdown-content{
+      display:block;
+    }
+
+    .hero{
+      position:relative;
+      overflow:hidden;
+      color:#fff;
+      background:linear-gradient(135deg, rgba(8,26,53,.96), rgba(15,47,99,.92));
+    }
+
+    .hero::before{
+      content:"";
+      position:absolute;
+      inset:0;
+      background:url('https://images.unsplash.com/photo-1560518883-ce09059eeffa?auto=format&fit=crop&w=1600&q=80') center/cover no-repeat;
+      opacity:.20;
+    }
+
+    .hero-inner{
+      position:relative;
+      z-index:1;
+      display:grid;
+      grid-template-columns:1.1fr .9fr;
+      gap:36px;
+      align-items:center;
+      padding:82px 0 96px;
+    }
+
+    .pill{
+      display:inline-block;
+      padding:10px 15px;
+      border-radius:999px;
+      background:rgba(255,255,255,.10);
+      border:1px solid rgba(255,255,255,.16);
+      font-size:14px;
+      margin-bottom:18px;
+    }
+
+    .hero h1{
+      margin:0;
+      font-size:56px;
+      line-height:1.02;
+      letter-spacing:-1.4px;
+      max-width:760px;
+    }
+
+    .hero p{
+      margin:18px 0 0;
+      color:#dbeafe;
+      font-size:20px;
+      max-width:720px;
+    }
+
+    .hero-actions{
+      display:flex;
+      flex-wrap:wrap;
+      gap:14px;
+      margin-top:28px;
+    }
+
+    .hero-proof{
+      margin-top:14px;
+      color:#dbeafe;
+      font-size:14px;
+    }
+
+    .hero-card{
+      background:rgba(255,255,255,.10);
+      border:1px solid rgba(255,255,255,.16);
+      border-radius:28px;
+      padding:14px;
+      box-shadow:var(--shadow);
+    }
+
+    .hero-card img{
+      width:100%;
+      height:480px;
+      object-fit:cover;
+      border-radius:22px;
+    }
+
+    .stats-wrap{
+      margin-top:-32px;
+      position:relative;
+      z-index:2;
+    }
+
+    .stats{
+      display:grid;
+      grid-template-columns:repeat(4,1fr);
+      gap:16px;
+      background:#fff;
+      border:1px solid var(--slate-200);
+      border-radius:24px;
+      padding:16px;
+      box-shadow:var(--shadow);
+    }
+
+    .stat{
+      background:var(--slate-100);
+      border-radius:18px;
+      padding:22px;
+    }
+
+    .stat strong{
+      display:block;
+      color:var(--blue-950);
+      font-size:28px;
+    }
+
+    .stat span{
+      color:var(--slate-600);
+      font-size:15px;
+    }
+
     section{padding:84px 0}
-    .eyebrow{color:var(--blue-700);text-transform:uppercase;letter-spacing:.18em;font-size:13px;font-weight:800}
-    h2{margin:12px 0 0;font-size:44px;line-height:1.08;letter-spacing:-1px}
-    .lead{margin:16px 0 0;color:var(--slate-600);font-size:19px;max-width:860px}
-    .grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:34px}
-    .feature-card{background:#fff;border:1px solid var(--slate-200);border-radius:24px;overflow:hidden;box-shadow:var(--shadow-soft)}
-    .feature-card img{width:100%;height:220px;object-fit:cover}
-    .feature-content{padding:22px}
-    .feature-content h3{margin:0;color:var(--blue-950);font-size:26px}
-    .feature-content p{margin:12px 0 0;color:var(--slate-600)}
-    .split{background:var(--slate-100);border-top:1px solid var(--slate-200);border-bottom:1px solid var(--slate-200)}
-    .split-grid{display:grid;grid-template-columns:1fr 1fr;gap:30px;align-items:start}
-    .panel{background:#fff;border:1px solid var(--slate-200);border-radius:24px;padding:26px;box-shadow:var(--shadow-soft)}
-    .panel h3{margin:0 0 14px;color:var(--blue-950);font-size:28px}
-    .panel ul{margin:0;padding-left:18px;color:var(--slate-600)}
-    .panel li{margin:10px 0}
-    .premium-banner{background:linear-gradient(135deg, var(--blue-950), var(--blue-700));color:#fff;border-radius:28px;padding:34px;box-shadow:var(--shadow);margin-top:34px}
-    .premium-banner h3{margin:0;font-size:34px}
-    .premium-banner p{margin:12px 0 0;color:#dbeafe;max-width:760px}
-    .premium-actions{display:flex;flex-wrap:wrap;gap:14px;margin-top:22px}
-    .trust-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;margin-top:34px}
-    .trust-item{background:#fff;border:1px solid var(--slate-200);border-radius:22px;padding:22px;box-shadow:var(--shadow-soft);text-align:center;font-weight:700;color:var(--blue-950)}
-    .faq-list{display:grid;gap:14px;margin-top:34px}
-    details{background:var(--slate-100);border:1px solid var(--slate-200);border-radius:18px;padding:18px 20px}
-    summary{cursor:pointer;font-weight:800;font-size:19px}
-    details p{color:var(--slate-600);margin:12px 0 0}
-    footer{background:var(--blue-950);color:#cbd5e1;padding:34px 0;margin-top:10px}
-    .footer-top{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
-    .whatsapp-float{position:fixed;bottom:20px;right:20px;background:#25D366;color:white;padding:14px 18px;border-radius:50px;font-weight:bold;text-decoration:none;box-shadow:0 5px 20px rgba(0,0,0,0.2);z-index:9999}
+
+    .eyebrow{
+      color:var(--blue-700);
+      text-transform:uppercase;
+      letter-spacing:.18em;
+      font-size:13px;
+      font-weight:800;
+    }
+
+    h2{
+      margin:12px 0 0;
+      font-size:42px;
+      line-height:1.08;
+      letter-spacing:-1px;
+    }
+
+    h3{
+      margin:0;
+      font-size:26px;
+      color:var(--blue-950);
+    }
+
+    .lead{
+      margin:16px 0 0;
+      color:var(--slate-600);
+      font-size:19px;
+      max-width:860px;
+    }
+
+    .grid-3{
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      gap:24px;
+      margin-top:34px;
+    }
+
+    .grid-2{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:24px;
+      margin-top:34px;
+    }
+
+    .card{
+      background:#fff;
+      border:1px solid var(--slate-200);
+      border-radius:24px;
+      overflow:hidden;
+      box-shadow:var(--shadow-soft);
+      padding:24px;
+    }
+
+    .card img{
+      width:100%;
+      height:210px;
+      object-fit:cover;
+      border-radius:16px;
+      margin-bottom:16px;
+    }
+
+    .card p{
+      margin:12px 0 0;
+      color:var(--slate-600);
+    }
+
+    .split{
+      background:var(--slate-100);
+      border-top:1px solid var(--slate-200);
+      border-bottom:1px solid var(--slate-200);
+    }
+
+    .panel{
+      background:#fff;
+      border:1px solid var(--slate-200);
+      border-radius:24px;
+      padding:26px;
+      box-shadow:var(--shadow-soft);
+    }
+
+    .panel p{
+      color:var(--slate-600);
+      margin:12px 0 0;
+    }
+
+    .panel ul{
+      margin:14px 0 0;
+      padding-left:18px;
+      color:var(--slate-600);
+    }
+
+    .panel li{
+      margin:10px 0;
+    }
+
+    .form-card{
+      background:#fff;
+      color:var(--slate-900);
+      border-radius:24px;
+      padding:26px;
+      box-shadow:var(--shadow);
+      margin-top:34px;
+    }
+
+    .form-card h3{
+      color:var(--blue-950);
+      font-size:30px;
+    }
+
+    .form-card p{
+      color:var(--slate-600);
+    }
+
+    .field{
+      width:100%;
+      margin-top:14px;
+      padding:14px 15px;
+      border:1px solid var(--slate-200);
+      border-radius:12px;
+      font:inherit;
+    }
+
+    textarea.field{
+      min-height:140px;
+      resize:vertical;
+    }
+
+    .faq-list{
+      display:grid;
+      gap:14px;
+      margin-top:34px;
+    }
+
+    details{
+      background:var(--slate-100);
+      border:1px solid var(--slate-200);
+      border-radius:18px;
+      padding:18px 20px;
+    }
+
+    summary{
+      cursor:pointer;
+      font-weight:800;
+      font-size:19px;
+    }
+
+    details p{
+      color:var(--slate-600);
+      margin:12px 0 0;
+    }
+
+    footer{
+      background:var(--blue-950);
+      color:#cbd5e1;
+      padding:34px 0;
+      margin-top:10px;
+    }
+
+    .footer-grid{
+      display:grid;
+      grid-template-columns:1.2fr 1fr 1fr;
+      gap:24px;
+    }
+
+    .footer-title{
+      color:#fff;
+      font-weight:800;
+      margin-bottom:12px;
+    }
+
+    footer a{
+      display:block;
+      margin:8px 0;
+      color:#cbd5e1;
+    }
+
+    .copy{
+      border-top:1px solid rgba(255,255,255,.10);
+      margin-top:26px;
+      padding-top:16px;
+      font-size:14px;
+    }
+
+    .whatsapp-float{
+      position:fixed;
+      bottom:20px;
+      right:20px;
+      background:#25D366;
+      color:white;
+      padding:14px 18px;
+      border-radius:50px;
+      font-weight:bold;
+      text-decoration:none;
+      box-shadow:0 5px 20px rgba(0,0,0,.2);
+      z-index:9999;
+    }
+
     @media (max-width:1100px){
-      .hero-inner,.split-grid{grid-template-columns:1fr}
-      .stats,.trust-grid{grid-template-columns:repeat(2,1fr)}
+      .hero-inner,.grid-2{grid-template-columns:1fr}
+      .stats{grid-template-columns:repeat(2,1fr)}
       .grid-3{grid-template-columns:repeat(2,1fr)}
+      .footer-grid{grid-template-columns:1fr}
       .hero h1{font-size:46px}
       .hero-card img{height:360px}
     }
+
     @media (max-width:720px){
       nav{display:none}
       .hero h1{font-size:36px}
       h2{font-size:34px}
-      .stats,.grid-3,.trust-grid{grid-template-columns:1fr}
+      .stats,.grid-3{grid-template-columns:1fr}
       .hero-inner{padding:56px 0 74px}
       .hero-card img{height:280px}
     }
   </style>
 </head>
 <body>
+
 <header>
   <div class="container topbar">
     <div class="brand">
@@ -113,11 +486,28 @@
         <span>Courtier indépendant en assurance</span>
       </div>
     </div>
+
     <nav>
-      <a href="index.html">Accueil</a>
-      <a href="index.html#services">Services</a>
+      <a href="index.html#accueil">Accueil</a>
+
+      <div class="dropdown">
+        <a href="assurance-auto.html">Auto ▼</a>
+        <div class="dropdown-content">
+          <a href="assurance-auto.html">Assurance auto</a>
+          <a href="assurance-auto-malusse.html">Conducteur malussé</a>
+          <a href="assurance-auto-resilie.html">Conducteur résilié</a>
+          <a href="assurance-auto-jeune-conducteur.html">Jeune conducteur</a>
+        </div>
+      </div>
+
+      <a href="assurance-habitation.html">Habitation</a>
+      <a href="assurance-sante.html">Santé</a>
+      <a href="assurance-pro.html">Pro</a>
+      <a href="index.html#apropos">À propos</a>
+      <a href="index.html#faq">FAQ</a>
       <a href="index.html#contact">Contact</a>
     </nav>
+
     <a class="btn btn-dark" href="index.html#contact">Devis gratuit</a>
   </div>
 </header>
@@ -126,97 +516,99 @@
   <section class="hero">
     <div class="container hero-inner">
       <div>
-        <div class="pill">Locataire • Propriétaire • Bailleur • PNO • Toute la France</div>
-        <h1>Assurance habitation premium pour protéger l’essentiel</h1>
-        <p>ASIX Assurance vous accompagne pour choisir une couverture claire et adaptée à votre logement, vos biens et votre situation.</p>
+        <div class="pill">Locataire • Propriétaire • Bailleur • PNO</div>
+        <h1>Assurance habitation pas chère et bien pensée</h1>
+        <p>ASIX Assurance vous aide à protéger votre logement avec une assurance habitation adaptée à votre statut, à votre bien et à votre budget.</p>
+
         <div class="hero-actions">
-          <a class="btn btn-white" href="https://wa.me/33603793189?text=Bonjour%2C%20je%20souhaite%20un%20devis%20pour%20une%20assurance%20habitation." target="_blank">📲 Demander un devis</a>
-          <a class="btn btn-outline" href="tel:0603793189">📞 06 03 79 31 89</a>
+          <a class="btn btn-primary" href="https://wa.me/33603793189?text=Bonjour%2C%20je%20cherche%20une%20assurance%20habitation." target="_blank">📲 Obtenir mon devis sur WhatsApp</a>
+          <a class="btn btn-dark" href="tel:0603793189">📞 06 03 79 31 89</a>
         </div>
+
         <div class="hero-proof">Réponse rapide • Devis gratuit • Sans engagement</div>
       </div>
+
       <div class="hero-card">
-        <img src="https://images.unsplash.com/photo-1560518883-ce09059eeffa?auto=format&fit=crop&w=1200&q=80" alt="Maison habitation">
+        <img src="https://images.unsplash.com/photo-1560185008-a33f7b3b7d91?auto=format&fit=crop&w=1200&q=80" alt="Assurance habitation">
       </div>
     </div>
   </section>
 
   <div class="container stats-wrap">
     <div class="stats">
-      <div class="stat"><strong>Locataire</strong><span>Couverture simple et conforme</span></div>
-      <div class="stat"><strong>Propriétaire</strong><span>Protection du logement et des biens</span></div>
-      <div class="stat"><strong>PNO / Bailleur</strong><span>Solutions pour investissement locatif</span></div>
+      <div class="stat"><strong>Locataire</strong><span>Studio, appartement, maison</span></div>
+      <div class="stat"><strong>Propriétaire</strong><span>Occupant ou bailleur</span></div>
+      <div class="stat"><strong>PNO</strong><span>Protection adaptée</span></div>
       <div class="stat"><strong>France</strong><span>Accompagnement partout</span></div>
     </div>
   </div>
 
   <section>
     <div class="container">
-      <div class="eyebrow">Profils accompagnés</div>
-      <h2>Une protection adaptée à votre logement</h2>
-      <p class="lead">Nous vous aidons à trouver une formule cohérente selon votre situation et les vraies garanties utiles.</p>
+      <div class="eyebrow">Vos besoins logement</div>
+      <h2>Une couverture adaptée selon votre situation</h2>
+      <p class="lead">Chaque logement et chaque occupant ont des besoins différents. Nous vous aidons à choisir un contrat cohérent, lisible et utile.</p>
 
       <div class="grid-3">
-        <article class="feature-card">
-          <img src="https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&w=1200&q=80" alt="Locataire">
-          <div class="feature-content">
-            <h3>Locataire</h3>
-            <p>Une solution adaptée à vos obligations, à votre logement et à la valeur de vos biens.</p>
-          </div>
+        <article class="card">
+          <img src="https://images.unsplash.com/photo-1494526585095-c41746248156?auto=format&fit=crop&w=900&q=80" alt="Locataire">
+          <h3>Locataire</h3>
+          <p>Une couverture pour protéger vos biens et votre responsabilité civile au quotidien.</p>
         </article>
-        <article class="feature-card">
-          <img src="https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?auto=format&fit=crop&w=1200&q=80" alt="Propriétaire">
-          <div class="feature-content">
-            <h3>Propriétaire occupant</h3>
-            <p>Protégez votre habitation, votre mobilier et vos responsabilités au quotidien.</p>
-          </div>
+
+        <article class="card">
+          <img src="https://images.unsplash.com/photo-1484154218962-a197022b5858?auto=format&fit=crop&w=900&q=80" alt="Propriétaire occupant">
+          <h3>Propriétaire occupant</h3>
+          <p>Une formule cohérente selon la valeur de votre logement et de vos biens.</p>
         </article>
-        <article class="feature-card">
-          <img src="https://images.unsplash.com/photo-1460317442991-0ec209397118?auto=format&fit=crop&w=1200&q=80" alt="PNO bailleur">
-          <div class="feature-content">
-            <h3>PNO / Bailleur</h3>
-            <p>Des solutions adaptées aux logements loués, non occupés ou en investissement locatif.</p>
-          </div>
+
+        <article class="card">
+          <img src="https://images.unsplash.com/photo-1460317442991-0ec209397118?auto=format&fit=crop&w=900&q=80" alt="Bailleur PNO">
+          <h3>Bailleur / PNO</h3>
+          <p>Une protection utile lorsque le bien est loué ou temporairement vacant.</p>
         </article>
       </div>
     </div>
   </section>
 
   <section class="split">
-    <div class="container split-grid">
+    <div class="container grid-2">
       <div class="panel">
         <h3>Garanties possibles</h3>
+        <p>Nous vous aidons à choisir des garanties utiles, sans surcharger votre contrat.</p>
         <ul>
           <li>Incendie</li>
-          <li>Dégâts des eaux</li>
+          <li>Dégât des eaux</li>
           <li>Vol et vandalisme</li>
+          <li>Responsabilité civile</li>
           <li>Bris de glace</li>
           <li>Catastrophes naturelles</li>
-          <li>Responsabilité civile</li>
           <li>Protection juridique</li>
           <li>Assistance habitation</li>
         </ul>
       </div>
+
       <div class="panel">
         <h3>Ce que nous analysons</h3>
         <ul>
           <li>Votre statut : locataire, propriétaire, bailleur</li>
           <li>Le type de logement</li>
-          <li>La surface et les caractéristiques</li>
-          <li>La valeur des biens à couvrir</li>
-          <li>Les garanties réellement utiles</li>
+          <li>La surface et les équipements</li>
+          <li>La localisation</li>
+          <li>Le niveau de biens à protéger</li>
           <li>Votre budget</li>
         </ul>
       </div>
     </div>
 
     <div class="container">
-      <div class="premium-banner">
-        <h3>Une assurance habitation claire et utile</h3>
-        <p>Nous vous aidons à comprendre les garanties proposées, à éviter les doublons inutiles et à choisir une formule adaptée à votre logement.</p>
-        <div class="premium-actions">
-          <a class="btn btn-white" href="https://wa.me/33603793189?text=Bonjour%2C%20je%20souhaite%20un%20devis%20pour%20une%20assurance%20habitation." target="_blank">WhatsApp direct</a>
-          <a class="btn btn-dark" href="index.html">Retour à l’accueil</a>
+      <div class="panel" style="margin-top:34px;background:linear-gradient(135deg, var(--blue-950), var(--blue-700));color:#fff;">
+        <h3 style="color:#fff;">Besoin d’une assurance habitation claire ?</h3>
+        <p style="color:#dbeafe;">Contactez ASIX Assurance pour comparer une solution adaptée à votre logement et à votre budget.</p>
+
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="https://wa.me/33603793189?text=Bonjour%2C%20je%20cherche%20une%20assurance%20habitation." target="_blank">WhatsApp direct</a>
+          <a class="btn btn-dark" href="index.html#contact">Retour contact</a>
         </div>
       </div>
     </div>
@@ -224,13 +616,55 @@
 
   <section>
     <div class="container">
-      <div class="eyebrow">Pourquoi ASIX Assurance</div>
-      <h2>Un service premium orienté clarté</h2>
-      <div class="trust-grid">
-        <div class="trust-item">✅ Devis gratuit</div>
-        <div class="trust-item">⚡ Réponse rapide</div>
-        <div class="trust-item">🏠 Garanties utiles</div>
-        <div class="trust-item">🇫🇷 Partout en France</div>
+      <div class="eyebrow">Contenu SEO</div>
+      <h2>Votre courtier en assurance habitation en France</h2>
+
+      <div class="panel">
+        <p>ASIX Assurance accompagne les locataires, propriétaires occupants, bailleurs et propriétaires non occupants dans la recherche d’une assurance habitation adaptée.</p>
+        <p>Nous comparons plusieurs possibilités pour vous proposer une formule cohérente avec vos besoins réels, vos garanties utiles et votre budget.</p>
+        <p>Nous intervenons partout en France, avec une réponse rapide par téléphone, email ou WhatsApp.</p>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="container">
+      <div class="eyebrow">Demande rapide</div>
+      <h2>Recevez une réponse rapide</h2>
+
+      <div class="form-card">
+        <h3>Demandez votre devis habitation</h3>
+        <p>Complétez ce formulaire pour recevoir une réponse rapide.</p>
+
+        <form action="https://formspree.io/f/xykbrnrr" method="POST">
+          <input class="field" type="text" name="Nom" placeholder="Nom complet" required>
+          <input class="field" type="email" name="email" placeholder="Adresse email" required>
+          <input class="field" type="tel" name="Téléphone" placeholder="Téléphone" required>
+
+          <select class="field" name="Type assurance" required>
+            <option value="">Type de besoin</option>
+            <option>Assurance habitation locataire</option>
+            <option>Assurance habitation propriétaire occupant</option>
+            <option>Assurance habitation bailleur</option>
+            <option>Assurance PNO</option>
+          </select>
+
+          <input class="field" type="text" name="Situation" placeholder="Ex: locataire, propriétaire, bailleur...">
+          <textarea class="field" name="Message" placeholder="Expliquez votre besoin" required></textarea>
+
+          <input type="hidden" name="_subject" value="Nouveau devis habitation ASIX Assurance">
+
+          <button class="btn btn-dark" type="submit" style="width:100%;margin-top:16px;border:none;">
+            Envoyer ma demande
+          </button>
+        </form>
+
+        <a class="btn btn-whatsapp"
+           href="https://wa.me/33603793189?text=Bonjour%2C%20je%20cherche%20une%20assurance%20habitation."
+           target="_blank"
+           style="width:100%;margin-top:12px;">
+           WhatsApp direct
+        </a>
       </div>
     </div>
   </section>
@@ -239,18 +673,21 @@
     <div class="container">
       <div class="eyebrow">FAQ</div>
       <h2>Questions fréquentes</h2>
+
       <div class="faq-list">
         <details>
-          <summary>Pouvez-vous accompagner un bailleur ou un PNO ?</summary>
-          <p>Oui. Nous accompagnons aussi les propriétaires bailleurs et les besoins en assurance propriétaire non occupant.</p>
+          <summary>Pouvez-vous assurer un logement en location ?</summary>
+          <p>Oui, nous accompagnons les locataires comme les bailleurs dans la recherche d’une couverture adaptée.</p>
         </details>
+
+        <details>
+          <summary>Proposez-vous des solutions PNO ?</summary>
+          <p>Oui, nous pouvons étudier une assurance propriétaire non occupant selon votre besoin.</p>
+        </details>
+
         <details>
           <summary>Le devis est-il gratuit ?</summary>
-          <p>Oui. L’étude est gratuite et sans engagement.</p>
-        </details>
-        <details>
-          <summary>Intervenez-vous partout en France ?</summary>
-          <p>Oui, ASIX Assurance accompagne ses clients partout en France.</p>
+          <p>Oui, l’étude est gratuite et sans engagement.</p>
         </details>
       </div>
     </div>
@@ -258,21 +695,39 @@
 </main>
 
 <footer>
-  <div class="container footer-top">
-    <div>
-      <strong style="color:#fff;">ASIX Assurance</strong><br>
-      Courtier indépendant en assurance
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <div class="footer-title">ASIX ASSURANCE</div>
+        <div>Courtier indépendant en assurance pour particuliers et professionnels. Intervention partout en France.</div>
+      </div>
+
+      <div>
+        <div class="footer-title">Navigation</div>
+        <a href="index.html#accueil">Accueil</a>
+        <a href="index.html#services">Services</a>
+        <a href="index.html#apropos">À propos</a>
+        <a href="index.html#faq">FAQ</a>
+        <a href="index.html#contact">Contact</a>
+      </div>
+
+      <div>
+        <div class="footer-title">Informations</div>
+        <a href="index.html#mentions-legales">Mentions légales</a>
+        <a href="mailto:contact@asixassurance.fr">contact@asixassurance.fr</a>
+        <a href="tel:0603793189">06 03 79 31 89</a>
+      </div>
     </div>
-    <div>
-      📞 06 03 79 31 89<br>
-      📧 contact@asixassurance.fr
-    </div>
+
+    <div class="copy">© 2026 ASIX Assurance — Tous droits réservés.</div>
   </div>
 </footer>
 
 <a class="whatsapp-float"
-   href="https://wa.me/33603793189?text=Bonjour%2C%20je%20souhaite%20un%20devis%20pour%20une%20assurance%20habitation."
-   target="_blank">WhatsApp</a>
+   href="https://wa.me/33603793189?text=Bonjour%2C%20je%20cherche%20une%20assurance%20habitation."
+   target="_blank">
+   WhatsApp
+</a>
 
 </body>
 </html>
