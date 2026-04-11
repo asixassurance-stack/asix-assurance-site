@@ -4,122 +4,143 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>ASIX Assurance | Courtier en assurance</title>
+<title>ASIX Assurance</title>
 
 <style>
-body{margin:0;font-family:Arial;background:#f8fafc}
+body {
+  margin:0;
+  font-family:Arial;
+  background:#f8fafc;
+}
 
 /* HEADER */
-header{
-background:white;
-padding:20px;
-display:flex;
-justify-content:space-between;
-align-items:center;
-box-shadow:0 2px 10px rgba(0,0,0,0.05);
+header {
+  background:white;
+  padding:15px 20px;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  box-shadow:0 2px 10px rgba(0,0,0,0.05);
 }
 
-nav{display:flex;gap:20px;align-items:center}
-nav a{font-weight:bold;text-decoration:none;color:#0f172a}
+nav {
+  display:flex;
+  gap:20px;
+  align-items:center;
+}
 
-/* DROPDOWN */
-.dropdown{position:relative}
-.dropdown-content{
-display:none;
-position:absolute;
-top:100%;
-background:white;
-min-width:220px;
-box-shadow:0 10px 25px rgba(0,0,0,0.1);
-border-radius:10px;
-overflow:hidden;
-z-index:999;
+nav a {
+  text-decoration:none;
+  font-weight:bold;
+  color:#0f172a;
 }
-.dropdown-content a{
-display:block;
-padding:12px;
+
+/* DROPDOWN FIX */
+.dropdown {
+  position:relative;
 }
-.dropdown-content a:hover{background:#f1f5f9}
-.dropdown:hover .dropdown-content{display:block}
+
+.dropdown-content {
+  display:none;
+  position:absolute;
+  top:100%;
+  left:0;
+  background:white;
+  min-width:200px;
+  border-radius:8px;
+  box-shadow:0 10px 25px rgba(0,0,0,0.1);
+  z-index:999;
+}
+
+.dropdown-content a {
+  display:block;
+  padding:10px;
+}
+
+.dropdown-content a:hover {
+  background:#f1f5f9;
+}
+
+.dropdown:hover .dropdown-content {
+  display:block;
+}
 
 /* HERO */
-.hero{
-background:#0f2f63;
-color:white;
-padding:80px 20px;
-text-align:center;
+.hero {
+  background:#0f2f63;
+  color:white;
+  padding:70px 20px;
+  text-align:center;
 }
 
-.btn{
-display:inline-block;
-padding:12px 20px;
-border-radius:8px;
-margin-top:15px;
-font-weight:bold;
-text-decoration:none;
+/* BUTTONS */
+.btn {
+  display:inline-block;
+  padding:12px 20px;
+  border-radius:8px;
+  text-decoration:none;
+  font-weight:bold;
 }
 
-.btn-whatsapp{background:#25D366;color:white}
-.btn-dark{background:#0f2f63;color:white}
+.btn-whatsapp {
+  background:#25D366;
+  color:white;
+}
+
+.btn-dark {
+  background:#0f2f63;
+  color:white;
+}
 
 /* SERVICES */
-.services{
-padding:60px 20px;
-text-align:center;
+.services {
+  padding:50px 20px;
+  text-align:center;
 }
 
-.card{
-background:white;
-padding:20px;
-border-radius:12px;
-width:250px;
-box-shadow:0 5px 20px rgba(0,0,0,0.05);
+.card {
+  background:white;
+  padding:20px;
+  border-radius:10px;
+  width:230px;
+  box-shadow:0 5px 20px rgba(0,0,0,0.05);
 }
 
 /* FORM */
-.form-card{
-background:white;
-padding:30px;
-max-width:400px;
-margin:40px auto;
-border-radius:12px;
-box-shadow:0 10px 25px rgba(0,0,0,0.08);
+.form-card {
+  background:white;
+  padding:25px;
+  max-width:400px;
+  margin:40px auto;
+  border-radius:10px;
+  box-shadow:0 10px 25px rgba(0,0,0,0.08);
 }
 
-.field{
-width:100%;
-padding:12px;
-margin-bottom:10px;
-border:1px solid #ddd;
-border-radius:8px;
+.field {
+  width:100%;
+  padding:10px;
+  margin-bottom:10px;
+  border:1px solid #ddd;
+  border-radius:6px;
 }
 
-button{
-width:100%;
-padding:12px;
-background:#0f2f63;
-color:white;
-border:none;
-border-radius:8px;
+button {
+  width:100%;
+  padding:12px;
+  background:#0f2f63;
+  color:white;
+  border:none;
+  border-radius:6px;
 }
 
-/* TRUST */
-.trust{
-background:#0f2f63;
-color:white;
-padding:60px 20px;
-text-align:center;
-}
-
-footer{
-background:#0f172a;
-color:white;
-padding:30px;
-text-align:center;
-margin-top:40px;
+/* FOOTER */
+footer {
+  background:#0f172a;
+  color:white;
+  text-align:center;
+  padding:25px;
 }
 </style>
-
 </head>
 
 <body>
@@ -144,65 +165,53 @@ margin-top:40px;
 <a href="#">Pro</a>
 
 <a class="btn btn-dark" href="https://wa.me/33603793189?text=Bonjour%20je%20souhaite%20un%20devis" target="_blank">
-📲 Devis
+Devis
 </a>
 
 </nav>
 </header>
 
-<!-- HERO -->
 <section class="hero">
 <h1>Assurance auto, habitation et santé</h1>
-
-<p style="font-size:18px;">
-Devis gratuit en 2 minutes – réponse rapide par WhatsApp 📲
-</p>
-
-<p style="font-size:14px;">
-✔️ Malussé ✔️ Résilié ✔️ Jeune conducteur ✔️ Toute la France
-</p>
+<p>Devis gratuit en 2 minutes</p>
 
 <a class="btn btn-whatsapp"
 href="https://wa.me/33603793189?text=Bonjour%20je%20cherche%20une%20assurance"
 target="_blank">
-💬 Obtenir un devis rapide
+WhatsApp direct
 </a>
 </section>
 
-<!-- SERVICES -->
 <section class="services">
+<h2>Nos solutions</h2>
 
-<h2>Nos solutions d’assurance</h2>
-
-<div style="display:flex;gap:20px;flex-wrap:wrap;justify-content:center;margin-top:30px;">
+<div style="display:flex;gap:15px;flex-wrap:wrap;justify-content:center;margin-top:20px;">
 
 <div class="card">
-<h3>Assurance auto</h3>
-<p>Solutions adaptées à tous les profils</p>
+<h3>Auto</h3>
+<p>Solutions pour tous profils</p>
 </div>
 
 <div class="card">
-<h3>Conducteur malussé</h3>
-<p>Solutions même avec un malus élevé</p>
+<h3>Malussé</h3>
+<p>Assurance adaptée</p>
 </div>
 
 <div class="card">
-<h3>Conducteur résilié</h3>
-<p>Assurance après résiliation</p>
+<h3>Résilié</h3>
+<p>Solutions rapides</p>
 </div>
 
 <div class="card">
 <h3>Jeune conducteur</h3>
-<p>Formules adaptées aux jeunes profils</p>
+<p>Offres adaptées</p>
 </div>
 
 </div>
-
 </section>
 
-<!-- FORMULAIRE -->
 <div class="form-card">
-<h3>Demande de devis gratuit</h3>
+<h3>Demande de devis</h3>
 
 <form action="https://formspree.io/f/xykbrnrr" method="POST">
 
@@ -223,25 +232,7 @@ target="_blank">
 
 </form>
 
-<a class="btn btn-whatsapp"
-href="https://wa.me/33603793189?text=Bonjour%20je%20souhaite%20un%20devis"
-target="_blank">
-💬 WhatsApp direct
-</a>
-
 </div>
-
-<!-- TRUST -->
-<section class="trust">
-<h2>Pourquoi choisir ASIX Assurance ?</h2>
-
-<p>
-✔️ Étude personnalisée<br>
-✔️ Réponse rapide<br>
-✔️ Accompagnement humain<br>
-✔️ Solutions adaptées à votre budget
-</p>
-</section>
 
 <footer>
 <p>ASIX Assurance</p>
