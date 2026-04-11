@@ -4,12 +4,13 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Assurance auto jeune conducteur pas chère | ASIX Assurance</title>
-  <meta name="description" content="ASIX Assurance accompagne les jeunes conducteurs pour trouver une assurance auto adaptée. Devis rapide, garanties claires et solutions partout en France." />
+  <meta name="description" content="Assurance auto jeune conducteur pas chère. Devis rapide et solutions adaptées partout en France avec ASIX Assurance." />
   <style>
     :root{
       --blue-950:#081a35;
       --blue-900:#0f2f63;
       --blue-700:#1f5bb5;
+      --blue-100:#eaf2ff;
       --slate-900:#0f172a;
       --slate-700:#334155;
       --slate-600:#475569;
@@ -30,7 +31,7 @@
       font-family:Arial, Helvetica, sans-serif;
       color:var(--slate-900);
       background:#fff;
-      line-height:1.5;
+      line-height:1.55;
     }
 
     a{text-decoration:none;color:inherit}
@@ -47,10 +48,11 @@
       font-weight:700;
       transition:.2s ease;
     }
+
     .btn:hover{transform:translateY(-1px)}
-    .btn-white{background:#fff;color:var(--blue-950)}
+    .btn-primary{background:#fff;color:var(--blue-950)}
     .btn-dark{background:var(--blue-900);color:#fff}
-    .btn-outline{background:rgba(255,255,255,.08); color:#fff; border:1px solid rgba(255,255,255,.22)}
+    .btn-whatsapp{background:var(--green);color:#08361b}
 
     header{
       position:sticky;
@@ -100,9 +102,49 @@
       flex-wrap:wrap;
     }
 
-    nav a{
+    nav > a,
+    nav > .dropdown > a{
       font-weight:700;
       color:var(--slate-700);
+    }
+
+    .dropdown{
+      position:relative;
+      display:inline-block;
+    }
+
+    .dropdown > a{
+      display:inline-block;
+      padding:8px 0;
+    }
+
+    .dropdown-content{
+      display:none;
+      position:absolute;
+      top:100%;
+      left:0;
+      background:#fff;
+      min-width:240px;
+      border:1px solid var(--slate-200);
+      box-shadow:0 10px 25px rgba(0,0,0,.08);
+      border-radius:12px;
+      overflow:hidden;
+      z-index:999;
+    }
+
+    .dropdown-content a{
+      display:block;
+      padding:12px 16px;
+      color:#0f172a;
+      white-space:nowrap;
+    }
+
+    .dropdown-content a:hover{
+      background:#f1f5f9;
+    }
+
+    .dropdown:hover .dropdown-content{
+      display:block;
     }
 
     .hero{
@@ -117,7 +159,7 @@
       position:absolute;
       inset:0;
       background:url('https://images.unsplash.com/photo-1511919884226-fd3cad34687c?auto=format&fit=crop&w=1600&q=80') center/cover no-repeat;
-      opacity:.22;
+      opacity:.20;
     }
 
     .hero-inner{
@@ -178,7 +220,7 @@
 
     .hero-card img{
       width:100%;
-      height:490px;
+      height:480px;
       object-fit:cover;
       border-radius:22px;
     }
@@ -254,12 +296,28 @@
       margin-top:34px;
     }
 
+    .grid-2{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:24px;
+      margin-top:34px;
+    }
+
     .card{
       background:#fff;
       border:1px solid var(--slate-200);
       border-radius:24px;
-      padding:24px;
+      overflow:hidden;
       box-shadow:var(--shadow-soft);
+      padding:24px;
+    }
+
+    .card img{
+      width:100%;
+      height:210px;
+      object-fit:cover;
+      border-radius:16px;
+      margin-bottom:16px;
     }
 
     .card p{
@@ -271,13 +329,6 @@
       background:var(--slate-100);
       border-top:1px solid var(--slate-200);
       border-bottom:1px solid var(--slate-200);
-    }
-
-    .split-grid{
-      display:grid;
-      grid-template-columns:1fr 1fr;
-      gap:30px;
-      align-items:start;
     }
 
     .panel{
@@ -299,47 +350,40 @@
       color:var(--slate-600);
     }
 
-    .panel li{margin:10px 0}
+    .panel li{
+      margin:10px 0;
+    }
 
-    .seo-block{
+    .form-card{
       background:#fff;
-      border:1px solid var(--slate-200);
+      color:var(--slate-900);
       border-radius:24px;
-      padding:28px;
-      box-shadow:var(--shadow-soft);
-      margin-top:34px;
-    }
-
-    .seo-block p{
-      color:var(--slate-600);
-      margin:14px 0 0;
-    }
-
-    .cta{
-      background:linear-gradient(135deg, var(--blue-950), var(--blue-700));
-      color:#fff;
-      border-radius:28px;
-      padding:34px;
+      padding:26px;
       box-shadow:var(--shadow);
       margin-top:34px;
     }
 
-    .cta h3{
-      color:#fff;
-      font-size:34px;
+    .form-card h3{
+      color:var(--blue-950);
+      font-size:30px;
     }
 
-    .cta p{
-      margin:12px 0 0;
-      color:#dbeafe;
-      max-width:760px;
+    .form-card p{
+      color:var(--slate-600);
     }
 
-    .cta-actions{
-      display:flex;
-      flex-wrap:wrap;
-      gap:14px;
-      margin-top:22px;
+    .field{
+      width:100%;
+      margin-top:14px;
+      padding:14px 15px;
+      border:1px solid var(--slate-200);
+      border-radius:12px;
+      font:inherit;
+    }
+
+    textarea.field{
+      min-height:140px;
+      resize:vertical;
     }
 
     .faq-list{
@@ -373,11 +417,29 @@
       margin-top:10px;
     }
 
-    .footer-top{
-      display:flex;
-      justify-content:space-between;
-      gap:20px;
-      flex-wrap:wrap;
+    .footer-grid{
+      display:grid;
+      grid-template-columns:1.2fr 1fr 1fr;
+      gap:24px;
+    }
+
+    .footer-title{
+      color:#fff;
+      font-weight:800;
+      margin-bottom:12px;
+    }
+
+    footer a{
+      display:block;
+      margin:8px 0;
+      color:#cbd5e1;
+    }
+
+    .copy{
+      border-top:1px solid rgba(255,255,255,.10);
+      margin-top:26px;
+      padding-top:16px;
+      font-size:14px;
     }
 
     .whatsapp-float{
@@ -390,14 +452,15 @@
       border-radius:50px;
       font-weight:bold;
       text-decoration:none;
-      box-shadow:0 5px 20px rgba(0,0,0,0.2);
+      box-shadow:0 5px 20px rgba(0,0,0,.2);
       z-index:9999;
     }
 
     @media (max-width:1100px){
-      .hero-inner,.split-grid{grid-template-columns:1fr}
+      .hero-inner,.grid-2{grid-template-columns:1fr}
       .stats{grid-template-columns:repeat(2,1fr)}
       .grid-3{grid-template-columns:repeat(2,1fr)}
+      .footer-grid{grid-template-columns:1fr}
       .hero h1{font-size:46px}
       .hero-card img{height:360px}
     }
@@ -423,12 +486,28 @@
         <span>Courtier indépendant en assurance</span>
       </div>
     </div>
+
     <nav>
-      <a href="index.html">Accueil</a>
-      <a href="assurance-auto.html">Auto</a>
-      <a href="index.html#services">Services</a>
+      <a href="index.html#accueil">Accueil</a>
+
+      <div class="dropdown">
+        <a href="assurance-auto.html">Auto ▼</a>
+        <div class="dropdown-content">
+          <a href="assurance-auto.html">Assurance auto</a>
+          <a href="assurance-auto-malusse.html">Conducteur malussé</a>
+          <a href="assurance-auto-resilie.html">Conducteur résilié</a>
+          <a href="assurance-auto-jeune-conducteur.html">Jeune conducteur</a>
+        </div>
+      </div>
+
+      <a href="assurance-habitation.html">Habitation</a>
+      <a href="assurance-sante.html">Santé</a>
+      <a href="assurance-pro.html">Pro</a>
+      <a href="index.html#apropos">À propos</a>
+      <a href="index.html#faq">FAQ</a>
       <a href="index.html#contact">Contact</a>
     </nav>
+
     <a class="btn btn-dark" href="index.html#contact">Devis gratuit</a>
   </div>
 </header>
@@ -440,53 +519,60 @@
         <div class="pill">Jeune conducteur • Devis rapide • Toute la France</div>
         <h1>Assurance auto jeune conducteur pas chère</h1>
         <p>ASIX Assurance accompagne les jeunes conducteurs pour trouver une assurance auto adaptée, plus claire et cohérente avec leur budget et leur profil.</p>
+
         <div class="hero-actions">
-          <a class="btn btn-white" href="https://wa.me/33603793189?text=Bonjour%2C%20je%20cherche%20une%20assurance%20auto%20jeune%20conducteur." target="_blank">📲 Demander un devis</a>
-          <a class="btn btn-outline" href="tel:0603793189">📞 06 03 79 31 89</a>
+          <a class="btn btn-primary" href="https://wa.me/33603793189?text=Bonjour%2C%20je%20suis%20jeune%20conducteur%20et%20je%20cherche%20une%20assurance%20auto." target="_blank">📲 Obtenir mon devis sur WhatsApp</a>
+          <a class="btn btn-dark" href="tel:0603793189">📞 06 03 79 31 89</a>
         </div>
-        <div class="hero-proof">Réponse rapide • Étude gratuite • Sans engagement</div>
+
+        <div class="hero-proof">Réponse rapide • Devis gratuit • Sans engagement</div>
       </div>
 
       <div class="hero-card">
-        <img src="https://images.unsplash.com/photo-1511919884226-fd3cad34687c?auto=format&fit=crop&w=1200&q=80" alt="Jeune conducteur voiture">
+        <img src="https://images.unsplash.com/photo-1511919884226-fd3cad34687c?auto=format&fit=crop&w=1200&q=80" alt="Assurance auto jeune conducteur">
       </div>
     </div>
   </section>
 
   <div class="container stats-wrap">
     <div class="stats">
-      <div class="stat"><strong>Jeune conducteur</strong><span>Profils récents et premières assurances</span></div>
-      <div class="stat"><strong>Rapide</strong><span>Étude de votre besoin en peu de temps</span></div>
-      <div class="stat"><strong>Claire</strong><span>Garanties expliquées simplement</span></div>
-      <div class="stat"><strong>France</strong><span>Accompagnement partout sur le territoire</span></div>
+      <div class="stat"><strong>Jeune conducteur</strong><span>Premières assurances</span></div>
+      <div class="stat"><strong>Rapide</strong><span>Étude du besoin</span></div>
+      <div class="stat"><strong>Claire</strong><span>Garanties expliquées</span></div>
+      <div class="stat"><strong>France</strong><span>Accompagnement partout</span></div>
     </div>
   </div>
 
   <section>
     <div class="container">
       <div class="eyebrow">Comprendre votre situation</div>
-      <h2>Pourquoi l’assurance auto jeune conducteur coûte souvent plus cher ?</h2>
-      <p class="lead">Les jeunes conducteurs ont souvent moins d’expérience et sont considérés comme plus exposés au risque. L’objectif est donc de trouver une formule cohérente avec votre profil et votre budget.</p>
+      <h2>Pourquoi l’assurance jeune conducteur coûte souvent plus cher ?</h2>
+      <p class="lead">Les jeunes conducteurs ont souvent moins d’expérience et sont considérés comme plus exposés au risque. L’objectif est de trouver une solution accessible, cohérente et adaptée à votre budget.</p>
 
       <div class="grid-3">
-        <div class="card">
+        <article class="card">
+          <img src="https://images.unsplash.com/photo-1519764622345-23439dd774f7?auto=format&fit=crop&w=900&q=80" alt="Première assurance">
           <h3>Première assurance</h3>
-          <p>Quand on débute, il est fréquent d’avoir peu de recul sur les garanties utiles et les différences entre les formules.</p>
-        </div>
-        <div class="card">
+          <p>Quand on débute, il est fréquent d’avoir peu de recul sur les garanties utiles.</p>
+        </article>
+
+        <article class="card">
+          <img src="https://images.unsplash.com/photo-1556742526-795a8eac090f?auto=format&fit=crop&w=900&q=80" alt="Budget limité">
           <h3>Budget limité</h3>
-          <p>Le but est souvent de trouver une solution plus accessible sans prendre un contrat qui manque de protection.</p>
-        </div>
-        <div class="card">
+          <p>Le but est souvent de trouver une solution plus accessible sans manquer de protection.</p>
+        </article>
+
+        <article class="card">
+          <img src="https://images.unsplash.com/photo-1542223616-740d5dff1f0f?auto=format&fit=crop&w=900&q=80" alt="Choix de formule">
           <h3>Choix de formule</h3>
-          <p>Une bonne couverture dépend du véhicule, de l’usage et du budget, pas seulement du prix affiché.</p>
-        </div>
+          <p>Une bonne couverture dépend du véhicule, de l’usage et du budget.</p>
+        </article>
       </div>
     </div>
   </section>
 
   <section class="split">
-    <div class="container split-grid">
+    <div class="container grid-2">
       <div class="panel">
         <h3>Nos solutions pour jeune conducteur</h3>
         <p>ASIX Assurance vous aide à trouver une assurance auto jeune conducteur plus claire et mieux adaptée.</p>
@@ -513,12 +599,13 @@
     </div>
 
     <div class="container">
-      <div class="cta">
-        <h3>Besoin d’une assurance auto jeune conducteur ?</h3>
-        <p>Contactez ASIX Assurance pour une étude claire, rapide et sans engagement. Nous vous aidons à trouver une solution adaptée à votre profil.</p>
-        <div class="cta-actions">
-          <a class="btn btn-white" href="https://wa.me/33603793189?text=Bonjour%2C%20je%20cherche%20une%20assurance%20auto%20jeune%20conducteur." target="_blank">WhatsApp direct</a>
-          <a class="btn btn-dark" href="assurance-auto.html">Retour page auto</a>
+      <div class="panel" style="margin-top:34px;background:linear-gradient(135deg, var(--blue-950), var(--blue-700));color:#fff;">
+        <h3 style="color:#fff;">Besoin d’une assurance auto jeune conducteur ?</h3>
+        <p style="color:#dbeafe;">Contactez ASIX Assurance pour une étude claire, rapide et sans engagement. Nous vous aidons à trouver une solution adaptée.</p>
+
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="https://wa.me/33603793189?text=Bonjour%2C%20je%20suis%20jeune%20conducteur%20et%20je%20cherche%20une%20assurance%20auto." target="_blank">WhatsApp direct</a>
+          <a class="btn btn-dark" href="index.html#contact">Retour contact</a>
         </div>
       </div>
     </div>
@@ -529,17 +616,51 @@
       <div class="eyebrow">Contenu SEO</div>
       <h2>Votre courtier en assurance auto jeune conducteur en France</h2>
 
-      <div class="seo-block">
-        <p>ASIX Assurance est un courtier indépendant qui accompagne les jeunes conducteurs dans la recherche d’une assurance auto adaptée. Si vous cherchez une assurance auto jeune conducteur pas chère, notre objectif est de vous proposer une solution réaliste, claire et cohérente avec votre situation.</p>
-
-        <p>Nous accompagnons les profils qui débutent, qui cherchent leur première assurance auto ou qui veulent mieux comprendre les garanties réellement utiles. Notre rôle est de comparer les possibilités et de vous orienter vers une formule plus lisible, avec un budget mieux maîtrisé.</p>
-
-        <p>Nous intervenons partout en France : Paris, Lyon, Marseille, Toulouse, Nice, Lille, Nantes, Strasbourg, Montpellier et dans toutes les autres villes. Vous pouvez nous contacter rapidement par téléphone, email ou WhatsApp pour obtenir une étude gratuite.</p>
+      <div class="panel">
+        <p>ASIX Assurance accompagne les jeunes conducteurs dans la recherche d’une assurance auto adaptée.</p>
+        <p>Nous accompagnons les profils qui débutent, qui cherchent leur première assurance auto ou qui veulent mieux comprendre les garanties réellement utiles.</p>
+        <p>Nous intervenons partout en France : Paris, Lyon, Marseille, Toulouse, Nice, Lille, Nantes, Strasbourg et Montpellier.</p>
       </div>
+    </div>
+  </section>
 
-      <div class="seo-block">
-        <h3>Pourquoi rechercher une assurance auto jeune conducteur pas chère ?</h3>
-        <p>Quand on débute, le prix est souvent un critère important. L’objectif est de trouver une solution accessible, mais aussi cohérente avec le véhicule, le niveau de protection souhaité et la réalité de votre budget.</p>
+  <section>
+    <div class="container">
+      <div class="eyebrow">Demande rapide</div>
+      <h2>Recevez une réponse rapide</h2>
+
+      <div class="form-card">
+        <h3>Demandez votre devis jeune conducteur</h3>
+        <p>Complétez ce formulaire pour recevoir une réponse rapide.</p>
+
+        <form action="https://formspree.io/f/xykbrnrr" method="POST">
+          <input class="field" type="text" name="Nom" placeholder="Nom complet" required>
+          <input class="field" type="email" name="email" placeholder="Adresse email" required>
+          <input class="field" type="tel" name="Téléphone" placeholder="Téléphone" required>
+
+          <select class="field" name="Type assurance" required>
+            <option value="">Type de besoin</option>
+            <option>Assurance auto jeune conducteur</option>
+            <option>Assurance auto classique</option>
+            <option>Assurance auto malussé</option>
+          </select>
+
+          <input class="field" type="text" name="Situation" placeholder="Ex: première assurance, permis récent...">
+          <textarea class="field" name="Message" placeholder="Expliquez votre besoin" required></textarea>
+
+          <input type="hidden" name="_subject" value="Nouveau devis jeune conducteur ASIX Assurance">
+
+          <button class="btn btn-dark" type="submit" style="width:100%;margin-top:16px;border:none;">
+            Envoyer ma demande
+          </button>
+        </form>
+
+        <a class="btn btn-whatsapp"
+           href="https://wa.me/33603793189?text=Bonjour%2C%20je%20suis%20jeune%20conducteur%20et%20je%20cherche%20une%20assurance%20auto."
+           target="_blank"
+           style="width:100%;margin-top:12px;">
+           WhatsApp direct
+        </a>
       </div>
     </div>
   </section>
@@ -548,15 +669,18 @@
     <div class="container">
       <div class="eyebrow">FAQ</div>
       <h2>Questions fréquentes</h2>
+
       <div class="faq-list">
         <details>
           <summary>Peut-on trouver une assurance auto quand on débute ?</summary>
-          <p>Oui. Même pour une première assurance, il existe des solutions. L’essentiel est d’étudier votre profil et vos besoins réels.</p>
+          <p>Oui. Même pour une première assurance, il existe des solutions adaptées.</p>
         </details>
+
         <details>
           <summary>Le devis est-il gratuit ?</summary>
           <p>Oui, l’étude est gratuite et sans engagement.</p>
         </details>
+
         <details>
           <summary>Intervenez-vous partout en France ?</summary>
           <p>Oui, ASIX Assurance accompagne ses clients partout en France.</p>
@@ -567,21 +691,39 @@
 </main>
 
 <footer>
-  <div class="container footer-top">
-    <div>
-      <strong style="color:#fff;">ASIX Assurance</strong><br>
-      Courtier indépendant en assurance
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <div class="footer-title">ASIX ASSURANCE</div>
+        <div>Courtier indépendant en assurance pour particuliers et professionnels. Intervention partout en France.</div>
+      </div>
+
+      <div>
+        <div class="footer-title">Navigation</div>
+        <a href="index.html#accueil">Accueil</a>
+        <a href="index.html#services">Services</a>
+        <a href="index.html#apropos">À propos</a>
+        <a href="index.html#faq">FAQ</a>
+        <a href="index.html#contact">Contact</a>
+      </div>
+
+      <div>
+        <div class="footer-title">Informations</div>
+        <a href="index.html#mentions-legales">Mentions légales</a>
+        <a href="mailto:contact@asixassurance.fr">contact@asixassurance.fr</a>
+        <a href="tel:0603793189">06 03 79 31 89</a>
+      </div>
     </div>
-    <div>
-      📞 06 03 79 31 89<br>
-      📧 contact@asixassurance.fr
-    </div>
+
+    <div class="copy">© 2026 ASIX Assurance — Tous droits réservés.</div>
   </div>
 </footer>
 
 <a class="whatsapp-float"
-   href="https://wa.me/33603793189?text=Bonjour%2C%20je%20cherche%20une%20assurance%20auto%20jeune%20conducteur."
-   target="_blank">WhatsApp</a>
+   href="https://wa.me/33603793189?text=Bonjour%2C%20je%20suis%20jeune%20conducteur%20et%20je%20cherche%20une%20assurance%20auto."
+   target="_blank">
+   WhatsApp
+</a>
 
 </body>
 </html>
