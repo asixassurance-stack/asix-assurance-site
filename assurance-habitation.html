@@ -3,18 +3,37 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Assurance Professionnelle | ASIX Assurance</title>
-  <meta name="description" content="ASIX Assurance accompagne les indépendants, professions libérales, auto-entrepreneurs et entreprises pour leurs assurances professionnelles." />
+  <title>Assurance Habitation | ASIX Assurance</title>
+  <meta name="description" content="ASIX Assurance vous accompagne pour votre assurance habitation : locataire, propriétaire, bailleur, PNO, résidence principale ou investissement locatif." />
   <style>
     :root{
-      --blue-950:#081a35;--blue-900:#0f2f63;--blue-700:#1f5bb5;--slate-900:#0f172a;--slate-700:#334155;--slate-600:#475569;--slate-300:#cbd5e1;--slate-200:#e2e8f0;--slate-100:#f8fafc;--green:#25D366;--max:1180px;--shadow:0 18px 50px rgba(2,8,23,.10);--shadow-soft:0 10px 30px rgba(15,23,42,.08);
+      --blue-950:#081a35;
+      --blue-900:#0f2f63;
+      --blue-700:#1f5bb5;
+      --blue-100:#eaf2ff;
+      --slate-900:#0f172a;
+      --slate-700:#334155;
+      --slate-600:#475569;
+      --slate-300:#cbd5e1;
+      --slate-200:#e2e8f0;
+      --slate-100:#f8fafc;
+      --white:#ffffff;
+      --green:#25D366;
+      --max:1180px;
+      --shadow:0 18px 50px rgba(2,8,23,.10);
+      --shadow-soft:0 10px 30px rgba(15,23,42,.08);
     }
-    *{box-sizing:border-box} html{scroll-behavior:smooth}
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
     body{margin:0;font-family:Arial,Helvetica,sans-serif;color:var(--slate-900);background:#fff;line-height:1.5}
-    a{text-decoration:none;color:inherit} img{max-width:100%;display:block}
+    a{text-decoration:none;color:inherit}
+    img{max-width:100%;display:block}
     .container{width:min(var(--max), calc(100% - 32px));margin:0 auto}
     .btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;padding:14px 22px;border-radius:16px;font-weight:700;transition:.2s ease}
-    .btn:hover{transform:translateY(-1px)} .btn-white{background:#fff;color:var(--blue-950)} .btn-dark{background:var(--blue-900);color:#fff} .btn-outline{background:rgba(255,255,255,.08); color:#fff; border:1px solid rgba(255,255,255,.22)}
+    .btn:hover{transform:translateY(-1px)}
+    .btn-white{background:#fff;color:var(--blue-950)}
+    .btn-dark{background:var(--blue-900);color:#fff}
+    .btn-outline{background:rgba(255,255,255,.08); color:#fff; border:1px solid rgba(255,255,255,.22)}
     header{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.96);backdrop-filter:blur(10px);border-bottom:1px solid var(--slate-200)}
     .topbar{min-height:78px;display:flex;align-items:center;justify-content:space-between;gap:16px}
     .brand{display:flex;align-items:center;gap:12px}
@@ -24,7 +43,7 @@
     nav{display:flex;gap:24px;align-items:center;flex-wrap:wrap}
     nav a{font-weight:700;color:var(--slate-700)}
     .hero{position:relative;overflow:hidden;color:#fff;background:linear-gradient(135deg, rgba(8,26,53,.96), rgba(15,47,99,.92))}
-    .hero::before{content:"";position:absolute;inset:0;background:url('https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=1600&q=80') center/cover no-repeat;opacity:.24}
+    .hero::before{content:"";position:absolute;inset:0;background:url('https://images.unsplash.com/photo-1560518883-ce09059eeffa?auto=format&fit=crop&w=1600&q=80') center/cover no-repeat;opacity:.24}
     .hero-inner{position:relative;z-index:1;display:grid;grid-template-columns:1.1fr .9fr;gap:36px;align-items:center;padding:82px 0 96px}
     .pill{display:inline-block;padding:10px 15px;border-radius:999px;background:rgba(255,255,255,.10);border:1px solid rgba(255,255,255,.16);font-size:14px;margin-bottom:18px}
     .hero h1{margin:0;font-size:58px;line-height:1.02;letter-spacing:-1.5px;max-width:760px}
@@ -67,8 +86,21 @@
     footer{background:var(--blue-950);color:#cbd5e1;padding:34px 0;margin-top:10px}
     .footer-top{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
     .whatsapp-float{position:fixed;bottom:20px;right:20px;background:#25D366;color:white;padding:14px 18px;border-radius:50px;font-weight:bold;text-decoration:none;box-shadow:0 5px 20px rgba(0,0,0,0.2);z-index:9999}
-    @media (max-width:1100px){.hero-inner,.split-grid{grid-template-columns:1fr}.stats,.trust-grid{grid-template-columns:repeat(2,1fr)}.grid-3{grid-template-columns:repeat(2,1fr)}.hero h1{font-size:46px}.hero-card img{height:360px}}
-    @media (max-width:720px){nav{display:none}.hero h1{font-size:36px}h2{font-size:34px}.stats,.grid-3,.trust-grid{grid-template-columns:1fr}.hero-inner{padding:56px 0 74px}.hero-card img{height:280px}}
+    @media (max-width:1100px){
+      .hero-inner,.split-grid{grid-template-columns:1fr}
+      .stats,.trust-grid{grid-template-columns:repeat(2,1fr)}
+      .grid-3{grid-template-columns:repeat(2,1fr)}
+      .hero h1{font-size:46px}
+      .hero-card img{height:360px}
+    }
+    @media (max-width:720px){
+      nav{display:none}
+      .hero h1{font-size:36px}
+      h2{font-size:34px}
+      .stats,.grid-3,.trust-grid{grid-template-columns:1fr}
+      .hero-inner{padding:56px 0 74px}
+      .hero-card img{height:280px}
+    }
   </style>
 </head>
 <body>
@@ -94,26 +126,26 @@
   <section class="hero">
     <div class="container hero-inner">
       <div>
-        <div class="pill">Indépendant • Profession libérale • Auto-entrepreneur • Entreprise</div>
-        <h1>Assurance professionnelle premium pour sécuriser votre activité</h1>
-        <p>ASIX Assurance accompagne les professionnels dans la recherche de garanties claires, cohérentes et adaptées à leur métier.</p>
+        <div class="pill">Locataire • Propriétaire • Bailleur • PNO • Toute la France</div>
+        <h1>Assurance habitation premium pour protéger l’essentiel</h1>
+        <p>ASIX Assurance vous accompagne pour choisir une couverture claire et adaptée à votre logement, vos biens et votre situation.</p>
         <div class="hero-actions">
-          <a class="btn btn-white" href="https://wa.me/33603793189?text=Bonjour%2C%20je%20souhaite%20un%20devis%20pour%20une%20assurance%20professionnelle." target="_blank">📲 Demander un devis</a>
+          <a class="btn btn-white" href="https://wa.me/33603793189?text=Bonjour%2C%20je%20souhaite%20un%20devis%20pour%20une%20assurance%20habitation." target="_blank">📲 Demander un devis</a>
           <a class="btn btn-outline" href="tel:0603793189">📞 06 03 79 31 89</a>
         </div>
         <div class="hero-proof">Réponse rapide • Devis gratuit • Sans engagement</div>
       </div>
       <div class="hero-card">
-        <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=1200&q=80" alt="Assurance pro">
+        <img src="https://images.unsplash.com/photo-1560518883-ce09059eeffa?auto=format&fit=crop&w=1200&q=80" alt="Maison habitation">
       </div>
     </div>
   </section>
 
   <div class="container stats-wrap">
     <div class="stats">
-      <div class="stat"><strong>RC Pro</strong><span>Protection de la responsabilité</span></div>
-      <div class="stat"><strong>Multirisque</strong><span>Biens, local, matériel</span></div>
-      <div class="stat"><strong>Conseil clair</strong><span>Selon votre activité réelle</span></div>
+      <div class="stat"><strong>Locataire</strong><span>Couverture simple et conforme</span></div>
+      <div class="stat"><strong>Propriétaire</strong><span>Protection du logement et des biens</span></div>
+      <div class="stat"><strong>PNO / Bailleur</strong><span>Solutions pour investissement locatif</span></div>
       <div class="stat"><strong>France</strong><span>Accompagnement partout</span></div>
     </div>
   </div>
@@ -121,29 +153,29 @@
   <section>
     <div class="container">
       <div class="eyebrow">Profils accompagnés</div>
-      <h2>Des solutions pour sécuriser votre activité</h2>
-      <p class="lead">Nous vous accompagnons selon votre métier, votre structure et votre niveau d’exposition au risque.</p>
+      <h2>Une protection adaptée à votre logement</h2>
+      <p class="lead">Nous vous aidons à trouver une formule cohérente selon votre situation et les vraies garanties utiles.</p>
 
       <div class="grid-3">
         <article class="feature-card">
-          <img src="https://images.unsplash.com/photo-1521737604893-d14cc237f11d?auto=format&fit=crop&w=1200&q=80" alt="Indépendant">
+          <img src="https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&w=1200&q=80" alt="Locataire">
           <div class="feature-content">
-            <h3>Indépendants</h3>
-            <p>Des solutions pour protéger votre activité, votre responsabilité et votre outil de travail.</p>
+            <h3>Locataire</h3>
+            <p>Une solution adaptée à vos obligations, à votre logement et à la valeur de vos biens.</p>
           </div>
         </article>
         <article class="feature-card">
-          <img src="https://images.unsplash.com/photo-1552664688-cf412ec27db2?auto=format&fit=crop&w=1200&q=80" alt="Professions libérales">
+          <img src="https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?auto=format&fit=crop&w=1200&q=80" alt="Propriétaire">
           <div class="feature-content">
-            <h3>Professions libérales</h3>
-            <p>Une couverture pensée pour les activités qui ont besoin de garanties claires et sérieuses.</p>
+            <h3>Propriétaire occupant</h3>
+            <p>Protégez votre habitation, votre mobilier et vos responsabilités au quotidien.</p>
           </div>
         </article>
         <article class="feature-card">
-          <img src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=1200&q=80" alt="Entreprise">
+          <img src="https://images.unsplash.com/photo-1460317442991-0ec209397118?auto=format&fit=crop&w=1200&q=80" alt="PNO bailleur">
           <div class="feature-content">
-            <h3>TPE / PME</h3>
-            <p>Nous étudions aussi les besoins des entreprises avec des solutions adaptées à leur structure.</p>
+            <h3>PNO / Bailleur</h3>
+            <p>Des solutions adaptées aux logements loués, non occupés ou en investissement locatif.</p>
           </div>
         </article>
       </div>
@@ -155,24 +187,24 @@
       <div class="panel">
         <h3>Garanties possibles</h3>
         <ul>
-          <li>Responsabilité Civile Professionnelle</li>
-          <li>Multirisque professionnelle</li>
+          <li>Incendie</li>
+          <li>Dégâts des eaux</li>
+          <li>Vol et vandalisme</li>
+          <li>Bris de glace</li>
+          <li>Catastrophes naturelles</li>
+          <li>Responsabilité civile</li>
           <li>Protection juridique</li>
-          <li>Assurance local professionnel</li>
-          <li>Assurance matériel</li>
-          <li>Perte d’exploitation</li>
-          <li>Garanties selon l’activité</li>
+          <li>Assistance habitation</li>
         </ul>
       </div>
       <div class="panel">
         <h3>Ce que nous analysons</h3>
         <ul>
-          <li>Votre activité professionnelle</li>
-          <li>Votre statut</li>
-          <li>Le niveau de risque lié à votre métier</li>
-          <li>La valeur des biens à protéger</li>
-          <li>La présence d’un local ou non</li>
-          <li>Vos obligations éventuelles</li>
+          <li>Votre statut : locataire, propriétaire, bailleur</li>
+          <li>Le type de logement</li>
+          <li>La surface et les caractéristiques</li>
+          <li>La valeur des biens à couvrir</li>
+          <li>Les garanties réellement utiles</li>
           <li>Votre budget</li>
         </ul>
       </div>
@@ -180,10 +212,10 @@
 
     <div class="container">
       <div class="premium-banner">
-        <h3>Une approche claire pour les pros</h3>
-        <p>Nous vous aidons à comprendre les garanties essentielles pour votre activité et à éviter les contrats insuffisamment protecteurs ou mal adaptés.</p>
+        <h3>Une assurance habitation claire et utile</h3>
+        <p>Nous vous aidons à comprendre les garanties proposées, à éviter les doublons inutiles et à choisir une formule adaptée à votre logement.</p>
         <div class="premium-actions">
-          <a class="btn btn-white" href="https://wa.me/33603793189?text=Bonjour%2C%20je%20souhaite%20un%20devis%20pour%20une%20assurance%20professionnelle." target="_blank">WhatsApp direct</a>
+          <a class="btn btn-white" href="https://wa.me/33603793189?text=Bonjour%2C%20je%20souhaite%20un%20devis%20pour%20une%20assurance%20habitation." target="_blank">WhatsApp direct</a>
           <a class="btn btn-dark" href="index.html">Retour à l’accueil</a>
         </div>
       </div>
@@ -193,11 +225,11 @@
   <section>
     <div class="container">
       <div class="eyebrow">Pourquoi ASIX Assurance</div>
-      <h2>Un service premium orienté activité réelle</h2>
+      <h2>Un service premium orienté clarté</h2>
       <div class="trust-grid">
         <div class="trust-item">✅ Devis gratuit</div>
         <div class="trust-item">⚡ Réponse rapide</div>
-        <div class="trust-item">💼 Garanties cohérentes</div>
+        <div class="trust-item">🏠 Garanties utiles</div>
         <div class="trust-item">🇫🇷 Partout en France</div>
       </div>
     </div>
@@ -209,8 +241,8 @@
       <h2>Questions fréquentes</h2>
       <div class="faq-list">
         <details>
-          <summary>Accompagnez-vous les indépendants et auto-entrepreneurs ?</summary>
-          <p>Oui. Nous accompagnons indépendants, professions libérales, auto-entrepreneurs et entreprises.</p>
+          <summary>Pouvez-vous accompagner un bailleur ou un PNO ?</summary>
+          <p>Oui. Nous accompagnons aussi les propriétaires bailleurs et les besoins en assurance propriétaire non occupant.</p>
         </details>
         <details>
           <summary>Le devis est-il gratuit ?</summary>
@@ -239,7 +271,7 @@
 </footer>
 
 <a class="whatsapp-float"
-   href="https://wa.me/33603793189?text=Bonjour%2C%20je%20souhaite%20un%20devis%20pour%20une%20assurance%20professionnelle."
+   href="https://wa.me/33603793189?text=Bonjour%2C%20je%20souhaite%20un%20devis%20pour%20une%20assurance%20habitation."
    target="_blank">WhatsApp</a>
 
 </body>
