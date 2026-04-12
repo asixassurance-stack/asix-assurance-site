@@ -57,7 +57,7 @@
     header{
       position:sticky;
       top:0;
-      z-index:50;
+      z-index:1000;
       background:rgba(255,255,255,.96);
       backdrop-filter:blur(10px);
       border-bottom:1px solid var(--slate-200);
@@ -75,6 +75,7 @@
       display:flex;
       align-items:center;
       gap:12px;
+      min-width:0;
     }
 
     .brand img{
@@ -95,15 +96,15 @@
       font-size:13px;
     }
 
-    nav{
+    .desktop-nav{
       display:flex;
       gap:24px;
       align-items:center;
       flex-wrap:wrap;
     }
 
-    nav > a,
-    nav > .dropdown > a{
+    .desktop-nav > a,
+    .desktop-nav > .dropdown > a{
       font-weight:700;
       color:var(--slate-700);
     }
@@ -145,6 +146,75 @@
 
     .dropdown:hover .dropdown-content{
       display:block;
+    }
+
+    .header-actions{
+      display:flex;
+      align-items:center;
+      gap:12px;
+    }
+
+    .menu-toggle{
+      display:none;
+      border:none;
+      background:var(--blue-900);
+      color:#fff;
+      font-size:24px;
+      line-height:1;
+      width:46px;
+      height:46px;
+      border-radius:12px;
+      cursor:pointer;
+    }
+
+    .mobile-menu{
+      display:none;
+      border-top:1px solid var(--slate-200);
+      background:#fff;
+    }
+
+    .mobile-menu.open{
+      display:block;
+    }
+
+    .mobile-menu-inner{
+      padding:14px 16px 20px;
+    }
+
+    .mobile-link,
+    .mobile-submenu summary{
+      display:block;
+      padding:14px 0;
+      font-weight:700;
+      color:var(--slate-700);
+      border-bottom:1px solid var(--slate-200);
+      cursor:pointer;
+      list-style:none;
+    }
+
+    .mobile-submenu summary::-webkit-details-marker{
+      display:none;
+    }
+
+    .mobile-submenu[open] summary{
+      color:var(--blue-900);
+    }
+
+    .mobile-sub-links{
+      padding:6px 0 8px 14px;
+      border-bottom:1px solid var(--slate-200);
+    }
+
+    .mobile-sub-links a{
+      display:block;
+      padding:10px 0;
+      color:var(--slate-700);
+      font-weight:600;
+    }
+
+    .mobile-menu .btn{
+      width:100%;
+      margin-top:16px;
     }
 
     .hero{
@@ -465,13 +535,50 @@
       .hero-card img{height:360px}
     }
 
+    @media (max-width:860px){
+      .desktop-nav,
+      .desktop-cta{
+        display:none;
+      }
+
+      .menu-toggle{
+        display:inline-flex;
+        align-items:center;
+        justify-content:center;
+      }
+
+      .topbar{
+        min-height:72px;
+      }
+
+      .brand strong{
+        font-size:18px;
+      }
+
+      .brand span{
+        font-size:12px;
+      }
+    }
+
+    @media (min-width:861px){
+      .mobile-menu{
+        display:none !important;
+      }
+    }
+
     @media (max-width:720px){
-      nav{display:none}
       .hero h1{font-size:36px}
       h2{font-size:34px}
       .stats,.grid-3{grid-template-columns:1fr}
       .hero-inner{padding:56px 0 74px}
       .hero-card img{height:280px}
+      .hero-actions .btn{
+        width:100%;
+      }
+      .whatsapp-float{
+        bottom:16px;
+        right:16px;
+      }
     }
   </style>
 </head>
@@ -487,7 +594,7 @@
       </div>
     </div>
 
-    <nav>
+    <nav class="desktop-nav">
       <a href="index.html#accueil">Accueil</a>
 
       <div class="dropdown">
@@ -508,7 +615,35 @@
       <a href="index.html#contact">Contact</a>
     </nav>
 
-    <a class="btn btn-dark" href="index.html#contact">Devis gratuit</a>
+    <div class="header-actions">
+      <a class="btn btn-dark desktop-cta" href="index.html#contact">Devis gratuit</a>
+      <button class="menu-toggle" id="menuToggle" aria-label="Ouvrir le menu" aria-expanded="false">☰</button>
+    </div>
+  </div>
+
+  <div class="mobile-menu" id="mobileMenu">
+    <div class="mobile-menu-inner">
+      <a class="mobile-link" href="index.html#accueil">Accueil</a>
+
+      <details class="mobile-submenu">
+        <summary>Auto ▼</summary>
+        <div class="mobile-sub-links">
+          <a href="assurance-auto.html">Assurance auto</a>
+          <a href="assurance-auto-malusse.html">Conducteur malussé</a>
+          <a href="assurance-auto-resilie.html">Conducteur résilié</a>
+          <a href="assurance-auto-jeune-conducteur.html">Jeune conducteur</a>
+        </div>
+      </details>
+
+      <a class="mobile-link" href="assurance-habitation.html">Habitation</a>
+      <a class="mobile-link" href="assurance-sante.html">Santé</a>
+      <a class="mobile-link" href="assurance-pro.html">Pro</a>
+      <a class="mobile-link" href="index.html#apropos">À propos</a>
+      <a class="mobile-link" href="index.html#faq">FAQ</a>
+      <a class="mobile-link" href="index.html#contact">Contact</a>
+
+      <a class="btn btn-dark" href="index.html#contact">Devis gratuit</a>
+    </div>
   </div>
 </header>
 
@@ -724,6 +859,26 @@
    target="_blank">
    WhatsApp
 </a>
+
+<script>
+  const menuToggle = document.getElementById('menuToggle');
+  const mobileMenu = document.getElementById('mobileMenu');
+
+  menuToggle.addEventListener('click', function () {
+    mobileMenu.classList.toggle('open');
+    const expanded = mobileMenu.classList.contains('open');
+    menuToggle.setAttribute('aria-expanded', expanded ? 'true' : 'false');
+    menuToggle.textContent = expanded ? '✕' : '☰';
+  });
+
+  document.querySelectorAll('.mobile-menu a').forEach(link => {
+    link.addEventListener('click', function () {
+      mobileMenu.classList.remove('open');
+      menuToggle.setAttribute('aria-expanded', 'false');
+      menuToggle.textContent = '☰';
+    });
+  });
+</script>
 
 </body>
 </html>
