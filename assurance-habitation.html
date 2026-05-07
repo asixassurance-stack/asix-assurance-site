@@ -3,886 +3,761 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
   <title>Assurance habitation pas chère | ASIX Assurance</title>
-  <meta name="description" content="Assurance habitation pour locataire, propriétaire occupant, bailleur et PNO. Devis rapide partout en France avec ASIX Assurance." />
+
+  <meta name="description" content="Assurance habitation locataire, propriétaire, bailleur et PNO avec ASIX Assurance. Devis rapide partout en France." />
+
   <style>
     :root{
-      --blue-950:#081a35;
-      --blue-900:#0f2f63;
-      --blue-700:#1f5bb5;
-      --blue-100:#eaf2ff;
-      --slate-900:#0f172a;
-      --slate-700:#334155;
-      --slate-600:#475569;
-      --slate-300:#cbd5e1;
-      --slate-200:#e2e8f0;
-      --slate-100:#f8fafc;
-      --white:#ffffff;
+      --blue:#0f2f63;
+      --blue-dark:#081a35;
+      --text:#0f172a;
+      --gray:#475569;
+      --light:#f8fafc;
+      --border:#e2e8f0;
       --green:#25D366;
       --max:1180px;
-      --shadow:0 18px 50px rgba(2,8,23,.10);
-      --shadow-soft:0 10px 30px rgba(15,23,42,.08);
     }
 
-    *{box-sizing:border-box}
-    html{scroll-behavior:smooth}
-    body{
+    *{
       margin:0;
+      padding:0;
+      box-sizing:border-box;
+    }
+
+    body{
       font-family:Arial, Helvetica, sans-serif;
-      color:var(--slate-900);
+      color:var(--text);
       background:#fff;
-      line-height:1.55;
+      line-height:1.6;
     }
 
-    a{text-decoration:none;color:inherit}
-    img{max-width:100%;display:block}
-    .container{width:min(var(--max), calc(100% - 32px));margin:0 auto}
-
-    .btn{
-      display:inline-flex;
-      align-items:center;
-      justify-content:center;
-      gap:10px;
-      padding:14px 22px;
-      border-radius:16px;
-      font-weight:700;
-      transition:.2s ease;
+    a{
+      text-decoration:none;
+      color:inherit;
     }
 
-    .btn:hover{transform:translateY(-1px)}
-    .btn-primary{background:#fff;color:var(--blue-950)}
-    .btn-dark{background:var(--blue-900);color:#fff}
-    .btn-whatsapp{background:var(--green);color:#08361b}
+    img{
+      max-width:100%;
+      display:block;
+    }
+
+    .container{
+      width:min(var(--max), calc(100% - 32px));
+      margin:auto;
+    }
 
     header{
       position:sticky;
       top:0;
-      z-index:1000;
-      background:rgba(255,255,255,.96);
-      backdrop-filter:blur(10px);
-      border-bottom:1px solid var(--slate-200);
+      z-index:999;
+      background:#fff;
+      border-bottom:1px solid var(--border);
     }
 
     .topbar{
-      min-height:78px;
+      min-height:82px;
       display:flex;
       align-items:center;
       justify-content:space-between;
-      gap:16px;
+      gap:20px;
     }
 
-    .brand{
+    .logo{
       display:flex;
       align-items:center;
-      gap:12px;
-      min-width:0;
+      gap:14px;
     }
 
-    .brand img{
-      height:54px;
-      width:auto;
+    .logo img{
+      height:56px;
     }
 
-    .brand strong{
+    .logo strong{
       display:block;
-      color:var(--blue-950);
-      font-size:20px;
-      line-height:1.1;
+      font-size:22px;
+      color:var(--blue-dark);
     }
 
-    .brand span{
-      display:block;
-      color:var(--slate-600);
+    .logo span{
+      color:var(--gray);
       font-size:13px;
     }
 
-    .desktop-nav{
+    nav{
       display:flex;
       gap:24px;
       align-items:center;
       flex-wrap:wrap;
     }
 
-    .desktop-nav > a,
-    .desktop-nav > .dropdown > a{
+    nav a{
       font-weight:700;
-      color:var(--slate-700);
+      color:#334155;
     }
 
-    .dropdown{
-      position:relative;
-      display:inline-block;
-    }
-
-    .dropdown > a{
-      display:inline-block;
-      padding:8px 0;
-    }
-
-    .dropdown-content{
-      display:none;
-      position:absolute;
-      top:100%;
-      left:0;
-      background:#fff;
-      min-width:240px;
-      border:1px solid var(--slate-200);
-      box-shadow:0 10px 25px rgba(0,0,0,.08);
-      border-radius:12px;
-      overflow:hidden;
-      z-index:999;
-    }
-
-    .dropdown-content a{
-      display:block;
-      padding:12px 16px;
-      color:#0f172a;
-      white-space:nowrap;
-    }
-
-    .dropdown-content a:hover{
-      background:#f1f5f9;
-    }
-
-    .dropdown:hover .dropdown-content{
-      display:block;
-    }
-
-    .header-actions{
-      display:flex;
+    .btn{
+      display:inline-flex;
       align-items:center;
-      gap:12px;
-    }
-
-    .menu-toggle{
-      display:none;
-      border:none;
-      background:var(--blue-900);
-      color:#fff;
-      font-size:24px;
-      line-height:1;
-      width:46px;
-      height:46px;
-      border-radius:12px;
-      cursor:pointer;
-    }
-
-    .mobile-menu{
-      display:none;
-      border-top:1px solid var(--slate-200);
-      background:#fff;
-    }
-
-    .mobile-menu.open{
-      display:block;
-    }
-
-    .mobile-menu-inner{
-      padding:14px 16px 20px;
-    }
-
-    .mobile-link,
-    .mobile-submenu summary{
-      display:block;
-      padding:14px 0;
+      justify-content:center;
+      padding:14px 22px;
+      border-radius:14px;
       font-weight:700;
-      color:var(--slate-700);
-      border-bottom:1px solid var(--slate-200);
-      cursor:pointer;
-      list-style:none;
+      transition:.2s;
     }
 
-    .mobile-submenu summary::-webkit-details-marker{
-      display:none;
+    .btn:hover{
+      transform:translateY(-2px);
     }
 
-    .mobile-submenu[open] summary{
-      color:var(--blue-900);
+    .btn-dark{
+      background:var(--blue);
+      color:#fff;
     }
 
-    .mobile-sub-links{
-      padding:6px 0 8px 14px;
-      border-bottom:1px solid var(--slate-200);
-    }
-
-    .mobile-sub-links a{
-      display:block;
-      padding:10px 0;
-      color:var(--slate-700);
-      font-weight:600;
-    }
-
-    .mobile-menu .btn{
-      width:100%;
-      margin-top:16px;
+    .btn-white{
+      background:#fff;
+      color:var(--blue-dark);
     }
 
     .hero{
       position:relative;
       overflow:hidden;
       color:#fff;
-      background:linear-gradient(135deg, rgba(8,26,53,.96), rgba(15,47,99,.92));
-    }
-
-    .hero::before{
-      content:"";
-      position:absolute;
-      inset:0;
-      background:url('https://images.unsplash.com/photo-1560518883-ce09059eeffa?auto=format&fit=crop&w=1600&q=80') center/cover no-repeat;
-      opacity:.20;
+      background:
+      linear-gradient(rgba(8,26,53,.85), rgba(8,26,53,.88)),
+      url('https://images.pexels.com/photos/7578860/pexels-photo-7578860.jpeg?auto=compress&cs=tinysrgb&w=1600');
+      background-size:cover;
+      background-position:center;
     }
 
     .hero-inner{
-      position:relative;
-      z-index:1;
       display:grid;
       grid-template-columns:1.1fr .9fr;
-      gap:36px;
+      gap:40px;
       align-items:center;
-      padding:82px 0 96px;
+      padding:90px 0;
     }
 
     .pill{
       display:inline-block;
-      padding:10px 15px;
+      padding:10px 16px;
       border-radius:999px;
-      background:rgba(255,255,255,.10);
-      border:1px solid rgba(255,255,255,.16);
+      background:rgba(255,255,255,.1);
+      border:1px solid rgba(255,255,255,.2);
+      margin-bottom:22px;
       font-size:14px;
-      margin-bottom:18px;
     }
 
     .hero h1{
-      margin:0;
-      font-size:56px;
+      font-size:64px;
       line-height:1.02;
-      letter-spacing:-1.4px;
-      max-width:760px;
+      margin-bottom:20px;
     }
 
     .hero p{
-      margin:18px 0 0;
-      color:#dbeafe;
       font-size:20px;
-      max-width:720px;
+      color:#dbeafe;
+      max-width:700px;
     }
 
     .hero-actions{
       display:flex;
+      gap:16px;
       flex-wrap:wrap;
-      gap:14px;
-      margin-top:28px;
-    }
-
-    .hero-proof{
-      margin-top:14px;
-      color:#dbeafe;
-      font-size:14px;
+      margin-top:30px;
     }
 
     .hero-card{
-      background:rgba(255,255,255,.10);
-      border:1px solid rgba(255,255,255,.16);
+      background:rgba(255,255,255,.08);
+      border:1px solid rgba(255,255,255,.15);
       border-radius:28px;
       padding:14px;
-      box-shadow:var(--shadow);
+      backdrop-filter:blur(8px);
     }
 
     .hero-card img{
       width:100%;
-      height:480px;
+      height:520px;
       object-fit:cover;
-      border-radius:22px;
+      border-radius:20px;
     }
 
-    .stats-wrap{
-      margin-top:-32px;
-      position:relative;
-      z-index:2;
+    section{
+      padding:90px 0;
     }
 
-    .stats{
-      display:grid;
-      grid-template-columns:repeat(4,1fr);
-      gap:16px;
-      background:#fff;
-      border:1px solid var(--slate-200);
-      border-radius:24px;
-      padding:16px;
-      box-shadow:var(--shadow);
-    }
-
-    .stat{
-      background:var(--slate-100);
-      border-radius:18px;
-      padding:22px;
-    }
-
-    .stat strong{
-      display:block;
-      color:var(--blue-950);
-      font-size:28px;
-    }
-
-    .stat span{
-      color:var(--slate-600);
-      font-size:15px;
-    }
-
-    section{padding:84px 0}
-
-    .eyebrow{
-      color:var(--blue-700);
+    .section-title{
+      text-align:center;
+      margin-bottom:18px;
+      color:var(--blue);
       text-transform:uppercase;
-      letter-spacing:.18em;
+      letter-spacing:.14em;
       font-size:13px;
       font-weight:800;
     }
 
     h2{
-      margin:12px 0 0;
-      font-size:42px;
-      line-height:1.08;
-      letter-spacing:-1px;
-    }
-
-    h3{
-      margin:0;
-      font-size:26px;
-      color:var(--blue-950);
+      text-align:center;
+      font-size:46px;
+      margin-bottom:14px;
+      color:var(--blue-dark);
     }
 
     .lead{
-      margin:16px 0 0;
-      color:var(--slate-600);
+      text-align:center;
+      color:var(--gray);
+      max-width:820px;
+      margin:auto;
       font-size:19px;
-      max-width:860px;
     }
 
-    .grid-3{
+    .grid{
       display:grid;
       grid-template-columns:repeat(3,1fr);
-      gap:24px;
-      margin-top:34px;
-    }
-
-    .grid-2{
-      display:grid;
-      grid-template-columns:1fr 1fr;
-      gap:24px;
-      margin-top:34px;
+      gap:26px;
+      margin-top:46px;
     }
 
     .card{
       background:#fff;
-      border:1px solid var(--slate-200);
+      border:1px solid var(--border);
       border-radius:24px;
       overflow:hidden;
-      box-shadow:var(--shadow-soft);
-      padding:24px;
+      box-shadow:0 10px 30px rgba(15,23,42,.06);
     }
 
     .card img{
+      height:240px;
       width:100%;
-      height:210px;
       object-fit:cover;
-      border-radius:16px;
-      margin-bottom:16px;
+    }
+
+    .card-content{
+      padding:24px;
+    }
+
+    .card h3{
+      font-size:24px;
+      color:var(--blue-dark);
+      margin-bottom:10px;
     }
 
     .card p{
-      margin:12px 0 0;
-      color:var(--slate-600);
+      color:var(--gray);
     }
 
-    .split{
-      background:var(--slate-100);
-      border-top:1px solid var(--slate-200);
-      border-bottom:1px solid var(--slate-200);
+    .gray-section{
+      background:var(--light);
+      border-top:1px solid var(--border);
+      border-bottom:1px solid var(--border);
     }
 
-    .panel{
-      background:#fff;
-      border:1px solid var(--slate-200);
-      border-radius:24px;
-      padding:26px;
-      box-shadow:var(--shadow-soft);
-    }
-
-    .panel p{
-      color:var(--slate-600);
-      margin:12px 0 0;
-    }
-
-    .panel ul{
-      margin:14px 0 0;
-      padding-left:18px;
-      color:var(--slate-600);
-    }
-
-    .panel li{
-      margin:10px 0;
-    }
-
-    .form-card{
-      background:#fff;
-      color:var(--slate-900);
-      border-radius:24px;
-      padding:26px;
-      box-shadow:var(--shadow);
-      margin-top:34px;
-    }
-
-    .form-card h3{
-      color:var(--blue-950);
-      font-size:30px;
-    }
-
-    .form-card p{
-      color:var(--slate-600);
-    }
-
-    .field{
-      width:100%;
-      margin-top:14px;
-      padding:14px 15px;
-      border:1px solid var(--slate-200);
-      border-radius:12px;
-      font:inherit;
-    }
-
-    textarea.field{
-      min-height:140px;
-      resize:vertical;
-    }
-
-    .faq-list{
+    .two-cols{
       display:grid;
-      gap:14px;
-      margin-top:34px;
+      grid-template-columns:1fr 1fr;
+      gap:28px;
+      margin-top:40px;
     }
 
-    details{
-      background:var(--slate-100);
-      border:1px solid var(--slate-200);
-      border-radius:18px;
-      padding:18px 20px;
+    .box{
+      background:#fff;
+      border:1px solid var(--border);
+      border-radius:24px;
+      padding:28px;
     }
 
-    summary{
-      cursor:pointer;
-      font-weight:800;
-      font-size:19px;
+    .box h3{
+      color:var(--blue-dark);
+      margin-bottom:16px;
+      font-size:28px;
     }
 
-    details p{
-      color:var(--slate-600);
-      margin:12px 0 0;
+    .box ul{
+      padding-left:20px;
+      color:var(--gray);
+    }
+
+    .box li{
+      margin:12px 0;
+    }
+
+    .partners{
+      padding:90px 0;
+    }
+
+    .partners-grid{
+      display:grid;
+      grid-template-columns:repeat(5,1fr);
+      gap:24px;
+      align-items:center;
+      margin-top:50px;
+    }
+
+    .partner{
+      background:#fff;
+      border:1px solid var(--border);
+      border-radius:20px;
+      padding:24px;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      min-height:120px;
+    }
+
+    .partner img{
+      max-height:60px;
+      width:auto;
+      object-fit:contain;
+    }
+
+    .contact-box{
+      margin-top:50px;
+      background:linear-gradient(135deg,var(--blue-dark),var(--blue));
+      color:#fff;
+      border-radius:30px;
+      padding:40px;
+      text-align:center;
+    }
+
+    .contact-box h3{
+      font-size:36px;
+      margin-bottom:14px;
+    }
+
+    .contact-box p{
+      color:#dbeafe;
+      max-width:700px;
+      margin:auto;
+    }
+
+    .contact-actions{
+      display:flex;
+      justify-content:center;
+      gap:16px;
+      flex-wrap:wrap;
+      margin-top:26px;
     }
 
     footer{
-      background:var(--blue-950);
+      background:var(--blue-dark);
       color:#cbd5e1;
-      padding:34px 0;
-      margin-top:10px;
+      padding:50px 0;
     }
 
     .footer-grid{
       display:grid;
-      grid-template-columns:1.2fr 1fr 1fr;
-      gap:24px;
+      grid-template-columns:1fr 1fr 1fr;
+      gap:30px;
     }
 
-    .footer-title{
+    footer h4{
       color:#fff;
-      font-weight:800;
-      margin-bottom:12px;
+      margin-bottom:14px;
     }
 
     footer a{
       display:block;
       margin:8px 0;
-      color:#cbd5e1;
     }
 
     .copy{
-      border-top:1px solid rgba(255,255,255,.10);
-      margin-top:26px;
-      padding-top:16px;
+      border-top:1px solid rgba(255,255,255,.1);
+      margin-top:30px;
+      padding-top:20px;
       font-size:14px;
     }
 
-    .whatsapp-float{
+    .whatsapp{
       position:fixed;
-      bottom:20px;
       right:20px;
-      background:#25D366;
-      color:white;
-      padding:14px 18px;
+      bottom:20px;
+      background:var(--green);
+      color:#fff;
+      padding:15px 22px;
       border-radius:50px;
-      font-weight:bold;
-      text-decoration:none;
-      box-shadow:0 5px 20px rgba(0,0,0,.2);
+      font-weight:700;
       z-index:9999;
+      box-shadow:0 10px 25px rgba(0,0,0,.2);
     }
 
-    @media (max-width:1100px){
-      .hero-inner,.grid-2{grid-template-columns:1fr}
-      .stats{grid-template-columns:repeat(2,1fr)}
-      .grid-3{grid-template-columns:repeat(2,1fr)}
-      .footer-grid{grid-template-columns:1fr}
-      .hero h1{font-size:46px}
-      .hero-card img{height:360px}
+    @media(max-width:1000px){
+
+      .hero-inner,
+      .two-cols{
+        grid-template-columns:1fr;
+      }
+
+      .grid{
+        grid-template-columns:1fr 1fr;
+      }
+
+      .partners-grid{
+        grid-template-columns:repeat(3,1fr);
+      }
+
+      .hero h1{
+        font-size:48px;
+      }
     }
 
-    @media (max-width:860px){
-      .desktop-nav,
-      .desktop-cta{
+    @media(max-width:720px){
+
+      nav{
         display:none;
       }
 
-      .menu-toggle{
-        display:inline-flex;
-        align-items:center;
-        justify-content:center;
+      .hero h1{
+        font-size:38px;
       }
 
-      .topbar{
-        min-height:72px;
+      h2{
+        font-size:34px;
       }
 
-      .brand strong{
-        font-size:18px;
+      .grid,
+      .partners-grid,
+      .footer-grid{
+        grid-template-columns:1fr;
       }
 
-      .brand span{
-        font-size:12px;
+      .hero-card img{
+        height:320px;
       }
-    }
 
-    @media (min-width:861px){
-      .mobile-menu{
-        display:none !important;
-      }
-    }
-
-    @media (max-width:720px){
-      .hero h1{font-size:36px}
-      h2{font-size:34px}
-      .stats,.grid-3{grid-template-columns:1fr}
-      .hero-inner{padding:56px 0 74px}
-      .hero-card img{height:280px}
       .hero-actions .btn{
         width:100%;
-      }
-      .whatsapp-float{
-        bottom:16px;
-        right:16px;
       }
     }
   </style>
 </head>
+
 <body>
 
 <header>
   <div class="container topbar">
-    <div class="brand">
-      <img src="asix_hd.png" alt="Logo ASIX Assurance">
+
+    <div class="logo">
+      <img src="asix_hd.png" alt="ASIX Assurance">
       <div>
         <strong>ASIX ASSURANCE</strong>
         <span>Courtier indépendant en assurance</span>
       </div>
     </div>
 
-    <nav class="desktop-nav">
-      <a href="index.html#accueil">Accueil</a>
-
-      <div class="dropdown">
-        <a href="assurance-auto.html">Auto ▼</a>
-        <div class="dropdown-content">
-          <a href="assurance-auto.html">Assurance auto</a>
-          <a href="assurance-auto-malusse.html">Conducteur malussé</a>
-          <a href="assurance-auto-resilie.html">Conducteur résilié</a>
-          <a href="assurance-auto-jeune-conducteur.html">Jeune conducteur</a>
-        </div>
-      </div>
-
+    <nav>
+      <a href="index.html">Accueil</a>
+      <a href="assurance-auto.html">Auto</a>
       <a href="assurance-habitation.html">Habitation</a>
       <a href="assurance-sante.html">Santé</a>
       <a href="assurance-pro.html">Pro</a>
-      <a href="index.html#apropos">À propos</a>
       <a href="index.html#faq">FAQ</a>
       <a href="index.html#contact">Contact</a>
     </nav>
 
-    <div class="header-actions">
-      <a class="btn btn-dark desktop-cta" href="index.html#contact">Devis gratuit</a>
-      <button class="menu-toggle" id="menuToggle" aria-label="Ouvrir le menu" aria-expanded="false">☰</button>
-    </div>
-  </div>
+    <a class="btn btn-dark" href="index.html#contact">
+      Devis gratuit
+    </a>
 
-  <div class="mobile-menu" id="mobileMenu">
-    <div class="mobile-menu-inner">
-      <a class="mobile-link" href="index.html#accueil">Accueil</a>
-
-      <details class="mobile-submenu">
-        <summary>Auto ▼</summary>
-        <div class="mobile-sub-links">
-          <a href="assurance-auto.html">Assurance auto</a>
-          <a href="assurance-auto-malusse.html">Conducteur malussé</a>
-          <a href="assurance-auto-resilie.html">Conducteur résilié</a>
-          <a href="assurance-auto-jeune-conducteur.html">Jeune conducteur</a>
-        </div>
-      </details>
-
-      <a class="mobile-link" href="assurance-habitation.html">Habitation</a>
-      <a class="mobile-link" href="assurance-sante.html">Santé</a>
-      <a class="mobile-link" href="assurance-pro.html">Pro</a>
-      <a class="mobile-link" href="index.html#apropos">À propos</a>
-      <a class="mobile-link" href="index.html#faq">FAQ</a>
-      <a class="mobile-link" href="index.html#contact">Contact</a>
-
-      <a class="btn btn-dark" href="index.html#contact">Devis gratuit</a>
-    </div>
   </div>
 </header>
 
 <main>
-  <section class="hero">
-    <div class="container hero-inner">
-      <div>
-        <div class="pill">Locataire • Propriétaire • Bailleur • PNO</div>
-        <h1>Assurance habitation pas chère et bien pensée</h1>
-        <p>ASIX Assurance vous aide à protéger votre logement avec une assurance habitation adaptée à votre statut, à votre bien et à votre budget.</p>
 
-        <div class="hero-actions">
-          <a class="btn btn-primary" href="https://wa.me/33603793189?text=Bonjour%2C%20je%20cherche%20une%20assurance%20habitation." target="_blank">📲 Obtenir mon devis sur WhatsApp</a>
-          <a class="btn btn-dark" href="tel:0603793189">📞 06 03 79 31 89</a>
-        </div>
+<section class="hero">
 
-        <div class="hero-proof">Réponse rapide • Devis gratuit • Sans engagement</div>
+  <div class="container hero-inner">
+
+    <div>
+
+      <div class="pill">
+        Locataire • Propriétaire • Bailleur • PNO
       </div>
 
-      <div class="hero-card">
-        <img src="https://images.unsplash.com/photo-1560185008-a33f7b3b7d91?auto=format&fit=crop&w=1200&q=80" alt="Assurance habitation">
-      </div>
-    </div>
-  </section>
+      <h1>
+        Assurance habitation pas chère et bien pensée
+      </h1>
 
-  <div class="container stats-wrap">
-    <div class="stats">
-      <div class="stat"><strong>Locataire</strong><span>Studio, appartement, maison</span></div>
-      <div class="stat"><strong>Propriétaire</strong><span>Occupant ou bailleur</span></div>
-      <div class="stat"><strong>PNO</strong><span>Protection adaptée</span></div>
-      <div class="stat"><strong>France</strong><span>Accompagnement partout</span></div>
+      <p>
+        ASIX Assurance vous aide à protéger votre logement avec une assurance habitation adaptée à votre situation et à votre budget.
+      </p>
+
+      <div class="hero-actions">
+
+        <a class="btn btn-white"
+           href="https://wa.me/33603793189?text=Bonjour%20je%20cherche%20une%20assurance%20habitation"
+           target="_blank">
+          📲 Devis WhatsApp
+        </a>
+
+        <a class="btn btn-dark" href="tel:0603793189">
+          📞 06 03 79 31 89
+        </a>
+
+      </div>
+
     </div>
+
+    <div class="hero-card">
+
+      <img
+      src="https://images.pexels.com/photos/106399/pexels-photo-106399.jpeg?auto=compress&cs=tinysrgb&w=1200"
+      alt="Assurance habitation">
+
+    </div>
+
   </div>
 
-  <section>
-    <div class="container">
-      <div class="eyebrow">Vos besoins logement</div>
-      <h2>Une couverture adaptée selon votre situation</h2>
-      <p class="lead">Chaque logement et chaque occupant ont des besoins différents. Nous vous aidons à choisir un contrat cohérent, lisible et utile.</p>
+</section>
 
-      <div class="grid-3">
-        <article class="card">
-          <img src="https://images.unsplash.com/photo-1494526585095-c41746248156?auto=format&fit=crop&w=900&q=80" alt="Locataire">
-          <h3>Locataire</h3>
-          <p>Une couverture pour protéger vos biens et votre responsabilité civile au quotidien.</p>
-        </article>
+<section>
 
-        <article class="card">
-          <img src="https://images.unsplash.com/photo-1484154218962-a197022b5858?auto=format&fit=crop&w=900&q=80" alt="Propriétaire occupant">
-          <h3>Propriétaire occupant</h3>
-          <p>Une formule cohérente selon la valeur de votre logement et de vos biens.</p>
-        </article>
+  <div class="container">
 
-        <article class="card">
-          <img src="https://images.unsplash.com/photo-1460317442991-0ec209397118?auto=format&fit=crop&w=900&q=80" alt="Bailleur PNO">
-          <h3>Bailleur / PNO</h3>
-          <p>Une protection utile lorsque le bien est loué ou temporairement vacant.</p>
-        </article>
-      </div>
+    <div class="section-title">
+      Vos besoins habitation
     </div>
-  </section>
 
-  <section class="split">
-    <div class="container grid-2">
-      <div class="panel">
-        <h3>Garanties possibles</h3>
-        <p>Nous vous aidons à choisir des garanties utiles, sans surcharger votre contrat.</p>
+    <h2>
+      Une couverture adaptée à chaque situation
+    </h2>
+
+    <p class="lead">
+      Nous accompagnons les locataires, propriétaires occupants, bailleurs et PNO partout en France.
+    </p>
+
+    <div class="grid">
+
+      <div class="card">
+
+        <img src="https://images.pexels.com/photos/2724749/pexels-photo-2724749.jpeg?auto=compress&cs=tinysrgb&w=1200">
+
+        <div class="card-content">
+          <h3>Locataire</h3>
+          <p>
+            Protection des biens, responsabilité civile et garanties essentielles pour votre logement.
+          </p>
+        </div>
+
+      </div>
+
+      <div class="card">
+
+        <img src="https://images.pexels.com/photos/1643384/pexels-photo-1643384.jpeg?auto=compress&cs=tinysrgb&w=1200">
+
+        <div class="card-content">
+          <h3>Propriétaire</h3>
+          <p>
+            Une assurance habitation complète selon votre logement et vos équipements.
+          </p>
+        </div>
+
+      </div>
+
+      <div class="card">
+
+        <img src="https://images.pexels.com/photos/259588/pexels-photo-259588.jpeg?auto=compress&cs=tinysrgb&w=1200">
+
+        <div class="card-content">
+          <h3>Bailleur / PNO</h3>
+          <p>
+            Protection utile pour les biens loués ou inoccupés temporairement.
+          </p>
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+<section class="gray-section">
+
+  <div class="container">
+
+    <div class="section-title">
+      Garanties
+    </div>
+
+    <h2>
+      Les garanties les plus demandées
+    </h2>
+
+    <div class="two-cols">
+
+      <div class="box">
+
+        <h3>Garanties habitation</h3>
+
         <ul>
           <li>Incendie</li>
           <li>Dégât des eaux</li>
           <li>Vol et vandalisme</li>
           <li>Responsabilité civile</li>
           <li>Bris de glace</li>
-          <li>Catastrophes naturelles</li>
           <li>Protection juridique</li>
           <li>Assistance habitation</li>
         </ul>
+
       </div>
 
-      <div class="panel">
-        <h3>Ce que nous analysons</h3>
+      <div class="box">
+
+        <h3>Analyse ASIX Assurance</h3>
+
         <ul>
-          <li>Votre statut : locataire, propriétaire, bailleur</li>
-          <li>Le type de logement</li>
-          <li>La surface et les équipements</li>
-          <li>La localisation</li>
-          <li>Le niveau de biens à protéger</li>
-          <li>Votre budget</li>
+          <li>Type de logement</li>
+          <li>Surface</li>
+          <li>Statut du client</li>
+          <li>Valeur des biens</li>
+          <li>Ville et localisation</li>
+          <li>Budget du client</li>
         </ul>
+
       </div>
+
     </div>
 
-    <div class="container">
-      <div class="panel" style="margin-top:34px;background:linear-gradient(135deg, var(--blue-950), var(--blue-700));color:#fff;">
-        <h3 style="color:#fff;">Besoin d’une assurance habitation claire ?</h3>
-        <p style="color:#dbeafe;">Contactez ASIX Assurance pour comparer une solution adaptée à votre logement et à votre budget.</p>
+  </div>
 
-        <div class="hero-actions">
-          <a class="btn btn-primary" href="https://wa.me/33603793189?text=Bonjour%2C%20je%20cherche%20une%20assurance%20habitation." target="_blank">WhatsApp direct</a>
-          <a class="btn btn-dark" href="index.html#contact">Retour contact</a>
-        </div>
-      </div>
+</section>
+
+<section class="partners">
+
+  <div class="container">
+
+    <div class="section-title">
+      Partenaires
     </div>
-  </section>
 
-  <section>
-    <div class="container">
-      <div class="eyebrow">Contenu SEO</div>
-      <h2>Votre courtier en assurance habitation en France</h2>
+    <h2>
+      Nos partenaires assurance
+    </h2>
 
-      <div class="panel">
-        <p>ASIX Assurance accompagne les locataires, propriétaires occupants, bailleurs et propriétaires non occupants dans la recherche d’une assurance habitation adaptée.</p>
-        <p>Nous comparons plusieurs possibilités pour vous proposer une formule cohérente avec vos besoins réels, vos garanties utiles et votre budget.</p>
-        <p>Nous intervenons partout en France, avec une réponse rapide par téléphone, email ou WhatsApp.</p>
+    <p class="lead">
+      ASIX Assurance travaille avec plusieurs partenaires pour comparer et proposer des solutions adaptées.
+    </p>
+
+    <div class="partners-grid">
+
+      <div class="partner">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/4/4b/Hiscox_logo.svg" alt="Hiscox">
       </div>
+
+      <div class="partner">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/2/2e/Allianz_logo.svg" alt="Allianz">
+      </div>
+
+      <div class="partner">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/4/49/AIG_logo.svg" alt="AIG">
+      </div>
+
+      <div class="partner">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/8/8f/April_logo.svg" alt="APRIL">
+      </div>
+
+      <div class="partner">
+        <img src="https://www.wekase.fr/wp-content/uploads/2023/02/logo-wekase.svg" alt="Wekase">
+      </div>
+
     </div>
-  </section>
 
-  <section>
-    <div class="container">
-      <div class="eyebrow">Demande rapide</div>
-      <h2>Recevez une réponse rapide</h2>
+    <div class="contact-box">
 
-      <div class="form-card">
-        <h3>Demandez votre devis habitation</h3>
-        <p>Complétez ce formulaire pour recevoir une réponse rapide.</p>
+      <h3>
+        Besoin d’une assurance habitation ?
+      </h3>
 
-        <form action="https://formspree.io/f/xykbrnrr" method="POST">
-          <input class="field" type="text" name="Nom" placeholder="Nom complet" required>
-          <input class="field" type="email" name="email" placeholder="Adresse email" required>
-          <input class="field" type="tel" name="Téléphone" placeholder="Téléphone" required>
+      <p>
+        Contactez ASIX Assurance pour obtenir une étude rapide et un accompagnement personnalisé partout en France.
+      </p>
 
-          <select class="field" name="Type assurance" required>
-            <option value="">Type de besoin</option>
-            <option>Assurance habitation locataire</option>
-            <option>Assurance habitation propriétaire occupant</option>
-            <option>Assurance habitation bailleur</option>
-            <option>Assurance PNO</option>
-          </select>
+      <div class="contact-actions">
 
-          <input class="field" type="text" name="Situation" placeholder="Ex: locataire, propriétaire, bailleur...">
-          <textarea class="field" name="Message" placeholder="Expliquez votre besoin" required></textarea>
-
-          <input type="hidden" name="_subject" value="Nouveau devis habitation ASIX Assurance">
-
-          <button class="btn btn-dark" type="submit" style="width:100%;margin-top:16px;border:none;">
-            Envoyer ma demande
-          </button>
-        </form>
-
-        <a class="btn btn-whatsapp"
-           href="https://wa.me/33603793189?text=Bonjour%2C%20je%20cherche%20une%20assurance%20habitation."
-           target="_blank"
-           style="width:100%;margin-top:12px;">
-           WhatsApp direct
+        <a class="btn btn-white"
+           href="https://wa.me/33603793189?text=Bonjour%20je%20cherche%20une%20assurance%20habitation"
+           target="_blank">
+          WhatsApp direct
         </a>
+
+        <a class="btn btn-dark" href="tel:0603793189">
+          Appeler maintenant
+        </a>
+
       </div>
+
     </div>
-  </section>
 
-  <section>
-    <div class="container">
-      <div class="eyebrow">FAQ</div>
-      <h2>Questions fréquentes</h2>
+  </div>
 
-      <div class="faq-list">
-        <details>
-          <summary>Pouvez-vous assurer un logement en location ?</summary>
-          <p>Oui, nous accompagnons les locataires comme les bailleurs dans la recherche d’une couverture adaptée.</p>
-        </details>
+</section>
 
-        <details>
-          <summary>Proposez-vous des solutions PNO ?</summary>
-          <p>Oui, nous pouvons étudier une assurance propriétaire non occupant selon votre besoin.</p>
-        </details>
-
-        <details>
-          <summary>Le devis est-il gratuit ?</summary>
-          <p>Oui, l’étude est gratuite et sans engagement.</p>
-        </details>
-      </div>
-    </div>
-  </section>
 </main>
 
 <footer>
+
   <div class="container">
+
     <div class="footer-grid">
+
       <div>
-        <div class="footer-title">ASIX ASSURANCE</div>
-        <div>Courtier indépendant en assurance pour particuliers et professionnels. Intervention partout en France.</div>
+
+        <h4>ASIX ASSURANCE</h4>
+
+        <p>
+          Courtier indépendant en assurance pour particuliers et professionnels partout en France.
+        </p>
+
       </div>
 
       <div>
-        <div class="footer-title">Navigation</div>
-        <a href="index.html#accueil">Accueil</a>
-        <a href="index.html#services">Services</a>
-        <a href="index.html#apropos">À propos</a>
-        <a href="index.html#faq">FAQ</a>
-        <a href="index.html#contact">Contact</a>
+
+        <h4>Navigation</h4>
+
+        <a href="index.html">Accueil</a>
+        <a href="assurance-auto.html">Auto</a>
+        <a href="assurance-habitation.html">Habitation</a>
+        <a href="assurance-sante.html">Santé</a>
+        <a href="assurance-pro.html">Pro</a>
+
       </div>
 
       <div>
-        <div class="footer-title">Informations</div>
-        <a href="index.html#mentions-legales">Mentions légales</a>
-        <a href="mailto:contact@asixassurance.fr">contact@asixassurance.fr</a>
-        <a href="tel:0603793189">06 03 79 31 89</a>
+
+        <h4>Informations</h4>
+
+        <a href="mailto:contact@asixassurance.fr">
+          contact@asixassurance.fr
+        </a>
+
+        <a href="tel:0603793189">
+          06 03 79 31 89
+        </a>
+
+        <p style="margin-top:10px;">
+          ORIAS : En cours d’intégration
+        </p>
+
       </div>
+
     </div>
 
-    <div class="copy">© 2026 ASIX Assurance — Tous droits réservés.</div>
+    <div class="copy">
+      © 2026 ASIX Assurance — Tous droits réservés.
+    </div>
+
   </div>
+
 </footer>
 
-<a class="whatsapp-float"
-   href="https://wa.me/33603793189?text=Bonjour%2C%20je%20cherche%20une%20assurance%20habitation."
+<a class="whatsapp"
+   href="https://wa.me/33603793189?text=Bonjour%20je%20cherche%20une%20assurance%20habitation"
    target="_blank">
    WhatsApp
 </a>
-
-<script>
-  const menuToggle = document.getElementById('menuToggle');
-  const mobileMenu = document.getElementById('mobileMenu');
-
-  menuToggle.addEventListener('click', function () {
-    mobileMenu.classList.toggle('open');
-    const expanded = mobileMenu.classList.contains('open');
-    menuToggle.setAttribute('aria-expanded', expanded ? 'true' : 'false');
-    menuToggle.textContent = expanded ? '✕' : '☰';
-  });
-
-  document.querySelectorAll('.mobile-menu a').forEach(link => {
-    link.addEventListener('click', function () {
-      mobileMenu.classList.remove('open');
-      menuToggle.setAttribute('aria-expanded', 'false');
-      menuToggle.textContent = '☰';
-    });
-  });
-</script>
 
 </body>
 </html>
