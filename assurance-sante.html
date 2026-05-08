@@ -5,299 +5,74 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>Assurance santé | ASIX Assurance</title>
-
 <meta name="description" content="Complémentaire santé et mutuelle avec ASIX Assurance. Solutions santé pour particuliers, familles, seniors et indépendants. ORIAS n°26006637.">
 
 <style>
 :root{
-  --blue:#0f2f63;
-  --dark:#081a35;
-  --light:#f8fafc;
-  --text:#1e293b;
-  --gray:#64748b;
-  --border:#dbe4f0;
-  --green:#25D366;
+  --blue:#0f2f63; --dark:#081a35; --light:#f8fafc; --text:#1e293b;
+  --gray:#64748b; --border:#dbe4f0; --green:#25D366;
 }
-
 *{margin:0;padding:0;box-sizing:border-box}
-
-body{
-  font-family:Arial, Helvetica, sans-serif;
-  background:#fff;
-  color:var(--text);
-  line-height:1.6;
-}
-
+body{font-family:Arial,Helvetica,sans-serif;background:#fff;color:var(--text);line-height:1.6}
 a{text-decoration:none;color:inherit}
 img{max-width:100%;display:block}
+.container{width:min(1180px,calc(100% - 32px));margin:auto}
 
-.container{
-  width:min(1180px, calc(100% - 32px));
-  margin:auto;
-}
-
-header{
-  position:sticky;
-  top:0;
-  z-index:1000;
-  background:#fff;
-  border-bottom:1px solid var(--border);
-}
-
-.topbar{
-  min-height:82px;
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-  gap:20px;
-}
-
-.logo{
-  display:flex;
-  align-items:center;
-  gap:14px;
-}
-
+header{position:sticky;top:0;z-index:1000;background:#fff;border-bottom:1px solid var(--border)}
+.topbar{min-height:82px;display:flex;justify-content:space-between;align-items:center;gap:20px}
+.logo{display:flex;align-items:center;gap:14px}
 .logo img{height:54px}
-
-.logo strong{
-  display:block;
-  font-size:20px;
-  color:var(--dark);
-}
-
-.logo span{
-  font-size:13px;
-  color:var(--gray);
-}
-
-nav{
-  display:flex;
-  gap:26px;
-  align-items:center;
-}
-
-nav a,.dropdown-toggle{
-  font-weight:700;
-  color:#334155;
-  cursor:pointer;
-}
-
+.logo strong{display:block;font-size:20px;color:var(--dark)}
+.logo span{font-size:13px;color:var(--gray)}
+nav{display:flex;gap:26px;align-items:center}
+nav a,.dropdown-toggle{font-weight:700;color:#334155;cursor:pointer}
 .dropdown{position:relative}
-
-.dropdown-menu{
-  display:none;
-  position:absolute;
-  top:100%;
-  left:0;
-  background:#fff;
-  border:1px solid var(--border);
-  border-radius:14px;
-  overflow:hidden;
-  min-width:240px;
-  box-shadow:0 15px 35px rgba(0,0,0,.08);
-  z-index:999;
-}
-
-.dropdown-menu a{
-  display:block;
-  padding:14px 16px;
-}
-
+.dropdown-menu{display:none;position:absolute;top:100%;left:0;background:#fff;border:1px solid var(--border);border-radius:14px;overflow:hidden;min-width:240px;box-shadow:0 15px 35px rgba(0,0,0,.08);z-index:999}
+.dropdown-menu a{display:block;padding:14px 16px}
 .dropdown-menu a:hover{background:#f1f5f9}
 .dropdown:hover .dropdown-menu{display:block}
 
-.btn{
-  display:inline-flex;
-  align-items:center;
-  justify-content:center;
-  padding:14px 22px;
-  border-radius:14px;
-  font-weight:700;
-  transition:.2s;
-}
-
+.btn{display:inline-flex;align-items:center;justify-content:center;padding:14px 22px;border-radius:14px;font-weight:700;transition:.2s}
 .btn:hover{transform:translateY(-2px)}
 .btn-dark{background:var(--blue);color:#fff}
 .btn-white{background:#fff;color:var(--dark)}
 
 .hero{
-  background:
-  linear-gradient(rgba(8,26,53,.85), rgba(8,26,53,.85)),
+  background:linear-gradient(rgba(8,26,53,.85),rgba(8,26,53,.85)),
   url('https://images.unsplash.com/photo-1584515933487-779824d29309?auto=format&fit=crop&w=1600&q=80') center/cover;
-  color:white;
-  padding:90px 0;
+  color:#fff;padding:90px 0;
 }
-
-.hero-grid{
-  display:grid;
-  grid-template-columns:1.1fr .9fr;
-  gap:40px;
-  align-items:center;
-}
-
-.pill{
-  display:inline-block;
-  padding:10px 16px;
-  border-radius:999px;
-  background:rgba(255,255,255,.12);
-  border:1px solid rgba(255,255,255,.18);
-  margin-bottom:22px;
-  font-size:14px;
-}
-
-.hero h1{
-  font-size:64px;
-  line-height:1;
-  margin-bottom:22px;
-}
-
-.hero p{
-  font-size:20px;
-  color:#dbeafe;
-  max-width:720px;
-}
-
-.hero-actions{
-  display:flex;
-  gap:16px;
-  flex-wrap:wrap;
-  margin-top:30px;
-}
-
-.hero-card{
-  background:rgba(255,255,255,.08);
-  padding:16px;
-  border-radius:28px;
-  border:1px solid rgba(255,255,255,.15);
-}
-
-.hero-card img{
-  border-radius:22px;
-  height:520px;
-  width:100%;
-  object-fit:cover;
-}
+.hero-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:40px;align-items:center}
+.pill{display:inline-block;padding:10px 16px;border-radius:999px;background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.18);margin-bottom:22px;font-size:14px}
+.hero h1{font-size:64px;line-height:1;margin-bottom:22px}
+.hero p{font-size:20px;color:#dbeafe;max-width:720px}
+.hero-actions{display:flex;gap:16px;flex-wrap:wrap;margin-top:30px}
+.hero-card{background:rgba(255,255,255,.08);padding:16px;border-radius:28px;border:1px solid rgba(255,255,255,.15)}
+.hero-card img{border-radius:22px;height:520px;width:100%;object-fit:cover}
 
 section{padding:90px 0}
+.section-title{text-align:center;margin-bottom:20px}
+.section-title small{display:block;color:#1f5bb5;font-weight:800;letter-spacing:.18em;margin-bottom:10px}
+.section-title h2{font-size:52px;color:var(--dark);margin-bottom:16px}
+.section-title p{font-size:20px;color:var(--gray);max-width:850px;margin:auto}
 
-.section-title{
-  text-align:center;
-  margin-bottom:20px;
-}
-
-.section-title small{
-  display:block;
-  color:#1f5bb5;
-  font-weight:800;
-  letter-spacing:.18em;
-  margin-bottom:10px;
-}
-
-.section-title h2{
-  font-size:52px;
-  color:var(--dark);
-  margin-bottom:16px;
-}
-
-.section-title p{
-  font-size:20px;
-  color:var(--gray);
-  max-width:850px;
-  margin:auto;
-}
-
-.cards{
-  display:grid;
-  grid-template-columns:repeat(3,1fr);
-  gap:24px;
-  margin-top:50px;
-}
-
-.card{
-  background:#fff;
-  border:1px solid var(--border);
-  border-radius:24px;
-  overflow:hidden;
-  box-shadow:0 10px 30px rgba(15,23,42,.06);
-}
-
-.card img{
-  height:230px;
-  width:100%;
-  object-fit:cover;
-}
-
-.card-content{
-  padding:24px;
-}
-
-.card-content h3{
-  font-size:26px;
-  color:var(--dark);
-  margin-bottom:12px;
-}
-
-.card-content p{
-  color:var(--gray);
-  margin-bottom:20px;
-}
+.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:50px}
+.card{background:#fff;border:1px solid var(--border);border-radius:24px;overflow:hidden;box-shadow:0 10px 30px rgba(15,23,42,.06)}
+.card img{height:230px;width:100%;object-fit:cover}
+.card-content{padding:24px}
+.card-content h3{font-size:26px;color:var(--dark);margin-bottom:12px}
+.card-content p{color:var(--gray);margin-bottom:20px}
 
 .gray{background:var(--light)}
-
-.two-cols{
-  display:grid;
-  grid-template-columns:1fr 1fr;
-  gap:28px;
-  margin-top:50px;
-}
-
-.box{
-  background:#fff;
-  border:1px solid var(--border);
-  border-radius:24px;
-  padding:30px;
-  box-shadow:0 10px 30px rgba(15,23,42,.05);
-}
-
-.box h3{
-  font-size:28px;
-  color:var(--dark);
-  margin-bottom:16px;
-}
-
-.box ul{
-  padding-left:20px;
-  color:var(--gray);
-}
-
+.two-cols{display:grid;grid-template-columns:1fr 1fr;gap:28px;margin-top:50px}
+.box{background:#fff;border:1px solid var(--border);border-radius:24px;padding:30px;box-shadow:0 10px 30px rgba(15,23,42,.05)}
+.box h3{font-size:28px;color:var(--dark);margin-bottom:16px}
+.box ul{padding-left:20px;color:var(--gray)}
 .box li{margin:12px 0}
 
-.partner-grid{
-  display:grid;
-  grid-template-columns:repeat(4,1fr);
-  gap:24px;
-  margin-top:50px;
-}
-
-.partner-card{
-  border:1px solid var(--border);
-  border-radius:22px;
-  padding:34px;
-  background:#fff;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  height:135px;
-  box-shadow:0 10px 25px rgba(15,23,42,.04);
-}
-
-.partner-card strong{
-  font-size:25px;
-  font-weight:900;
-  color:var(--dark);
-}
-
+.partner-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:24px;margin-top:50px}
+.partner-card{border:1px solid var(--border);border-radius:22px;padding:34px;background:#fff;display:flex;align-items:center;justify-content:center;height:135px;box-shadow:0 10px 25px rgba(15,23,42,.04)}
+.partner-card strong{font-size:25px;font-weight:900;color:var(--dark)}
 .partner-card.april strong{color:#0f8f9d}
 .partner-card.kase strong{color:#1f5bb5}
 .partner-card.coover strong{color:#111827}
@@ -308,119 +83,30 @@ section{padding:90px 0}
 .partner-card.endya strong{color:#0f766e}
 
 .infos{background:#f8fafc}
+.info-box{background:linear-gradient(135deg,#081a35,#1f5bb5);color:#fff;padding:42px;border-radius:30px}
+.info-box h2{font-size:44px;margin-bottom:20px}
+.info-box p{color:#dbeafe;font-size:18px}
+.info-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:40px}
+.info-card{background:rgba(255,255,255,.10);padding:24px;border-radius:20px}
+.info-card strong{display:block;margin-bottom:8px;font-size:18px}
 
-.info-box{
-  background:linear-gradient(135deg,#081a35,#1f5bb5);
-  color:white;
-  padding:42px;
-  border-radius:30px;
-}
+.form-box{max-width:760px;margin:50px auto 0;background:#fff;padding:40px;border-radius:28px;border:1px solid var(--border);box-shadow:0 10px 30px rgba(15,23,42,.06)}
+.field{width:100%;padding:16px;margin-bottom:16px;border-radius:14px;border:1px solid var(--border);font-size:16px;font-family:Arial,Helvetica,sans-serif}
+textarea.field{min-height:150px;resize:vertical}
 
-.info-box h2{
-  font-size:44px;
-  margin-bottom:20px;
-}
+.cta{background:var(--dark);color:#fff;text-align:center}
+.cta h2{font-size:48px;margin-bottom:18px}
+.cta p{color:#dbeafe;font-size:20px;max-width:760px;margin:auto}
 
-.info-box p{
-  color:#dbeafe;
-  font-size:18px;
-}
-
-.info-grid{
-  display:grid;
-  grid-template-columns:repeat(3,1fr);
-  gap:24px;
-  margin-top:40px;
-}
-
-.info-card{
-  background:rgba(255,255,255,.10);
-  padding:24px;
-  border-radius:20px;
-}
-
-.info-card strong{
-  display:block;
-  margin-bottom:8px;
-  font-size:18px;
-}
-
-.form-box{
-  max-width:760px;
-  margin:50px auto 0;
-  background:#fff;
-  padding:40px;
-  border-radius:28px;
-  border:1px solid var(--border);
-  box-shadow:0 10px 30px rgba(15,23,42,.06);
-}
-
-.field{
-  width:100%;
-  padding:16px;
-  margin-bottom:16px;
-  border-radius:14px;
-  border:1px solid var(--border);
-  font-size:16px;
-}
-
-textarea.field{
-  min-height:150px;
-  resize:vertical;
-}
-
-footer{
-  background:#081a35;
-  color:#cbd5e1;
-  padding:50px 0;
-}
-
-.footer-grid{
-  display:grid;
-  grid-template-columns:1.2fr 1fr 1fr;
-  gap:40px;
-}
-
-.footer-title{
-  font-weight:800;
-  color:white;
-  margin-bottom:16px;
-}
-
-footer a{
-  display:block;
-  margin:10px 0;
-}
-
-.copy{
-  margin-top:30px;
-  padding-top:20px;
-  border-top:1px solid rgba(255,255,255,.1);
-  font-size:14px;
-}
-
-.whatsapp{
-  position:fixed;
-  right:20px;
-  bottom:20px;
-  background:var(--green);
-  color:white;
-  padding:16px 22px;
-  border-radius:999px;
-  font-weight:700;
-  z-index:9999;
-}
+footer{background:#081a35;color:#cbd5e1;padding:50px 0}
+.footer-grid{display:grid;grid-template-columns:1.2fr 1fr 1fr;gap:40px}
+.footer-title{font-weight:800;color:#fff;margin-bottom:16px}
+footer a{display:block;margin:10px 0}
+.copy{margin-top:30px;padding-top:20px;border-top:1px solid rgba(255,255,255,.1);font-size:14px}
+.whatsapp{position:fixed;right:20px;bottom:20px;background:var(--green);color:#fff;padding:16px 22px;border-radius:999px;font-weight:700;z-index:9999}
 
 @media(max-width:1000px){
-  .hero-grid,
-  .cards,
-  .two-cols,
-  .partner-grid,
-  .info-grid,
-  .footer-grid{
-    grid-template-columns:1fr;
-  }
-
+  .hero-grid,.cards,.two-cols,.partner-grid,.info-grid,.footer-grid{grid-template-columns:1fr}
   nav{display:none}
   .hero h1{font-size:42px}
   .hero-card img{height:320px}
@@ -443,7 +129,6 @@ footer a{
 
     <nav>
       <a href="index.html">Accueil</a>
-
       <div class="dropdown">
         <div class="dropdown-toggle">Auto ▼</div>
         <div class="dropdown-menu">
@@ -453,10 +138,11 @@ footer a{
           <a href="assurance-auto-jeune-conducteur.html">Jeune conducteur</a>
         </div>
       </div>
-
       <a href="assurance-habitation.html">Habitation</a>
       <a href="assurance-sante.html">Santé</a>
       <a href="assurance-pro.html">Pro</a>
+      <a href="index.html#apropos">À propos</a>
+      <a href="index.html#contact">Contact</a>
     </nav>
 
     <a class="btn btn-dark" href="#devis">Devis gratuit</a>
@@ -467,12 +153,8 @@ footer a{
   <div class="container hero-grid">
     <div>
       <div class="pill">Mutuelle • Santé • Famille • Senior • Indépendant</div>
-
       <h1>Une complémentaire santé adaptée à vos besoins.</h1>
-
-      <p>
-        ASIX Assurance vous accompagne pour trouver une mutuelle santé claire, adaptée à votre situation et à votre budget.
-      </p>
+      <p>ASIX Assurance vous accompagne pour trouver une mutuelle santé claire, adaptée à votre situation et à votre budget.</p>
 
       <div class="hero-actions">
         <a class="btn btn-white" href="https://wa.me/33603793189" target="_blank">📲 WhatsApp</a>
@@ -496,7 +178,7 @@ footer a{
 
     <div class="cards">
       <div class="card">
-        <img src="https://images.unsplash.com/photo-1516574187841-cb9cc2ca948b?auto=format&fit=crop&w=1200&q=80">
+        <img src="https://images.unsplash.com/photo-1516574187841-cb9cc2ca948b?auto=format&fit=crop&w=1200&q=80" alt="Santé particulier">
         <div class="card-content">
           <h3>Particulier</h3>
           <p>Une mutuelle santé adaptée à votre quotidien et à votre budget.</p>
@@ -504,7 +186,7 @@ footer a{
       </div>
 
       <div class="card">
-        <img src="https://images.unsplash.com/photo-1511895426328-dc8714191300?auto=format&fit=crop&w=1200&q=80">
+        <img src="https://images.unsplash.com/photo-1511895426328-dc8714191300?auto=format&fit=crop&w=1200&q=80" alt="Santé famille">
         <div class="card-content">
           <h3>Famille</h3>
           <p>Des garanties santé pensées pour protéger toute votre famille.</p>
@@ -512,7 +194,7 @@ footer a{
       </div>
 
       <div class="card">
-        <img src="https://images.unsplash.com/photo-1516302752625-fcc3c50ae61f?auto=format&fit=crop&w=1200&q=80">
+        <img src="https://images.unsplash.com/photo-1516302752625-fcc3c50ae61f?auto=format&fit=crop&w=1200&q=80" alt="Santé senior">
         <div class="card-content">
           <h3>Senior</h3>
           <p>Une couverture santé adaptée aux besoins évolutifs des seniors.</p>
@@ -558,45 +240,88 @@ footer a{
   </div>
 </section>
 
-<section>
-<div class="container">
-<div class="section-title">
-<small>DEVIS SANTÉ</small>
-<h2>Recevez votre étude rapidement</h2>
-</div>
+<section class="partners">
+  <div class="container">
+    <div class="section-title">
+      <small>PARTENAIRES</small>
+      <h2>Nos partenaires & références</h2>
+      <p>ASIX Assurance s’appuie sur des partenaires reconnus pour proposer des solutions adaptées.</p>
+    </div>
 
-<div class="form-box">
-<form action="https://formspree.io/f/xykbrnrr" method="POST">
-
-<input class="field" type="text" name="Nom" placeholder="Nom complet" required>
-
-<input class="field" type="email" name="Email" placeholder="Adresse email" required>
-
-<input class="field" type="tel" name="Téléphone" placeholder="Téléphone" required>
-
-<select class="field" name="Profil" required>
-<option value="">Votre profil</option>
-<option>Particulier</option>
-<option>Famille</option>
-<option>Senior</option>
-<option>Indépendant</option>
-</select>
-
-<textarea class="field" name="Message" placeholder="Expliquez votre besoin"></textarea>
-
-<button type="submit" class="btn btn-dark" style="width:100%;border:none;">
-Envoyer ma demande
-</button>
-
-</form>
-</div>
-</div>
+    <div class="partner-grid">
+      <div class="partner-card april"><strong>APRIL</strong></div>
+      <div class="partner-card kase"><strong>Kase</strong></div>
+      <div class="partner-card coover"><strong>Coover</strong></div>
+      <div class="partner-card hiscox"><strong>Hiscox</strong></div>
+      <div class="partner-card allianz"><strong>Allianz</strong></div>
+      <div class="partner-card aig"><strong>AIG</strong></div>
+      <div class="partner-card orias"><strong>ORIAS</strong></div>
+      <div class="partner-card endya"><strong>ENDYA</strong></div>
+    </div>
+  </div>
 </section>
 
-<footer>
+<section class="infos" id="apropos">
+  <div class="container">
+    <div class="info-box">
+      <h2>Informations ASIX Assurance</h2>
+      <p>ASIX ASSURANCE est un cabinet de courtage en assurances pour particuliers et professionnels.</p>
+
+      <div class="info-grid">
+        <div class="info-card"><strong>ORIAS</strong>N° ORIAS : 26006637</div>
+        <div class="info-card"><strong>SIRET</strong>10348790600010</div>
+        <div class="info-card"><strong>Association professionnelle</strong>ENDYA</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="devis">
+  <div class="container">
+    <div class="section-title">
+      <small>DEVIS SANTÉ</small>
+      <h2>Recevez votre étude rapidement</h2>
+      <p>Remplissez ce formulaire et ASIX Assurance vous recontacte rapidement.</p>
+    </div>
+
+    <div class="form-box">
+      <form action="https://formspree.io/f/xykbrnrr" method="POST">
+        <input class="field" type="text" name="Nom" placeholder="Nom complet" required>
+        <input class="field" type="email" name="Email" placeholder="Adresse email" required>
+        <input class="field" type="tel" name="Téléphone" placeholder="Téléphone" required>
+
+        <select class="field" name="Profil" required>
+          <option value="">Votre profil</option>
+          <option>Particulier</option>
+          <option>Famille</option>
+          <option>Senior</option>
+          <option>Indépendant</option>
+        </select>
+
+        <textarea class="field" name="Message" placeholder="Expliquez votre besoin" required></textarea>
+        <input type="hidden" name="_subject" value="Nouveau devis santé ASIX Assurance">
+
+        <button type="submit" class="btn btn-dark" style="width:100%;border:none;font-size:17px;">Envoyer ma demande</button>
+      </form>
+    </div>
+  </div>
+</section>
+
+<section class="cta">
+  <div class="container">
+    <h2>Besoin d’un devis santé ?</h2>
+    <p>Contactez ASIX Assurance pour une étude personnalisée, gratuite et sans engagement.</p>
+
+    <div class="hero-actions" style="justify-content:center;">
+      <a class="btn btn-white" href="https://wa.me/33603793189" target="_blank">WhatsApp direct</a>
+      <a class="btn btn-dark" href="tel:0603793189">Appeler maintenant</a>
+    </div>
+  </div>
+</section>
+
+<footer id="contact">
   <div class="container">
     <div class="footer-grid">
-
       <div>
         <div class="footer-title">ASIX ASSURANCE</div>
         <p>Courtier indépendant en assurance pour particuliers et professionnels.</p>
@@ -615,22 +340,18 @@ Envoyer ma demande
         <div class="footer-title">Informations légales</div>
         <p>ORIAS n°26006637</p>
         <p>SIRET 10348790600010</p>
+        <p>SAS au capital de 1 000 €</p>
         <p>Association professionnelle : ENDYA</p>
         <a href="mailto:contact@asixassurance.fr">contact@asixassurance.fr</a>
         <a href="tel:0603793189">06 03 79 31 89</a>
       </div>
-
     </div>
 
-    <div class="copy">
-      © 2026 ASIX Assurance — Tous droits réservés.
-    </div>
+    <div class="copy">© 2026 ASIX Assurance — Tous droits réservés. Courtier immatriculé à l’ORIAS sous le n°26006637.</div>
   </div>
 </footer>
 
-<a class="whatsapp" href="https://wa.me/33603793189" target="_blank">
-WhatsApp
-</a>
+<a class="whatsapp" href="https://wa.me/33603793189" target="_blank">WhatsApp</a>
 
 </body>
 </html>
