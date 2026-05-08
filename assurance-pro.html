@@ -6,316 +6,284 @@
 
 <title>Assurance professionnelle | ASIX Assurance</title>
 
-<meta name="description" content="Assurance professionnelle avec ASIX Assurance : RC Pro, multirisque professionnelle, décennale et solutions entreprise. ORIAS n°26006637.">
+<meta name="description" content="Assurance professionnelle avec ASIX Assurance. RC Pro, décennale, multirisque et solutions adaptées aux indépendants et entreprises partout en France.">
 
 <style>
 :root{
-  --blue:#0f2f63;
-  --dark:#081a35;
-  --light:#f8fafc;
-  --text:#1e293b;
-  --gray:#64748b;
-  --border:#dbe4f0;
-  --green:#25D366;
+--blue:#0f2f63;
+--dark:#081a35;
+--light:#f8fafc;
+--text:#1e293b;
+--gray:#64748b;
+--border:#dbe4f0;
+--green:#25D366;
 }
 
 *{margin:0;padding:0;box-sizing:border-box}
 
 body{
-  font-family:Arial,Helvetica,sans-serif;
-  background:#fff;
-  color:var(--text);
-  line-height:1.6;
+font-family:Arial,Helvetica,sans-serif;
+background:#fff;
+color:var(--text);
+line-height:1.6;
 }
 
 a{text-decoration:none;color:inherit}
 img{max-width:100%;display:block}
 
 .container{
-  width:min(1180px,calc(100% - 32px));
-  margin:auto;
+width:min(1180px,calc(100% - 32px));
+margin:auto;
 }
 
 header{
-  position:sticky;
-  top:0;
-  z-index:1000;
-  background:#fff;
-  border-bottom:1px solid var(--border);
+position:sticky;
+top:0;
+z-index:1000;
+background:#fff;
+border-bottom:1px solid var(--border);
 }
 
 .topbar{
-  min-height:82px;
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-  gap:20px;
+min-height:82px;
+display:flex;
+justify-content:space-between;
+align-items:center;
+gap:20px;
 }
 
 .logo{
-  display:flex;
-  align-items:center;
-  gap:14px;
+display:flex;
+align-items:center;
+gap:14px;
 }
 
 .logo img{height:54px}
 
 .logo strong{
-  display:block;
-  font-size:20px;
-  color:var(--dark);
+display:block;
+font-size:20px;
+color:var(--dark);
 }
 
 .logo span{
-  font-size:13px;
-  color:var(--gray);
+font-size:13px;
+color:var(--gray);
 }
 
 nav{
-  display:flex;
-  gap:26px;
-  align-items:center;
+display:flex;
+gap:26px;
+align-items:center;
 }
 
 nav a,.dropdown-toggle{
-  font-weight:700;
-  color:#334155;
-  cursor:pointer;
+font-weight:700;
+color:#334155;
+cursor:pointer;
 }
 
-.dropdown{position:relative}
+.dropdown{
+position:relative;
+}
 
 .dropdown-menu{
-  display:none;
-  position:absolute;
-  top:100%;
-  left:0;
-  background:#fff;
-  border:1px solid var(--border);
-  border-radius:14px;
-  overflow:hidden;
-  min-width:240px;
-  box-shadow:0 15px 35px rgba(0,0,0,.08);
-  z-index:999;
+display:none;
+position:absolute;
+top:100%;
+left:0;
+background:#fff;
+border:1px solid var(--border);
+border-radius:14px;
+overflow:hidden;
+min-width:240px;
+box-shadow:0 15px 35px rgba(0,0,0,.08);
+z-index:999;
 }
 
 .dropdown-menu a{
-  display:block;
-  padding:14px 16px;
+display:block;
+padding:14px 16px;
 }
 
 .dropdown-menu a:hover{
-  background:#f1f5f9;
+background:#f1f5f9;
 }
 
 .dropdown:hover .dropdown-menu{
-  display:block;
+display:block;
 }
 
 .btn{
-  display:inline-flex;
-  align-items:center;
-  justify-content:center;
-  padding:14px 22px;
-  border-radius:14px;
-  font-weight:700;
-  transition:.2s;
+display:inline-flex;
+align-items:center;
+justify-content:center;
+padding:14px 22px;
+border-radius:14px;
+font-weight:700;
+transition:.2s;
 }
 
 .btn:hover{
-  transform:translateY(-2px);
+transform:translateY(-2px);
 }
 
 .btn-dark{
-  background:var(--blue);
-  color:#fff;
+background:var(--blue);
+color:#fff;
 }
 
 .btn-white{
-  background:#fff;
-  color:var(--dark);
+background:#fff;
+color:var(--dark);
 }
 
 .hero{
-  background:
-  linear-gradient(rgba(8,26,53,.88),rgba(8,26,53,.88)),
-  url('https://images.unsplash.com/photo-1521791136064-7986c2920216?auto=format&fit=crop&w=1600&q=80') center/cover;
-  color:#fff;
-  padding:90px 0;
+background:
+linear-gradient(rgba(8,26,53,.88),rgba(8,26,53,.88)),
+url('https://images.pexels.com/photos/3184291/pexels-photo-3184291.jpeg?auto=compress&cs=tinysrgb&w=1600') center/cover;
+color:#fff;
+padding:90px 0;
 }
 
 .hero-grid{
-  display:grid;
-  grid-template-columns:1.1fr .9fr;
-  gap:40px;
-  align-items:center;
+display:grid;
+grid-template-columns:1.1fr .9fr;
+gap:40px;
+align-items:center;
 }
 
 .pill{
-  display:inline-block;
-  padding:10px 16px;
-  border-radius:999px;
-  background:rgba(255,255,255,.12);
-  border:1px solid rgba(255,255,255,.18);
-  margin-bottom:22px;
-  font-size:14px;
+display:inline-block;
+padding:10px 16px;
+border-radius:999px;
+background:rgba(255,255,255,.12);
+border:1px solid rgba(255,255,255,.18);
+margin-bottom:22px;
+font-size:14px;
 }
 
 .hero h1{
-  font-size:64px;
-  line-height:1;
-  margin-bottom:22px;
+font-size:62px;
+line-height:1;
+margin-bottom:22px;
 }
 
 .hero p{
-  font-size:20px;
-  color:#dbeafe;
-  max-width:720px;
+font-size:20px;
+color:#dbeafe;
+max-width:720px;
 }
 
 .hero-actions{
-  display:flex;
-  gap:16px;
-  flex-wrap:wrap;
-  margin-top:30px;
+display:flex;
+gap:16px;
+flex-wrap:wrap;
+margin-top:30px;
 }
 
 .hero-card{
-  background:rgba(255,255,255,.08);
-  padding:16px;
-  border-radius:28px;
-  border:1px solid rgba(255,255,255,.15);
+background:rgba(255,255,255,.08);
+padding:16px;
+border-radius:28px;
+border:1px solid rgba(255,255,255,.15);
 }
 
 .hero-card img{
-  border-radius:22px;
-  height:520px;
-  width:100%;
-  object-fit:cover;
+border-radius:22px;
+height:520px;
+width:100%;
+object-fit:cover;
 }
 
 section{
-  padding:90px 0;
+padding:90px 0;
 }
 
 .section-title{
-  text-align:center;
-  margin-bottom:20px;
+text-align:center;
+margin-bottom:20px;
 }
 
 .section-title small{
-  display:block;
-  color:#1f5bb5;
-  font-weight:800;
-  letter-spacing:.18em;
-  margin-bottom:10px;
+display:block;
+color:#1f5bb5;
+font-weight:800;
+letter-spacing:.18em;
+margin-bottom:10px;
 }
 
 .section-title h2{
-  font-size:52px;
-  color:var(--dark);
-  margin-bottom:16px;
+font-size:50px;
+color:var(--dark);
+margin-bottom:16px;
 }
 
 .section-title p{
-  font-size:20px;
-  color:var(--gray);
-  max-width:850px;
-  margin:auto;
+font-size:20px;
+color:var(--gray);
+max-width:850px;
+margin:auto;
 }
 
 .cards{
-  display:grid;
-  grid-template-columns:repeat(3,1fr);
-  gap:24px;
-  margin-top:50px;
+display:grid;
+grid-template-columns:repeat(3,1fr);
+gap:24px;
+margin-top:50px;
 }
 
 .card{
-  background:#fff;
-  border:1px solid var(--border);
-  border-radius:24px;
-  overflow:hidden;
-  box-shadow:0 10px 30px rgba(15,23,42,.06);
+background:#fff;
+border:1px solid var(--border);
+border-radius:24px;
+overflow:hidden;
+box-shadow:0 10px 30px rgba(15,23,42,.06);
 }
 
 .card img{
-  height:230px;
-  width:100%;
-  object-fit:cover;
+height:230px;
+width:100%;
+object-fit:cover;
 }
 
 .card-content{
-  padding:24px;
+padding:24px;
 }
 
 .card-content h3{
-  font-size:26px;
-  color:var(--dark);
-  margin-bottom:12px;
+font-size:26px;
+color:var(--dark);
+margin-bottom:12px;
 }
 
 .card-content p{
-  color:var(--gray);
-}
-
-.gray{
-  background:var(--light);
-}
-
-.two-cols{
-  display:grid;
-  grid-template-columns:1fr 1fr;
-  gap:28px;
-  margin-top:50px;
-}
-
-.box{
-  background:#fff;
-  border:1px solid var(--border);
-  border-radius:24px;
-  padding:30px;
-  box-shadow:0 10px 30px rgba(15,23,42,.05);
-}
-
-.box h3{
-  font-size:28px;
-  color:var(--dark);
-  margin-bottom:16px;
-}
-
-.box ul{
-  padding-left:20px;
-  color:var(--gray);
-}
-
-.box li{
-  margin:12px 0;
+color:var(--gray);
+margin-bottom:18px;
 }
 
 .partner-grid{
-  display:grid;
-  grid-template-columns:repeat(4,1fr);
-  gap:24px;
-  margin-top:50px;
+display:grid;
+grid-template-columns:repeat(4,1fr);
+gap:24px;
+margin-top:50px;
 }
 
 .partner-card{
-  border:1px solid var(--border);
-  border-radius:22px;
-  padding:34px;
-  background:#fff;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  height:135px;
-  box-shadow:0 10px 25px rgba(15,23,42,.04);
+border:1px solid var(--border);
+border-radius:22px;
+padding:34px;
+background:#fff;
+display:flex;
+align-items:center;
+justify-content:center;
+height:135px;
+box-shadow:0 10px 25px rgba(15,23,42,.04);
 }
 
 .partner-card strong{
-  font-size:25px;
-  font-weight:900;
-  color:var(--dark);
+font-size:25px;
+font-weight:900;
 }
 
 .partner-card.april strong{color:#0f8f9d}
@@ -328,153 +296,112 @@ section{
 .partner-card.endya strong{color:#0f766e}
 
 .infos{
-  background:#f8fafc;
+background:#f8fafc;
 }
 
 .info-box{
-  background:linear-gradient(135deg,#081a35,#1f5bb5);
-  color:#fff;
-  padding:42px;
-  border-radius:30px;
-}
-
-.info-box h2{
-  font-size:44px;
-  margin-bottom:20px;
-}
-
-.info-box p{
-  color:#dbeafe;
-  font-size:18px;
+background:linear-gradient(135deg,#081a35,#1f5bb5);
+color:#fff;
+padding:42px;
+border-radius:30px;
 }
 
 .info-grid{
-  display:grid;
-  grid-template-columns:repeat(3,1fr);
-  gap:24px;
-  margin-top:40px;
+display:grid;
+grid-template-columns:repeat(3,1fr);
+gap:24px;
+margin-top:40px;
 }
 
 .info-card{
-  background:rgba(255,255,255,.10);
-  padding:24px;
-  border-radius:20px;
-}
-
-.info-card strong{
-  display:block;
-  margin-bottom:8px;
-  font-size:18px;
+background:rgba(255,255,255,.10);
+padding:24px;
+border-radius:20px;
 }
 
 .form-box{
-  max-width:760px;
-  margin:50px auto 0;
-  background:#fff;
-  padding:40px;
-  border-radius:28px;
-  border:1px solid var(--border);
-  box-shadow:0 10px 30px rgba(15,23,42,.06);
+max-width:760px;
+margin:50px auto 0;
+background:#fff;
+padding:40px;
+border-radius:28px;
+border:1px solid var(--border);
+box-shadow:0 10px 30px rgba(15,23,42,.06);
 }
 
 .field{
-  width:100%;
-  padding:16px;
-  margin-bottom:16px;
-  border-radius:14px;
-  border:1px solid var(--border);
-  font-size:16px;
-  font-family:Arial,Helvetica,sans-serif;
+width:100%;
+padding:16px;
+margin-bottom:16px;
+border-radius:14px;
+border:1px solid var(--border);
+font-size:16px;
 }
 
 textarea.field{
-  min-height:150px;
-  resize:vertical;
-}
-
-.cta{
-  background:var(--dark);
-  color:#fff;
-  text-align:center;
-}
-
-.cta h2{
-  font-size:48px;
-  margin-bottom:18px;
-}
-
-.cta p{
-  color:#dbeafe;
-  font-size:20px;
-  max-width:760px;
-  margin:auto;
+min-height:150px;
+resize:vertical;
 }
 
 footer{
-  background:#081a35;
-  color:#cbd5e1;
-  padding:50px 0;
+background:#081a35;
+color:#cbd5e1;
+padding:50px 0;
 }
 
 .footer-grid{
-  display:grid;
-  grid-template-columns:1.2fr 1fr 1fr;
-  gap:40px;
+display:grid;
+grid-template-columns:1.2fr 1fr 1fr;
+gap:40px;
 }
 
 .footer-title{
-  font-weight:800;
-  color:#fff;
-  margin-bottom:16px;
+color:#fff;
+font-weight:800;
+margin-bottom:16px;
 }
 
 footer a{
-  display:block;
-  margin:10px 0;
+display:block;
+margin:10px 0;
 }
 
 .copy{
-  margin-top:30px;
-  padding-top:20px;
-  border-top:1px solid rgba(255,255,255,.1);
-  font-size:14px;
+margin-top:30px;
+padding-top:20px;
+border-top:1px solid rgba(255,255,255,.1);
+font-size:14px;
 }
 
 .whatsapp{
-  position:fixed;
-  right:20px;
-  bottom:20px;
-  background:var(--green);
-  color:#fff;
-  padding:16px 22px;
-  border-radius:999px;
-  font-weight:700;
-  z-index:9999;
+position:fixed;
+right:20px;
+bottom:20px;
+background:var(--green);
+color:#fff;
+padding:16px 22px;
+border-radius:999px;
+font-weight:700;
+z-index:9999;
 }
 
 @media(max-width:1000px){
-  .hero-grid,
-  .cards,
-  .two-cols,
-  .partner-grid,
-  .info-grid,
-  .footer-grid{
-    grid-template-columns:1fr;
-  }
 
-  nav{display:none}
+.hero-grid,
+.cards,
+.partner-grid,
+.info-grid,
+.footer-grid{
+grid-template-columns:1fr;
+}
 
-  .hero h1{
-    font-size:42px;
-  }
+nav{display:none}
 
-  .hero-card img{
-    height:320px;
-  }
+.hero h1{font-size:42px}
 
-  .section-title h2{
-    font-size:36px;
-  }
+.hero-card img{height:320px}
+
+.section-title h2{font-size:36px}
 }
 </style>
 </head>
@@ -482,326 +409,304 @@ footer a{
 <body>
 
 <header>
-  <div class="container topbar">
+<div class="container topbar">
 
-    <div class="logo">
-      <img src="asix_hd.png" alt="ASIX Assurance">
-      <div>
-        <strong>ASIX ASSURANCE</strong>
-        <span>Courtier indépendant en assurance</span>
-      </div>
-    </div>
+<div class="logo">
+<img src="asix_hd.png" alt="ASIX Assurance">
 
-    <nav>
-      <a href="index.html">Accueil</a>
+<div>
+<strong>ASIX ASSURANCE</strong>
+<span>Courtier indépendant en assurance</span>
+</div>
+</div>
 
-      <div class="dropdown">
-        <div class="dropdown-toggle">Auto ▼</div>
+<nav>
+<a href="index.html">Accueil</a>
 
-        <div class="dropdown-menu">
-          <a href="assurance-auto.html">Assurance auto</a>
-          <a href="assurance-auto-malusse.html">Conducteur malussé</a>
-          <a href="assurance-auto-resilie.html">Conducteur résilié</a>
-          <a href="assurance-auto-jeune-conducteur.html">Jeune conducteur</a>
-        </div>
-      </div>
+<div class="dropdown">
+<div class="dropdown-toggle">Auto ▼</div>
 
-      <a href="assurance-habitation.html">Habitation</a>
-      <a href="assurance-sante.html">Santé</a>
-      <a href="assurance-pro.html">Pro</a>
-      <a href="index.html#apropos">À propos</a>
-      <a href="index.html#contact">Contact</a>
-    </nav>
+<div class="dropdown-menu">
+<a href="assurance-auto.html">Assurance auto</a>
+<a href="assurance-auto-malusse.html">Conducteur malussé</a>
+<a href="assurance-auto-resilie.html">Conducteur résilié</a>
+<a href="assurance-auto-jeune-conducteur.html">Jeune conducteur</a>
+</div>
+</div>
 
-    <a class="btn btn-dark" href="#devis">Devis gratuit</a>
-  </div>
+<a href="assurance-habitation.html">Habitation</a>
+<a href="assurance-sante.html">Santé</a>
+<a href="assurance-pro.html">Pro</a>
+<a href="index.html#apropos">À propos</a>
+<a href="index.html#contact">Contact</a>
+</nav>
+
+<a class="btn btn-dark" href="#devis">Devis gratuit</a>
+
+</div>
 </header>
 
 <section class="hero">
-  <div class="container hero-grid">
 
-    <div>
-      <div class="pill">RC Pro • Multirisque • Décennale • Entreprise</div>
+<div class="container hero-grid">
 
-      <h1>Des assurances adaptées aux professionnels.</h1>
+<div>
 
-      <p>
-        ASIX Assurance accompagne indépendants, commerçants, artisans,
-        professions libérales et entreprises dans la protection de leur activité.
-      </p>
+<div class="pill">
+Professionnel • RC Pro • Décennale • Multirisque
+</div>
 
-      <div class="hero-actions">
-        <a class="btn btn-white" href="https://wa.me/33603793189" target="_blank">📲 WhatsApp</a>
-        <a class="btn btn-dark" href="tel:0603793189">📞 06 03 79 31 89</a>
-      </div>
-    </div>
+<h1>Votre assurance professionnelle avec ASIX Assurance.</h1>
 
-    <div class="hero-card">
-      <img src="https://images.unsplash.com/photo-1521791136064-7986c2920216?auto=format&fit=crop&w=1200&q=80" alt="Assurance professionnelle">
-    </div>
+<p>
+Des solutions adaptées selon votre activité,
+votre entreprise et vos obligations professionnelles.
+</p>
 
-  </div>
+<div class="hero-actions">
+<a class="btn btn-white" href="https://wa.me/33603793189" target="_blank">
+📲 WhatsApp
+</a>
+
+<a class="btn btn-dark" href="tel:0603793189">
+📞 06 03 79 31 89
+</a>
+</div>
+
+</div>
+
+<div class="hero-card">
+<img src="https://images.pexels.com/photos/3184465/pexels-photo-3184465.jpeg?auto=compress&cs=tinysrgb&w=1200" alt="Assurance professionnelle">
+</div>
+
+</div>
 </section>
 
 <section>
-  <div class="container">
 
-    <div class="section-title">
-      <small>ASSURANCES PROFESSIONNELLES</small>
-      <h2>Des solutions selon votre activité</h2>
+<div class="container">
 
-      <p>
-        Nous étudions vos besoins afin de proposer des garanties cohérentes
-        avec votre métier et votre activité professionnelle.
-      </p>
-    </div>
+<div class="section-title">
+<small>SOLUTIONS PROFESSIONNELLES</small>
 
-    <div class="cards">
+<h2>Des solutions adaptées à chaque activité</h2>
 
-      <div class="card">
-        <img src="https://images.unsplash.com/photo-1556740749-887f6717d7e4?auto=format&fit=crop&w=1200&q=80">
+<p>
+ASIX Assurance accompagne indépendants,
+TPE, PME et professions réglementées.
+</p>
+</div>
 
-        <div class="card-content">
-          <h3>RC Professionnelle</h3>
+<div class="cards">
 
-          <p>
-            Une protection essentielle contre les dommages causés à des tiers
-            dans le cadre de votre activité.
-          </p>
-        </div>
-      </div>
+<div class="card">
+<img src="https://images.pexels.com/photos/3184465/pexels-photo-3184465.jpeg?auto=compress&cs=tinysrgb&w=1200">
 
-      <div class="card">
-        <img src="https://images.unsplash.com/photo-1520607162513-77705c0f0d4a?auto=format&fit=crop&w=1200&q=80">
+<div class="card-content">
+<h3>Responsabilité civile pro</h3>
 
-        <div class="card-content">
-          <h3>Multirisque professionnelle</h3>
+<p>
+Protection essentielle contre les dommages causés à des tiers.
+</p>
 
-          <p>
-            Protection des locaux, matériels, marchandises et activité
-            professionnelle.
-          </p>
-        </div>
-      </div>
+<a class="btn btn-dark" href="#devis">
+Demander un devis
+</a>
+</div>
+</div>
 
-      <div class="card">
-        <img src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=1200&q=80">
+<div class="card">
+<img src="https://images.pexels.com/photos/3184325/pexels-photo-3184325.jpeg?auto=compress&cs=tinysrgb&w=1200">
 
-        <div class="card-content">
-          <h3>Décennale</h3>
+<div class="card-content">
+<h3>Décennale</h3>
 
-          <p>
-            Des solutions pour les professionnels du bâtiment et de la construction.
-          </p>
-        </div>
-      </div>
+<p>
+Solutions adaptées aux métiers du bâtiment et de la construction.
+</p>
 
-    </div>
-  </div>
+<a class="btn btn-dark" href="#devis">
+Demander un devis
+</a>
+</div>
+</div>
+
+<div class="card">
+<img src="https://images.pexels.com/photos/3183197/pexels-photo-3183197.jpeg?auto=compress&cs=tinysrgb&w=1200">
+
+<div class="card-content">
+<h3>Multirisque professionnelle</h3>
+
+<p>
+Protection de vos locaux, équipements et activité.
+</p>
+
+<a class="btn btn-dark" href="#devis">
+Demander un devis
+</a>
+</div>
+</div>
+
+</div>
+</div>
 </section>
 
-<section class="gray">
-  <div class="container">
+<section>
 
-    <div class="section-title">
-      <small>GARANTIES</small>
-      <h2>Des garanties selon votre activité</h2>
-    </div>
+<div class="container">
 
-    <div class="two-cols">
+<div class="section-title">
+<small>PARTENAIRES</small>
 
-      <div class="box">
-        <h3>Garanties possibles</h3>
+<h2>Nos partenaires & références</h2>
 
-        <ul>
-          <li>Responsabilité civile professionnelle</li>
-          <li>Protection juridique</li>
-          <li>Multirisque locaux professionnels</li>
-          <li>Protection du matériel</li>
-          <li>Perte d’exploitation</li>
-          <li>Garantie décennale</li>
-          <li>Cyber-risques</li>
-        </ul>
-      </div>
+<p>
+ASIX Assurance s’appuie sur des partenaires reconnus.
+</p>
+</div>
 
-      <div class="box">
-        <h3>Informations étudiées</h3>
+<div class="partner-grid">
 
-        <ul>
-          <li>Votre activité</li>
-          <li>Votre chiffre d’affaires</li>
-          <li>Vos locaux et équipements</li>
-          <li>Le nombre de salariés</li>
-          <li>Vos besoins spécifiques</li>
-          <li>Votre budget</li>
-        </ul>
-      </div>
+<div class="partner-card april"><strong>APRIL</strong></div>
+<div class="partner-card kase"><strong>Kase</strong></div>
+<div class="partner-card coover"><strong>Coover</strong></div>
+<div class="partner-card hiscox"><strong>Hiscox</strong></div>
+<div class="partner-card allianz"><strong>Allianz</strong></div>
+<div class="partner-card aig"><strong>AIG</strong></div>
+<div class="partner-card orias"><strong>ORIAS</strong></div>
+<div class="partner-card endya"><strong>ENDYA</strong></div>
 
-    </div>
-  </div>
-</section>
-
-<section class="partners">
-  <div class="container">
-
-    <div class="section-title">
-      <small>PARTENAIRES</small>
-      <h2>Nos partenaires & références</h2>
-
-      <p>
-        ASIX Assurance s’appuie sur des partenaires reconnus pour proposer des solutions adaptées.
-      </p>
-    </div>
-
-    <div class="partner-grid">
-
-      <div class="partner-card april"><strong>APRIL</strong></div>
-      <div class="partner-card kase"><strong>Kase</strong></div>
-      <div class="partner-card coover"><strong>Coover</strong></div>
-      <div class="partner-card hiscox"><strong>Hiscox</strong></div>
-      <div class="partner-card allianz"><strong>Allianz</strong></div>
-      <div class="partner-card aig"><strong>AIG</strong></div>
-      <div class="partner-card orias"><strong>ORIAS</strong></div>
-      <div class="partner-card endya"><strong>ENDYA</strong></div>
-
-    </div>
-  </div>
+</div>
+</div>
 </section>
 
 <section class="infos" id="apropos">
-  <div class="container">
 
-    <div class="info-box">
+<div class="container">
 
-      <h2>Informations ASIX Assurance</h2>
+<div class="info-box">
 
-      <p>
-        ASIX ASSURANCE est un cabinet de courtage en assurances
-        pour particuliers et professionnels.
-      </p>
+<h2>Informations ASIX Assurance</h2>
 
-      <div class="info-grid">
+<div class="info-grid">
 
-        <div class="info-card">
-          <strong>ORIAS</strong>
-          N° ORIAS : 26006637
-        </div>
+<div class="info-card">
+<strong>ORIAS</strong>
+N°26006637
+</div>
 
-        <div class="info-card">
-          <strong>SIRET</strong>
-          10348790600010
-        </div>
+<div class="info-card">
+<strong>SIRET</strong>
+10348790600010
+</div>
 
-        <div class="info-card">
-          <strong>Association professionnelle</strong>
-          ENDYA
-        </div>
+<div class="info-card">
+<strong>Association professionnelle</strong>
+ENDYA
+</div>
 
-      </div>
-    </div>
-  </div>
+</div>
+
+</div>
+</div>
 </section>
 
 <section id="devis">
-  <div class="container">
 
-    <div class="section-title">
-      <small>DEVIS PROFESSIONNEL</small>
-      <h2>Recevez votre étude rapidement</h2>
+<div class="container">
 
-      <p>
-        Remplissez ce formulaire et ASIX Assurance vous recontacte rapidement.
-      </p>
-    </div>
+<div class="section-title">
+<small>DEVIS RAPIDE</small>
 
-    <div class="form-box">
+<h2>Recevez une réponse rapidement</h2>
+</div>
 
-      <form action="https://formspree.io/f/xykbrnrr" method="POST">
+<div class="form-box">
 
-        <input class="field" type="text" name="Nom" placeholder="Nom complet" required>
+<form action="https://formspree.io/f/xykbrnrr" method="POST">
 
-        <input class="field" type="email" name="Email" placeholder="Adresse email" required>
+<input class="field" type="text" name="Nom" placeholder="Nom complet" required>
 
-        <input class="field" type="tel" name="Téléphone" placeholder="Téléphone" required>
+<input class="field" type="email" name="Email" placeholder="Adresse email" required>
 
-        <input class="field" type="text" name="Activité" placeholder="Votre activité professionnelle" required>
+<input class="field" type="tel" name="Téléphone" placeholder="Téléphone" required>
 
-        <textarea class="field" name="Message" placeholder="Expliquez votre besoin" required></textarea>
+<select class="field" name="Type assurance" required>
+<option value="">Type d’assurance professionnelle</option>
+<option>RC Pro</option>
+<option>Décennale</option>
+<option>Multirisque professionnelle</option>
+<option>Autre besoin professionnel</option>
+</select>
 
-        <input type="hidden" name="_subject" value="Nouveau devis professionnel ASIX Assurance">
+<textarea class="field" name="Message" placeholder="Expliquez votre besoin" required></textarea>
 
-        <button type="submit" class="btn btn-dark" style="width:100%;border:none;font-size:17px;">
-          Envoyer ma demande
-        </button>
+<input type="hidden" name="_subject" value="Nouvelle demande pro ASIX Assurance">
 
-      </form>
-    </div>
-  </div>
-</section>
+<button type="submit" class="btn btn-dark" style="width:100%;border:none;font-size:17px;">
+Envoyer ma demande
+</button>
 
-<section class="cta">
-  <div class="container">
+</form>
 
-    <h2>Besoin d’un devis professionnel ?</h2>
-
-    <p>
-      Contactez ASIX Assurance pour une étude personnalisée,
-      gratuite et sans engagement.
-    </p>
-
-    <div class="hero-actions" style="justify-content:center;">
-      <a class="btn btn-white" href="https://wa.me/33603793189" target="_blank">WhatsApp direct</a>
-
-      <a class="btn btn-dark" href="tel:0603793189">Appeler maintenant</a>
-    </div>
-
-  </div>
+</div>
+</div>
 </section>
 
 <footer id="contact">
-  <div class="container">
 
-    <div class="footer-grid">
+<div class="container">
 
-      <div>
-        <div class="footer-title">ASIX ASSURANCE</div>
+<div class="footer-grid">
 
-        <p>
-          Courtier indépendant en assurance pour particuliers et professionnels.
-        </p>
-      </div>
+<div>
+<div class="footer-title">ASIX ASSURANCE</div>
 
-      <div>
-        <div class="footer-title">Navigation</div>
+<p>
+Courtier indépendant en assurance pour particuliers et professionnels.
+</p>
+</div>
 
-        <a href="index.html">Accueil</a>
-        <a href="assurance-auto.html">Auto</a>
-        <a href="assurance-habitation.html">Habitation</a>
-        <a href="assurance-sante.html">Santé</a>
-        <a href="assurance-pro.html">Professionnel</a>
-      </div>
+<div>
+<div class="footer-title">Navigation</div>
 
-      <div>
-        <div class="footer-title">Informations légales</div>
+<a href="index.html">Accueil</a>
+<a href="assurance-auto.html">Auto</a>
+<a href="assurance-habitation.html">Habitation</a>
+<a href="assurance-sante.html">Santé</a>
+<a href="assurance-pro.html">Professionnel</a>
+<a href="index.html#apropos">À propos</a>
+<a href="index.html#contact">Contact</a>
+</div>
 
-        <p>ORIAS n°26006637</p>
-        <p>SIRET 10348790600010</p>
-        <p>SAS au capital de 1 000 €</p>
-        <p>Association professionnelle : ENDYA</p>
+<div>
+<div class="footer-title">Informations légales</div>
 
-        <a href="mailto:contact@asixassurance.fr">contact@asixassurance.fr</a>
+<p>ORIAS n°26006637</p>
+<p>SIRET 10348790600010</p>
+<p>SAS au capital de 1 000 €</p>
+<p>Association professionnelle : ENDYA</p>
 
-        <a href="tel:0603793189">06 03 79 31 89</a>
-      </div>
+<a href="mentions-legales.html">Mentions légales</a>
 
-    </div>
+<a href="mailto:contact@asixassurance.fr">
+contact@asixassurance.fr
+</a>
 
-    <div class="copy">
-      © 2026 ASIX Assurance — Tous droits réservés.
-      Courtier immatriculé à l’ORIAS sous le n°26006637.
-    </div>
+<a href="tel:0603793189">
+06 03 79 31 89
+</a>
 
-  </div>
+</div>
+
+</div>
+
+<div class="copy">
+© 2026 ASIX Assurance — Tous droits réservés.
+Courtier immatriculé à l’ORIAS sous le n°26006637.
+</div>
+
+</div>
 </footer>
 
 <a class="whatsapp" href="https://wa.me/33603793189" target="_blank">
