@@ -6,195 +6,228 @@
 
 <title>Mentions légales | ASIX Assurance</title>
 
-<meta name="description" content="Mentions légales du site ASIX Assurance, courtier indépendant en assurance immatriculé à l’ORIAS sous le numéro 26006637.">
+<meta name="description" content="Mentions légales du site ASIX Assurance. Informations ORIAS, SIRET, hébergement et contact.">
 
 <style>
 :root{
-  --blue:#0f2f63;
-  --dark:#081a35;
-  --light:#f8fafc;
-  --text:#1e293b;
-  --gray:#64748b;
-  --border:#dbe4f0;
-  --green:#25D366;
+--blue:#0f2f63;
+--dark:#081a35;
+--text:#1e293b;
+--gray:#64748b;
+--border:#dbe4f0;
+--green:#25D366;
 }
 
-*{margin:0;padding:0;box-sizing:border-box}
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+}
 
 body{
-  font-family:Arial,Helvetica,sans-serif;
-  background:#fff;
-  color:var(--text);
-  line-height:1.7;
+font-family:Arial,Helvetica,sans-serif;
+background:#fff;
+color:var(--text);
+line-height:1.7;
 }
 
-a{text-decoration:none;color:inherit}
+a{
+text-decoration:none;
+color:inherit;
+}
 
 .container{
-  width:min(1000px,calc(100% - 32px));
-  margin:auto;
+width:min(1100px,calc(100% - 32px));
+margin:auto;
 }
 
 header{
-  position:sticky;
-  top:0;
-  z-index:1000;
-  background:#fff;
-  border-bottom:1px solid var(--border);
+position:sticky;
+top:0;
+background:#fff;
+border-bottom:1px solid var(--border);
+z-index:1000;
 }
 
 .topbar{
-  min-height:82px;
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-  gap:20px;
+min-height:82px;
+display:flex;
+justify-content:space-between;
+align-items:center;
+gap:20px;
 }
 
 .logo{
-  display:flex;
-  align-items:center;
-  gap:14px;
+display:flex;
+align-items:center;
+gap:14px;
 }
 
-.logo img{height:54px}
+.logo img{
+height:54px;
+}
 
 .logo strong{
-  display:block;
-  font-size:20px;
-  color:var(--dark);
+display:block;
+font-size:20px;
+color:var(--dark);
 }
 
 .logo span{
-  font-size:13px;
-  color:var(--gray);
+font-size:13px;
+color:var(--gray);
 }
 
 nav{
-  display:flex;
-  gap:24px;
-  align-items:center;
+display:flex;
+gap:24px;
+align-items:center;
 }
 
-nav a{
-  font-weight:700;
-  color:#334155;
+nav a,.dropdown-toggle{
+font-weight:700;
+color:#334155;
+cursor:pointer;
 }
 
-.btn{
-  display:inline-flex;
-  align-items:center;
-  justify-content:center;
-  padding:14px 22px;
-  border-radius:14px;
-  font-weight:700;
+.dropdown{
+position:relative;
 }
 
-.btn-dark{
-  background:var(--blue);
-  color:#fff;
+.dropdown-menu{
+display:none;
+position:absolute;
+top:100%;
+left:0;
+background:#fff;
+border:1px solid var(--border);
+border-radius:14px;
+overflow:hidden;
+min-width:240px;
+box-shadow:0 15px 35px rgba(0,0,0,.08);
+z-index:999;
+}
+
+.dropdown-menu a{
+display:block;
+padding:14px 16px;
+}
+
+.dropdown-menu a:hover{
+background:#f1f5f9;
+}
+
+.dropdown:hover .dropdown-menu{
+display:block;
 }
 
 .hero{
-  background:linear-gradient(135deg,var(--dark),var(--blue));
-  color:#fff;
-  padding:80px 0;
+background:
+linear-gradient(rgba(8,26,53,.92),rgba(8,26,53,.92)),
+url('https://images.pexels.com/photos/4386370/pexels-photo-4386370.jpeg?auto=compress&cs=tinysrgb&w=1600') center/cover;
+color:#fff;
+padding:90px 0;
+text-align:center;
 }
 
 .hero h1{
-  font-size:54px;
-  line-height:1;
-  margin-bottom:18px;
+font-size:58px;
+margin-bottom:20px;
 }
 
 .hero p{
-  color:#dbeafe;
-  font-size:20px;
+font-size:20px;
+color:#dbeafe;
 }
 
-.legal{
-  padding:80px 0;
+section{
+padding:80px 0;
 }
 
 .legal-box{
-  background:#fff;
-  border:1px solid var(--border);
-  border-radius:28px;
-  padding:40px;
-  box-shadow:0 10px 30px rgba(15,23,42,.06);
+background:#fff;
+border:1px solid var(--border);
+border-radius:28px;
+padding:50px;
+box-shadow:0 10px 30px rgba(15,23,42,.06);
 }
 
 .legal-box h2{
-  color:var(--dark);
-  font-size:30px;
-  margin:32px 0 12px;
+font-size:32px;
+color:var(--dark);
+margin-bottom:20px;
+margin-top:40px;
 }
 
 .legal-box h2:first-child{
-  margin-top:0;
+margin-top:0;
 }
 
-.legal-box p,
-.legal-box li{
-  color:var(--gray);
-  margin-bottom:12px;
-}
-
-.legal-box ul{
-  padding-left:22px;
-  margin-bottom:18px;
-}
-
-.legal-box strong{
-  color:var(--dark);
+.legal-box p{
+margin-bottom:16px;
+color:#475569;
 }
 
 footer{
-  background:#081a35;
-  color:#cbd5e1;
-  padding:50px 0;
+background:#081a35;
+color:#cbd5e1;
+padding:50px 0;
+margin-top:80px;
 }
 
 .footer-grid{
-  display:grid;
-  grid-template-columns:1.2fr 1fr 1fr;
-  gap:40px;
+display:grid;
+grid-template-columns:1.2fr 1fr 1fr;
+gap:40px;
 }
 
 .footer-title{
-  color:#fff;
-  font-weight:800;
-  margin-bottom:16px;
+color:#fff;
+font-weight:800;
+margin-bottom:16px;
 }
 
 footer a{
-  display:block;
-  margin:10px 0;
+display:block;
+margin:10px 0;
 }
 
 .copy{
-  margin-top:30px;
-  padding-top:20px;
-  border-top:1px solid rgba(255,255,255,.1);
-  font-size:14px;
+margin-top:30px;
+padding-top:20px;
+border-top:1px solid rgba(255,255,255,.1);
+font-size:14px;
 }
 
 .whatsapp{
-  position:fixed;
-  right:20px;
-  bottom:20px;
-  background:var(--green);
-  color:#fff;
-  padding:16px 22px;
-  border-radius:999px;
-  font-weight:700;
-  z-index:9999;
+position:fixed;
+right:20px;
+bottom:20px;
+background:var(--green);
+color:#fff;
+padding:16px 22px;
+border-radius:999px;
+font-weight:700;
+z-index:9999;
 }
 
-@media(max-width:900px){
-  nav{display:none}
-  .hero h1{font-size:40px}
-  .footer-grid{grid-template-columns:1fr}
+@media(max-width:1000px){
+
+nav{
+display:none;
+}
+
+.hero h1{
+font-size:42px;
+}
+
+.footer-grid{
+grid-template-columns:1fr;
+}
+
+.legal-box{
+padding:30px;
+}
 }
 </style>
 </head>
@@ -202,150 +235,212 @@ footer a{
 <body>
 
 <header>
-  <div class="container topbar">
-    <div class="logo">
-      <img src="asix_hd.png" alt="ASIX Assurance">
-      <div>
-        <strong>ASIX ASSURANCE</strong>
-        <span>Courtier indépendant en assurance</span>
-      </div>
-    </div>
 
-    <nav>
-      <a href="index.html">Accueil</a>
-      <a href="assurance-auto.html">Auto</a>
-      <a href="assurance-habitation.html">Habitation</a>
-      <a href="assurance-sante.html">Santé</a>
-      <a href="assurance-pro.html">Pro</a>
-      <a href="index.html#contact">Contact</a>
-    </nav>
+<div class="container topbar">
 
-    <a class="btn btn-dark" href="index.html#devis">Devis gratuit</a>
-  </div>
+<div class="logo">
+
+<img src="asix_hd.png" alt="ASIX Assurance">
+
+<div>
+<strong>ASIX ASSURANCE</strong>
+<span>Courtier indépendant en assurance</span>
+</div>
+
+</div>
+
+<nav>
+
+<a href="index.html">Accueil</a>
+
+<div class="dropdown">
+
+<div class="dropdown-toggle">
+Auto ▼
+</div>
+
+<div class="dropdown-menu">
+<a href="assurance-auto.html">Assurance auto</a>
+<a href="assurance-auto-malusse.html">Conducteur malussé</a>
+<a href="assurance-auto-resilie.html">Conducteur résilié</a>
+<a href="assurance-auto-jeune-conducteur.html">Jeune conducteur</a>
+</div>
+
+</div>
+
+<a href="assurance-habitation.html">Habitation</a>
+<a href="assurance-sante.html">Santé</a>
+<a href="assurance-pro.html">Pro</a>
+<a href="mentions-legales.html">Mentions légales</a>
+<a href="index.html#contact">Contact</a>
+
+</nav>
+
+</div>
+
 </header>
 
 <section class="hero">
-  <div class="container">
-    <h1>Mentions légales</h1>
-    <p>Informations légales du site ASIX Assurance.</p>
-  </div>
+
+<div class="container">
+
+<h1>
+Mentions légales
+</h1>
+
+<p>
+Informations légales et réglementaires ASIX Assurance
+</p>
+
+</div>
+
 </section>
 
-<section class="legal">
-  <div class="container">
-    <div class="legal-box">
+<section>
 
-      <h2>Éditeur du site</h2>
-      <p><strong>ASIX ASSURANCE</strong></p>
-      <p>SAS au capital de 1 000 €</p>
-      <p>SIRET : 10348790600010</p>
-      <p>Siège social : 9 place du 19 mars 1962, 92130 Issy-les-Moulineaux</p>
-      <p>Email : contact@asixassurance.fr</p>
-      <p>Téléphone : 06 03 79 31 89</p>
+<div class="container">
 
-      <h2>Activité réglementée</h2>
-      <p>
-        ASIX ASSURANCE exerce une activité de courtage en assurances.
-      </p>
-      <p>
-        Cabinet immatriculé à l’ORIAS sous le numéro :
-        <strong>26006637</strong>.
-      </p>
-      <p>
-        Le registre ORIAS est consultable sur :
-        <strong>www.orias.fr</strong>.
-      </p>
+<div class="legal-box">
 
-      <h2>Association professionnelle</h2>
-      <p>
-        ASIX ASSURANCE est membre de l’association professionnelle :
-        <strong>ENDYA</strong>.
-      </p>
+<h2>Éditeur du site</h2>
 
-      <h2>Responsabilité</h2>
-      <p>
-        Les informations présentes sur ce site sont fournies à titre indicatif.
-        Elles ne constituent pas une offre contractuelle définitive.
-      </p>
-      <p>
-        Les garanties, tarifs et conditions de souscription sont soumis à
-        l’acceptation des partenaires assureurs et aux conditions générales
-        et particulières des contrats proposés.
-      </p>
+<p>
+ASIX ASSURANCE
+</p>
 
-      <h2>Données personnelles</h2>
-      <p>
-        Les informations transmises via les formulaires du site sont utilisées
-        uniquement pour traiter les demandes de devis, de contact ou d’information.
-      </p>
-      <p>
-        Conformément à la réglementation applicable, vous pouvez demander
-        l’accès, la rectification ou la suppression de vos données en contactant :
-        <strong>contact@asixassurance.fr</strong>.
-      </p>
+<p>
+SAS au capital de 1 000 €
+</p>
 
-      <h2>Cookies</h2>
-      <p>
-        Le site peut utiliser des cookies techniques nécessaires à son bon
-        fonctionnement. Aucun cookie publicitaire n’est installé sans consentement.
-      </p>
+<p>
+SIRET : 10348790600010
+</p>
 
-      <h2>Propriété intellectuelle</h2>
-      <p>
-        Le contenu du site, les textes, éléments graphiques, logos, images et
-        mises en page sont protégés. Toute reproduction non autorisée est interdite.
-      </p>
+<p>
+ORIAS : 26006637
+</p>
 
-      <h2>Partenaires et marques</h2>
-      <p>
-        Les noms de marques, logos ou références partenaires cités sur le site
-        appartiennent à leurs propriétaires respectifs.
-      </p>
+<p>
+Association professionnelle : ENDYA
+</p>
 
-      <h2>Hébergement</h2>
-      <p>
-        Site hébergé par Vercel Inc.
-      </p>
+<p>
+Email : contact@asixassurance.fr
+</p>
 
-    </div>
-  </div>
+<p>
+Téléphone : 06 03 79 31 89
+</p>
+
+<h2>Activité</h2>
+
+<p>
+ASIX Assurance exerce une activité de courtage en assurance conformément à la réglementation française.
+</p>
+
+<h2>Hébergement</h2>
+
+<p>
+Le site est hébergé par Vercel Inc.
+</p>
+
+<p>
+440 N Barranca Ave #4133
+Covina, CA 91723
+États-Unis
+</p>
+
+<h2>Données personnelles</h2>
+
+<p>
+Les informations collectées via les formulaires du site sont utilisées uniquement afin de répondre aux demandes des utilisateurs.
+</p>
+
+<p>
+Aucune donnée n’est vendue à des tiers.
+</p>
+
+<h2>Cookies</h2>
+
+<p>
+Le site peut utiliser des cookies nécessaires au bon fonctionnement et à l’amélioration de l’expérience utilisateur.
+</p>
+
+<h2>Responsabilité</h2>
+
+<p>
+ASIX Assurance s’efforce d’assurer l’exactitude des informations publiées sur le site mais ne peut garantir l’absence totale d’erreurs ou d’omissions.
+</p>
+
+</div>
+
+</div>
+
 </section>
 
-<footer>
-  <div class="container">
-    <div class="footer-grid">
+<footer id="contact">
 
-      <div>
-        <div class="footer-title">ASIX ASSURANCE</div>
-        <p>Courtier indépendant en assurance pour particuliers et professionnels.</p>
-      </div>
+<div class="container">
 
-      <div>
-        <div class="footer-title">Navigation</div>
-        <a href="index.html">Accueil</a>
-        <a href="assurance-auto.html">Auto</a>
-        <a href="assurance-habitation.html">Habitation</a>
-        <a href="assurance-sante.html">Santé</a>
-        <a href="assurance-pro.html">Professionnel</a>
-      </div>
+<div class="footer-grid">
 
-      <div>
-        <div class="footer-title">Informations légales</div>
-        <p>ORIAS n°26006637</p>
-        <p>SIRET 10348790600010</p>
-        <p>SAS au capital de 1 000 €</p>
-        <p>Association professionnelle : ENDYA</p>
-        <a href="mentions-legales.html">Mentions légales</a>
-        <a href="mailto:contact@asixassurance.fr">contact@asixassurance.fr</a>
-        <a href="tel:0603793189">06 03 79 31 89</a>
-      </div>
+<div>
 
-    </div>
+<div class="footer-title">
+ASIX ASSURANCE
+</div>
 
-    <div class="copy">
-      © 2026 ASIX Assurance — Tous droits réservés. Courtier immatriculé à l’ORIAS sous le n°26006637.
-    </div>
-  </div>
+<p>
+Courtier indépendant en assurance pour particuliers et professionnels.
+</p>
+
+</div>
+
+<div>
+
+<div class="footer-title">
+Navigation
+</div>
+
+<a href="index.html">Accueil</a>
+<a href="assurance-auto.html">Auto</a>
+<a href="assurance-habitation.html">Habitation</a>
+<a href="assurance-sante.html">Santé</a>
+<a href="assurance-pro.html">Professionnel</a>
+<a href="mentions-legales.html">Mentions légales</a>
+
+</div>
+
+<div>
+
+<div class="footer-title">
+Informations légales
+</div>
+
+<p>ORIAS n°26006637</p>
+<p>SIRET 10348790600010</p>
+<p>SAS au capital de 1 000 €</p>
+<p>Association professionnelle : ENDYA</p>
+
+<a href="mailto:contact@asixassurance.fr">
+contact@asixassurance.fr
+</a>
+
+<a href="tel:0603793189">
+06 03 79 31 89
+</a>
+
+</div>
+
+</div>
+
+<div class="copy">
+© 2026 ASIX Assurance — Tous droits réservés.
+Courtier immatriculé à l’ORIAS sous le n°26006637.
+</div>
+
+</div>
+
 </footer>
 
 <a class="whatsapp" href="https://wa.me/33603793189" target="_blank">
