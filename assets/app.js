@@ -24,3 +24,7 @@ document.querySelectorAll('.enquiry-form').forEach(form=>{
 
 document.addEventListener('click',event=>{document.querySelectorAll('.auto-subtabs[open]').forEach(menu=>{if(!menu.contains(event.target))menu.open=false;});});
 document.addEventListener('keydown',event=>{if(event.key==='Escape')document.querySelectorAll('.auto-subtabs[open]').forEach(menu=>{menu.open=false;menu.querySelector('summary').focus();});});
+
+// Search professional offers by trade or product name.
+const proSearch=document.querySelector('#pro-search');
+if(proSearch){const normalize=s=>s.normalize('NFD').replace(/[\u0300-\u036f]/g,'').toLowerCase();proSearch.addEventListener('input',()=>{const words=normalize(proSearch.value).trim().split(/\s+/);let count=0;document.querySelectorAll('.pro-family').forEach(section=>{let visible=0;section.querySelectorAll('.pro-offer').forEach(card=>{const match=words.every(word=>normalize(card.textContent).includes(word));card.hidden=!match;if(match){visible++;count++;}});section.hidden=!visible;});document.querySelector('#pro-search-status').textContent=count+' offre'+(count>1?'s':'')+' correspondante'+(count>1?'s':'');document.querySelector('#pro-no-results').hidden=count!==0;});}
