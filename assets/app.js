@@ -6,17 +6,16 @@ document.addEventListener('keydown',e=>{if(e.key==='Escape'&&nav?.classList.cont
 document.addEventListener('click',e=>{if(nav?.classList.contains('open')&&!nav.contains(e.target)&&!toggle.contains(e.target))closeMenu();});
 matchMedia('(min-width:981px)').addEventListener('change',closeMenu);
 document.querySelectorAll('.enquiry-form').forEach(form=>{
- const contact=form.querySelector('[name="Contact"]');
+ const contact=form.querySelector('[name="Telephone"]')||form.querySelector('[name="Contact"]');
  contact.addEventListener('input',()=>contact.setCustomValidity(''));
  form.addEventListener('submit',async e=>{
   e.preventDefault();
   const value=contact.value.trim();
-  const email=/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value);
   const phone=/^[+\d\s().-]+$/.test(value)&&value.replace(/\D/g,'').length>=9&&value.replace(/\D/g,'').length<=15;
-  if(!email&&!phone){contact.setCustomValidity('Indiquez une adresse email valide ou un numéro de téléphone complet.');contact.reportValidity();return;}
+  if(!phone){contact.setCustomValidity('Indiquez un numéro de téléphone valide et complet. Le numéro est obligatoire.');contact.reportValidity();return;}
   const status=form.querySelector('.form-status');const button=form.querySelector('button[type="submit"]');
   const original=button.innerHTML;button.disabled=true;button.textContent='Envoi en cours…';status.className='form-status';status.textContent='';
-  try{const data=new FormData(form);if(email)data.set('email',value);const response=await fetch(form.action,{method:'POST',body:data,headers:{Accept:'application/json'}});if(!response.ok)throw new Error('Envoi refusé');form.reset();status.className='form-status success';status.textContent='Votre demande a bien été transmise. Merci. Pour toute urgence, appelez le 07 45 07 49 88.';}
+  try{const data=new FormData(form);const response=await fetch(form.action,{method:'POST',body:data,headers:{Accept:'application/json'}});if(!response.ok)throw new Error('Envoi refusé');form.reset();status.className='form-status success';status.textContent='Votre demande a bien été transmise. Merci. Pour toute urgence, appelez le 07 45 07 49 88.';}
   catch{status.className='form-status error';status.textContent='Votre demande n’a pas pu être envoyée. Vos informations restent dans le formulaire. Appelez le 07 45 07 49 88 ou écrivez à contact@asixassurance.fr.';}
   finally{button.disabled=false;button.innerHTML=original;}
  });
